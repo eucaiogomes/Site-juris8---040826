@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "juris8-site",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 8080
+    },
+    {
+      "name": "juris8-site-8081",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "--port", "8081"],
+      "port": 8081
+    },
+    {
+      "name": "juris8-site-8082",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "--port", "8082", "--strictPort"],
+      "port": 8082
+    }
+  ]
+}

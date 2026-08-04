@@ -1,0 +1,2305 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>O Agente Jurídico — Juris8</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/lucide@0.511.0/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="ia-juridica-styles.css" />
+<style>
+/* Specific additions for Agente Juridico */
+.aj-hero { padding: 120px 0 80px; text-align: center; }
+.aj-hero h1 { font-size: clamp(36px, 5vw, 56px); line-height: 1.1; margin-bottom: 24px; color: #fff; max-width: 800px; margin-inline: auto; letter-spacing: -0.02em; }
+.aj-hero p { font-size: 18px; color: var(--muted); max-width: 600px; margin-inline: auto; margin-bottom: 40px; line-height: 1.6; }
+.aj-flow { padding: 80px 0; background: var(--surface-1); }
+.aj-flow-title { text-align: center; margin-bottom: 60px; font-size: 32px; color: #fff; }
+.aj-flow-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; text-align: center; }
+.aj-flow-step { background: var(--surface-2); padding: 24px; border-radius: 12px; border: 1px solid var(--hairline); color: var(--text); font-weight: 500; }
+.aj-bento { padding: 100px 0; }
+.aj-bento-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.aj-card { background: var(--surface-1); padding: 40px; border-radius: 24px; border: 1px solid var(--hairline); box-shadow: var(--shadow-card); }
+.aj-card h3 { font-size: 24px; color: #fff; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+.aj-card ul { list-style: none; padding: 0; margin: 0; color: var(--muted); line-height: 1.8; }
+.aj-card ul li::before { content: '✓'; color: var(--brand, #7C3AED); margin-right: 8px; font-weight: bold; }
+.aj-compare { padding: 100px 0; text-align: center; background: linear-gradient(180deg, var(--bg) 0%, var(--surface-1) 100%); }
+.aj-compare h2 { font-size: 40px; color: #fff; margin-bottom: 24px; }
+.aj-cta { padding: 120px 0; text-align: center; }
+.aj-cta h2 { font-size: 48px; color: #fff; margin-bottom: 32px; }
+.aj-check-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 600px; margin: 40px auto; text-align: left; }
+.aj-check-item { display: flex; align-items: center; gap: 12px; color: var(--text); background: var(--surface-2); padding: 16px 24px; border-radius: 12px; }
+.aj-check-item i { color: #4ADE80; }
+@media (max-width: 768px) {
+  .aj-bento-grid, .aj-check-list { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== WHATSAPP FLUTUANTE (mesmo do DET) ===== -->
+<div class="wa-fab" data-wa>
+  <div class="wa-bubble" role="dialog" aria-label="Atendimento no WhatsApp">
+    <button class="wa-bubble-close" type="button" aria-label="Fechar"><i data-lucide="x"></i></button>
+    <p class="wa-bubble-title">Dúvidas sobre o Agente Jurídico?</p>
+    <p class="wa-bubble-text">Fale com um especialista agora — resposta em minutos.</p>
+    <span class="wa-bubble-cta">Iniciar conversa <i data-lucide="arrow-right"></i></span>
+  </div>
+  <a class="wa-btn" href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Agente%20Jur%C3%ADdico." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <span class="wa-btn-ring" aria-hidden="true"></span>
+    <svg class="wa-btn-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.04 4C9.93 4 4.97 8.96 4.97 15.07c0 2.13.6 4.13 1.64 5.83L4.5 28l7.27-2.06a11.03 11.03 0 0 0 4.27.85h.01c6.11 0 11.07-4.96 11.07-11.07S22.15 4 16.04 4zm0 20.2h-.01a9.1 9.1 0 0 1-4.64-1.27l-.33-.2-3.86 1.09 1.1-3.76-.22-.35a9.11 9.11 0 1 1 8.96 4.49zm5.1-6.83c-.28-.14-1.65-.81-1.9-.9-.26-.1-.45-.14-.63.14-.19.28-.72.9-.88 1.08-.16.19-.32.21-.6.07-.28-.14-1.18-.43-2.25-1.39-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.49.14-.16.18-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.48l-.54-.01c-.19 0-.49.07-.74.35-.26.28-.97.95-.97 2.32s1 2.69 1.14 2.88c.14.19 1.96 2.99 4.75 4.19.66.29 1.18.46 1.58.59.66.21 1.27.18 1.74.11.53-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.26-.19-.54-.33z"/></svg>
+  </a>
+</div>
+
+
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="/" class="nav-brand" aria-label="Juris8 — Home">
+      <img src="/DET/logo.png" alt="Juris8" class="nav-logo" />
+    </a>
+    <div class="nav-links">
+      <a href="#funcionalidades" class="nav-link">Funcionalidades</a>
+      <a href="#como-funciona" class="nav-link">Como funciona</a>
+      <a href="#comparativo" class="nav-link">Antes e depois</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+    </div>
+    <div class="nav-right">
+      <a href="#cta" class="nav-cta nav-cta-desktop">
+        <i data-lucide="arrow-right" width="13" height="13" stroke-width="1.7"></i>
+        Testar gratuitamente por 7 dias
+      </a>
+      <button class="nav-burger" id="nav-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="#funcionalidades">Funcionalidades</a>
+    <a href="#como-funciona">Como funciona</a>
+    <a href="#comparativo">Antes e depois</a>
+    <a href="#faq">FAQ</a>
+    <div class="nav-mobile-cta">
+      <a href="#cta" class="nav-cta">
+        Testar gratuitamente por 7 dias
+      </a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ==============================
+     HERO  ·  + demonstração do fluxo
+============================== -->
+<section class="hero-section" id="top" data-screen-label="Hero">
+  <div class="shell">
+    <div class="hero-grid">
+
+      <!-- TEXT -->
+      <div class="hero-content reveal">
+
+
+        <h1 class="hero-h1">
+          Redija, pesquise, analise e transcreva com uma <span class="accent">IA feita para a rotina jurídica.</span>
+        </h1>
+
+        <p class="hero-sub">
+          O Juris8 ajuda advogados a reduzir tarefas manuais no dia a dia: cria rascunhos de peças e contratos, organiza documentos, apoia a pesquisa de fundamentos e transforma audiências em registros úteis — sempre para a sua revisão.
+        </p>
+
+        <div class="btn-group">
+          <a href="#cta" class="btn primary lg">
+            Ativar meu agente - 14 dias grátis</a>
+          <a href="#" class="btn secondary lg">Falar com especialista</a>
+        </div>
+
+        <p class="hero-microcopy">
+          Você entra com o contexto. O Juris8 estrutura o caminho.<br>
+          <b>Você revisa, ajusta e decide.</b>
+        </p>
+
+        <div class="hero-trust">
+          <span class="hero-trust-item">
+            <svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>
+            Você mantém a revisão, a estratégia e a decisão final
+          </span>
+          <span class="hero-trust-item">
+            <svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>
+            Seus documentos não treinam IAs de terceiros
+          </span>
+          <span class="hero-trust-item">
+            <svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>
+            Dados criptografados em trânsito e em repouso
+          </span>
+        </div>
+      </div>
+
+      <!-- DEMO · agente trabalhando (workspace) -->
+      <div class="hero-visual reveal d2">
+        <div class="mock agent" id="agent">
+          <div class="mock-bar">
+            <span class="mock-dots"><i></i><i></i><i></i></span>
+            <span class="mock-bar-crumb"><span class="crumb-app">Juris8</span><svg class="crumb-sep" viewBox="0 0 12 12"><polyline points="4.5,2.5 8,6 4.5,9.5"/></svg><span class="crumb-now" id="agent-crumb">Redação assistida</span></span>
+            <span class="mock-bar-status"><span class="live-dot"></span><span id="agent-status">Pronto</span></span>
+            <span class="mock-progress" id="agent-progress"></span>
+          </div>
+
+          <!-- fake cursor -->
+          <div class="agent-cursorptr" id="agent-cursorptr">
+            <svg viewBox="0 0 24 24"><path d="M5 2l14 8.5-6 1.2 3.4 6.8-2.6 1.3L10.4 13 6 17z"/></svg>
+          </div>
+
+          <!-- chat scroll -->
+          <div class="agent-chat" id="agent-chat">
+
+            <!-- empty state (antes do envio) -->
+            <div class="agent-empty" id="agent-empty">
+              <span class="agent-empty-ic">
+                <svg viewBox="0 0 22 22"><path d="M11 1.8l1.5 3.6 3.6.6-2.6 2.5.7 3.6L11 13.9 7.8 11.7l.7-3.6L5.9 6l3.6-.6z"/></svg>
+              </span>
+              <span class="agent-empty-t">Comece descrevendo a peça que você precisa</span>
+              <span class="agent-empty-s">O Juris8 prepara um rascunho para a sua revisão</span>
+            </div>
+
+            <!-- mensagem do advogado (montada ao enviar) -->
+            <div class="agent-prompt" id="agent-prompt-msg">
+              <span class="agent-ava">EU</span>
+              <div class="agent-prompt-main">
+                <div class="agent-prompt-head"><span class="agent-prompt-name">Você</span><span class="agent-time">agora</span></div>
+                <span class="agent-prompt-txt" id="agent-prompt"></span>
+                <div class="agent-files" id="agent-files"></div>
+              </div>
+            </div>
+
+            <!-- resposta do assistente -->
+            <div class="agent-reply" id="agent-reply">
+              <span class="agent-bot-ava">
+                <svg viewBox="0 0 16 16"><path d="M8 1.5l1.1 2.6 2.6.4-1.9 1.8.5 2.6L8 7.7 5.6 8.9l.5-2.6-1.9-1.8 2.6-.4z"/></svg>
+              </span>
+              <span class="agent-bot-name">Juris8</span>
+              <span class="agent-bot-model">IA jurídica</span>
+              <span class="agent-typing" id="agent-typing"><i></i><i></i><i></i></span>
+              <span class="agent-time agent-reply-time">agora</span>
+            </div>
+
+            <!-- intro do assistente -->
+            <div class="agent-intro" id="agent-intro">
+              <span class="agent-intro-txt" id="agent-intro-txt"></span>
+              <span class="agent-cursor" id="intro-cursor"></span>
+            </div>
+
+            <!-- raciocínio -->
+            <div class="agent-think" id="agent-think">
+              <span class="agent-think-label">Raciocínio</span>
+              <div class="agent-think-row">
+                <span class="agent-think-txt" id="agent-think-txt"></span>
+                <span class="agent-cursor" id="think-cursor"></span>
+              </div>
+            </div>
+
+            <!-- tool calls -->
+            <div class="agent-tools" id="agent-tools">
+              <div class="agent-tool" data-tool="0">
+                <span class="agent-tool-ic"><span class="agent-spin"></span><span class="agent-check"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.5 10,3"/></svg></span></span>
+                <span class="agent-tool-main"><span class="agent-tool-txt">Lendo documentos do caso</span><span class="agent-tool-meta">3 arquivos · PDF, Word</span><span class="agent-tool-result"></span></span>
+                <span class="agent-tool-tag">contexto</span>
+              </div>
+              <div class="agent-tool" data-tool="1">
+                <span class="agent-tool-ic"><span class="agent-spin"></span><span class="agent-check"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.5 10,3"/></svg></span></span>
+                <span class="agent-tool-main"><span class="agent-tool-txt">Consultando legislação</span><span class="agent-tool-meta">CLT · arts. 58 e 59</span><span class="agent-tool-result"></span></span>
+                <span class="agent-tool-tag">pesquisa</span>
+              </div>
+              <div class="agent-tool" data-tool="2">
+                <span class="agent-tool-ic"><span class="agent-spin"></span><span class="agent-check"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.5 10,3"/></svg></span></span>
+                <span class="agent-tool-main"><span class="agent-tool-txt">Verificando entendimento</span><span class="agent-tool-meta">jurisprudência do TST</span><span class="agent-tool-result"></span></span>
+                <span class="agent-tool-tag">pesquisa</span>
+              </div>
+              <div class="agent-tool" data-tool="3">
+                <span class="agent-tool-ic"><span class="agent-spin"></span><span class="agent-check"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.5 10,3"/></svg></span></span>
+                <span class="agent-tool-main"><span class="agent-tool-txt">Estruturando a peça</span><span class="agent-tool-meta">preliminares · mérito · pedidos</span><span class="agent-tool-result"></span></span>
+                <span class="agent-tool-tag">redação</span>
+              </div>
+            </div>
+
+            <!-- documento sendo redigido -->
+            <div class="agent-doc" id="agent-doc">
+              <div class="agent-doc-head">
+                <span class="agent-doc-ic"><svg viewBox="0 0 16 16"><path d="M4 1.5h5l3 3v10H4z"/><path d="M9 1.5v3h3"/></svg></span>
+                <span class="agent-doc-name" id="agent-doc-name">Contestacao_horas-extras.docx</span>
+                <span class="agent-doc-meta" id="agent-doc-meta">redigindo…</span>
+              </div>
+              <div class="agent-doc-body" id="agent-doc-body"></div>
+              <div class="agent-doc-foot">
+                <span class="agent-doc-save"><span class="save-dot"></span><span id="agent-doc-save-txt">salvando…</span></span>
+                <span class="agent-doc-pages" id="agent-doc-pages">pág. 1</span>
+              </div>
+            </div>
+
+            <!-- rodapé · resultado -->
+            <div class="agent-done" id="agent-done">
+              <div class="agent-done-row">
+                <span class="agent-done-ic"><svg viewBox="0 0 16 16"><polyline points="2.5,8.5 6.5,12.5 13.5,4"/></svg></span>
+                <span class="agent-done-main">
+                  <span class="agent-done-t">Rascunho pronto para a sua revisão</span>
+                  <span class="agent-done-s">Você ajusta, complementa e decide — a autoria é sempre sua</span>
+                </span>
+              </div>
+              <div class="agent-done-actions">
+                <button class="agent-act primary"><svg viewBox="0 0 14 14"><path d="M3 1.5h5l3 3v8H3z"/><path d="M8 1.5v3h3"/></svg>Abrir p/ revisão</button>
+                <button class="agent-act"><svg viewBox="0 0 14 14"><rect x="3.5" y="3.5" width="7" height="8" rx="1"/><path d="M5.5 3.5v-2h5v8h-2"/></svg>Copiar</button>
+                <button class="agent-act"><svg viewBox="0 0 14 14"><path d="M7 1.5v7"/><polyline points="4.5,6 7,8.5 9.5,6"/><path d="M2.5 10.5v1a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1v-1"/></svg>Exportar .docx</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- composer -->
+          <div class="agent-composer" id="agent-composer">
+            <!-- file picker popover -->
+            <div class="agent-picker" id="agent-picker">
+              <span class="agent-picker-head">Anexar do caso</span>
+              <button class="agent-picker-item" data-f="0"><span class="apk-ic"><svg viewBox="0 0 12 12"><path d="M3 1h4l2 2v8H3z"/><path d="M7 1v2h2"/></svg></span><span class="apk-name"></span><span class="apk-check"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.5 10,3"/></svg></span></button>
+              <button class="agent-picker-item" data-f="1"><span class="apk-ic"><svg viewBox="0 0 12 12"><path d="M3 1h4l2 2v8H3z"/><path d="M7 1v2h2"/></svg></span><span class="apk-name"></span><span class="apk-check"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.5 10,3"/></svg></span></button>
+              <button class="agent-picker-item" data-f="2"><span class="apk-ic"><svg viewBox="0 0 12 12"><path d="M3 1h4l2 2v8H3z"/><path d="M7 1v2h2"/></svg></span><span class="apk-name"></span><span class="apk-check"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.5 10,3"/></svg></span></button>
+            </div>
+
+            <!-- attached chips in composer -->
+            <div class="agent-comp-files" id="agent-comp-files"></div>
+
+            <div class="agent-comp-row">
+              <button class="agent-attach" id="agent-attach" aria-label="Anexar">
+                <svg viewBox="0 0 16 16"><path d="M11 5l-4.5 4.5a1.8 1.8 0 0 0 2.5 2.5L13 7.5A3.2 3.2 0 0 0 8.5 3L4 7.5"/></svg>
+              </button>
+              <div class="agent-input" id="agent-input"><span id="agent-input-txt"></span><span class="agent-cursor input-cursor" id="input-cursor"></span></div>
+              <button class="agent-send" id="agent-send" aria-label="Enviar">
+                <svg viewBox="0 0 16 16"><path d="M3 8h9"/><polyline points="8.5,4.5 12.5,8 8.5,11.5"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- seletor de peças -->
+          <div class="demo-pecas" id="demo-pecas">
+            <button class="demo-peca active" data-piece="0">
+              <span class="demo-peca-ic"><svg viewBox="0 0 14 14"><path d="M3 1.5h5l3 3v8H3z"/><path d="M8 1.5v3h3"/></svg></span>
+              Contestação Trabalhista
+            </button>
+            <button class="demo-peca" data-piece="1">
+              <span class="demo-peca-ic"><svg viewBox="0 0 14 14"><path d="M7 1.5l2 2-5 5-2 .5.5-2z" transform="translate(1 1)"/><line x1="2" y1="12.5" x2="12" y2="12.5"/></svg></span>
+              Recurso Ordinário
+            </button>
+            <button class="demo-peca" data-piece="2">
+              <span class="demo-peca-ic"><svg viewBox="0 0 14 14"><path d="M3 1.5h5l3 3v8H3z"/><path d="M8 1.5v3h3"/></svg></span>
+              Recurso de Revista
+            </button>
+            <button class="demo-peca" data-piece="3">
+              <span class="demo-peca-ic"><svg viewBox="0 0 14 14"><rect x="2.5" y="2.5" width="9" height="9" rx="1"/><line x1="4.5" y1="5.5" x2="9.5" y2="5.5"/><line x1="4.5" y1="8" x2="8" y2="8"/></svg></span>
+              Contrato de Trabalho
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     TRUST STRIP
+============================== -->
+<div class="trust-strip">
+  <div class="trust-track" id="trust-track">
+    <!-- SET 1 -->
+    <span class="trust-pill hi"><svg viewBox="0 0 14 14"><path d="M7 1.5l1.5 2 2-.5-.5 2 1.5 1.5-1.5 1.5.5 2-2-.5L7 12.5 5.5 10.5l-2 .5.5-2L2.5 7.5 4 6l-.5-2 2 .5z"/></svg>Redação assistida de peças e contratos</span>
+    <span class="trust-pill"><svg viewBox="0 0 14 14"><circle cx="6" cy="6" r="4"/><line x1="9" y1="9" x2="12.5" y2="12.5"/></svg>Apoio à pesquisa de fundamentos</span>
+    <span class="trust-pill"><svg viewBox="0 0 14 14"><path d="M3 1.5h5l3 3v8H3z"/><path d="M8 1.5v3h3"/></svg>Análise de documentos</span>
+    <span class="trust-pill"><svg viewBox="0 0 14 14"><rect x="5" y="1.5" width="4" height="7" rx="2"/><path d="M3 6.5a4 4 0 0 0 8 0"/><line x1="7" y1="10.5" x2="7" y2="12.5"/></svg>Transcrição de reuniões e audiências</span>
+    <span class="trust-pill green"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Revisão sempre humana</span>
+    <span class="trust-pill"><svg viewBox="0 0 14 14"><rect x="2.5" y="6" width="9" height="6.5" rx="1"/><path d="M4.5 6V4.2a2.5 2.5 0 0 1 5 0V6"/></svg>LGPD · dados criptografados</span>
+    <span class="trust-pill"><svg viewBox="0 0 14 14"><path d="M3 1.5h5l3 3v8H3z"/><line x1="5" y1="7" x2="9" y2="7"/><line x1="5" y1="9.5" x2="9" y2="9.5"/></svg>Aceita PDF e Word</span>
+    <span class="trust-pill hi"><svg viewBox="0 0 14 14"><circle cx="7" cy="4" r="2.5"/><path d="M2 13a5 5 0 0 1 10 0"/></svg>Desenvolvido por advogados</span>
+    <!-- SET 2 (loop seamless) -->
+    <span class="trust-pill hi"><svg viewBox="0 0 14 14"><path d="M7 1.5l1.5 2 2-.5-.5 2 1.5 1.5-1.5 1.5.5 2-2-.5L7 12.5 5.5 10.5l-2 .5.5-2L2.5 7.5 4 6l-.5-2 2 .5z"/></svg>Redação assistida de peças e contratos</span>
+    <span class="trust-pill"><svg viewBox="0 0 14 14"><circle cx="6" cy="6" r="4"/><line x1="9" y1="9" x2="12.5" y2="12.5"/></svg>Apoio à pesquisa de fundamentos</span>
+    <span class="trust-pill"><svg viewBox="0 0 14 14"><path d="M3 1.5h5l3 3v8H3z"/><path d="M8 1.5v3h3"/></svg>Análise de documentos</span>
+    <span class="trust-pill"><svg viewBox="0 0 14 14"><rect x="5" y="1.5" width="4" height="7" rx="2"/><path d="M3 6.5a4 4 0 0 0 8 0"/><line x1="7" y1="10.5" x2="7" y2="12.5"/></svg>Transcrição de reuniões e audiências</span>
+    <span class="trust-pill green"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Revisão sempre humana</span>
+    <span class="trust-pill"><svg viewBox="0 0 14 14"><rect x="2.5" y="6" width="9" height="6.5" rx="1"/><path d="M4.5 6V4.2a2.5 2.5 0 0 1 5 0V6"/></svg>LGPD · dados criptografados</span>
+    <span class="trust-pill"><svg viewBox="0 0 14 14"><path d="M3 1.5h5l3 3v8H3z"/><line x1="5" y1="7" x2="9" y2="7"/><line x1="5" y1="9.5" x2="9" y2="9.5"/></svg>Aceita PDF e Word</span>
+    <span class="trust-pill hi"><svg viewBox="0 0 14 14"><circle cx="7" cy="4" r="2.5"/><path d="M2 13a5 5 0 0 1 10 0"/></svg>Desenvolvido por advogados</span>
+  </div>
+</div>
+
+<!-- ==============================
+     PROBLEMA
+============================== -->
+<section id="problema" data-screen-label="Problema">
+  <div class="shell">
+    <div class="sec-header reveal">
+
+      <h2 class="sec-h2">Boa parte do tempo jurídico vai embora <span class="grad">antes da estratégia.</span></h2>
+      <p class="sec-lede">Organizar documentos, buscar fundamentos, começar minutas, revisar informações e transformar reuniões em encaminhamentos. Trabalho necessário — mas que consome as horas que deveriam ir para a estratégia e o cliente.</p>
+    </div>
+
+    <div class="prob-grid">
+      <div class="prob-card reveal d1">
+        <span class="prob-ic"><svg viewBox="0 0 18 18"><path d="M4 2h7l3 3v11H4z"/><path d="M11 2v3h3"/><line x1="6.5" y1="9" x2="11.5" y2="9"/><line x1="6.5" y1="12" x2="9.5" y2="12"/></svg></span>
+        <span class="prob-title">A tela em branco</span>
+        <span class="prob-desc">Começar peças e contratos do zero, repetindo estruturas que você já escreveu dezenas de vezes.</span>
+      </div>
+      <div class="prob-card reveal d2">
+        <span class="prob-ic"><svg viewBox="0 0 18 18"><circle cx="7.5" cy="7.5" r="5"/><line x1="11" y1="11" x2="16" y2="16"/></svg></span>
+        <span class="prob-title">Horas em pesquisa</span>
+        <span class="prob-desc">Procurar fundamentos e precedentes manualmente, abrindo abas e comparando textos longos.</span>
+      </div>
+      <div class="prob-card reveal d3">
+        <span class="prob-ic"><svg viewBox="0 0 18 18"><rect x="3" y="2" width="12" height="14" rx="1.5"/><line x1="6" y1="6" x2="12" y2="6"/><line x1="6" y1="9" x2="12" y2="9"/><line x1="6" y1="12" x2="9.5" y2="12"/></svg></span>
+        <span class="prob-title">PDFs intermináveis</span>
+        <span class="prob-desc">Revisar contratos, decisões e laudos extensos linha por linha, com risco de perder o que importa.</span>
+      </div>
+      <div class="prob-card reveal d1">
+        <span class="prob-ic"><svg viewBox="0 0 18 18"><rect x="6.5" y="2" width="5" height="9" rx="2.5"/><path d="M4 8.5a5 5 0 0 0 10 0"/><line x1="9" y1="13.5" x2="9" y2="16"/></svg></span>
+        <span class="prob-title">Audiência sem registro</span>
+        <span class="prob-desc">Sair da audiência com anotações soltas e perder pontos relevantes do que foi discutido.</span>
+      </div>
+      <div class="prob-card reveal d2">
+        <span class="prob-ic"><svg viewBox="0 0 18 18"><path d="M9 2v3M9 13v3M2 9h3M13 9h3M4 4l2 2M12 12l2 2M14 4l-2 2M6 12l-2 2"/></svg></span>
+        <span class="prob-title">Tarefas dispersas</span>
+        <span class="prob-desc">Transformar reuniões em encaminhamentos e manter o padrão de escrita em meio ao volume do dia a dia.</span>
+      </div>
+      <div class="prob-card reveal d3">
+        <span class="prob-ic"><svg viewBox="0 0 18 18"><circle cx="9" cy="9" r="7"/><polyline points="9,5 9,9 12,11"/></svg></span>
+        <span class="prob-title">Velocidade x controle</span>
+        <span class="prob-desc">Ganhar tempo nas tarefas repetitivas sem abrir mão do critério técnico e da decisão final.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     FUNCIONALIDADES
+============================== -->
+<section id="funcionalidades" data-screen-label="Funcionalidades">
+  <div class="shell">
+    <div class="sec-header reveal">
+
+      <h2 class="sec-h2">Da primeira minuta à organização da audiência, <span class="grad">o Juris8 antecipa o trabalho operacional.</span></h2>
+      <p class="sec-lede">Quatro frentes para reduzir tarefas manuais. Em todas, o Juris8 prepara o material e você revisa, ajusta e decide.</p>
+    </div>
+
+    <div class="feat-grid">
+      <!-- 01 Redação -->
+      <div class="feat-card reveal d1">
+        <div class="feat-head">
+          <span class="feat-ic"><svg viewBox="0 0 22 22"><path d="M13 3l6 6-9 9-6 1 1-6z"/><line x1="11" y1="5" x2="17" y2="11"/></svg></span>
+          <div>
+            <div class="feat-num">01 — Redação</div>
+            <div class="feat-title">Saia da tela em branco</div>
+          </div>
+        </div>
+        <p class="feat-desc">O Juris8 <b>pré-elabora peças, contratos e documentos jurídicos</b> com base no contexto que você enviar, para que você revise e refine. Com o uso, ele passa a refletir melhor o seu estilo de escrita.</p>
+        <div class="feat-example"><span class="ex-label">Exemplo</span>Você descreve o caso e anexa os documentos. O Juris8 devolve uma minuta estruturada — preliminares, mérito e pedidos — pronta para a sua revisão.</div>
+      </div>
+
+      <!-- 02 Pesquisa -->
+      <div class="feat-card reveal d2">
+        <div class="feat-head">
+          <span class="feat-ic"><svg viewBox="0 0 22 22"><circle cx="9" cy="9" r="6"/><line x1="13.5" y1="13.5" x2="19" y2="19"/></svg></span>
+          <div>
+            <div class="feat-num">02 — Pesquisa</div>
+            <div class="feat-title">Fundamentos com mais contexto</div>
+          </div>
+        </div>
+        <p class="feat-desc">O Juris8 <b>apoia a pesquisa jurídica</b> e ajuda a organizar precedentes e argumentos relevantes para o seu caso, respeitando os seus critérios — para você reduzir o tempo de busca e focar na estratégia.</p>
+        <div class="feat-example"><span class="ex-label">Exemplo</span>A partir da tese em análise, o Juris8 organiza fundamentos e pontos de apoio em um material revisável, mantendo você no controle da seleção.</div>
+      </div>
+
+      <!-- 03 Análise -->
+      <div class="feat-card reveal d3">
+        <div class="feat-head">
+          <span class="feat-ic"><svg viewBox="0 0 22 22"><path d="M5 2h8l4 4v14H5z"/><path d="M13 2v4h4"/><circle cx="10" cy="12.5" r="3"/><line x1="12.2" y1="14.7" x2="15" y2="17.5"/></svg></span>
+          <div>
+            <div class="feat-num">03 — Análise</div>
+            <div class="feat-title">Documentos longos, sem perder o detalhe</div>
+          </div>
+        </div>
+        <p class="feat-desc">O Juris8 <b>analisa documentos complexos</b> e ajuda a identificar pontos críticos, inconsistências, riscos e dados relevantes que merecem atenção — em contratos, decisões judiciais, laudos e outros arquivos.</p>
+        <div class="feat-example"><span class="ex-label">Exemplo</span>Você envia um contrato extenso e recebe um resumo dos pontos sensíveis e das cláusulas que pedem revisão — você decide o que fazer com cada um.</div>
+      </div>
+
+      <!-- 04 Transcrição -->
+      <div class="feat-card reveal d4">
+        <div class="feat-head">
+          <span class="feat-ic"><svg viewBox="0 0 22 22"><rect x="8" y="2" width="6" height="11" rx="3"/><path d="M5 10a6 6 0 0 0 12 0"/><line x1="11" y1="16" x2="11" y2="20"/><line x1="7.5" y1="20" x2="14.5" y2="20"/></svg></span>
+          <div>
+            <div class="feat-num">04 — Transcrição</div>
+            <div class="feat-title">Reuniões e audiências viram registro útil</div>
+          </div>
+        </div>
+        <p class="feat-desc">O Juris8 <b>transcreve áudio em texto</b> e organiza o que foi discutido em um resumo estruturado, com pontos relevantes e tarefas posteriores — para você acompanhar sem depender de anotações soltas.</p>
+        <div class="feat-example"><span class="ex-label">Exemplo</span>Ao final de uma reunião, você recebe a transcrição, um resumo por tópicos e a lista de encaminhamentos para revisar e distribuir.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ===== JURISPRUDÊNCIA — mockup detalhado ===== -->
+  <section id="feature-jurisprudencia" data-screen-label="Jurisprudência">
+    <div class="shell">
+      <div class="feature-split">
+        <div class="feature-text reveal">
+          <h2>Jurisprudência do TST e TRT12 <span class="grad">— validada, sem alucinações.</span></h2>
+          <p class="feature-lede">Diferente de modelos genéricos que inventam citações, o Juris8 só retorna jurisprudência que existe e pode ser verificada. Cada resultado vem com o link de origem, permitindo conferência imediata.</p>
+          <div class="feature-points">
+            <div class="feature-point"><b>Tribunais cobertos:</b> TST, STJ, STF, TRTs e TJs de todo o Brasil, atualizados continuamente.</div>
+            <div class="feature-point"><b>Mecanismo anti-alucinação:</b> toda jurisprudência retornada é validada contra a base real antes de ser exibida — o sistema rejeita automaticamente qualquer correspondência não verificável.</div>
+            <div class="feature-point"><b>Correspondências difíceis:</b> o Juris8 encontra precedentes análogos e casos de menor repercussão que escapam das buscas tradicionais por palavras-chave.</div>
+            <div class="feature-point"><b>Contexto relevante:</b> cada resultado mostra por que o caso é aplicável ao seu pedido — não apenas a ementa, mas o argumento central e sua aderência ao pedido.</div>
+          </div>
+          <div class="feature-badge"><i data-lucide="shield-check" width="14" height="14" stroke-width="1.8"></i>100% dos resultados com link de origem verificado</div>
+        </div>
+
+        <div class="feature-visual reveal d2">
+          <div class="win juris-win">
+            <div class="win-bar">
+              <div class="win-dots"><span></span><span></span><span></span></div>
+              <span class="win-title">Juris8 · Pesquisa de Jurisprudência</span>
+            </div>
+            <div class="win-body juris-body">
+
+              <div class="juris-search">
+                <i data-lucide="search" width="14" height="14" stroke-width="1.8"></i>
+                <span>Ônus da prova horas extras — reforma trabalhista 2017</span>
+                <div class="juris-search-tags"><span>TST</span><span>TRT12</span><span>TRT4</span></div>
+              </div>
+
+              <div class="juris-result">
+                <div class="juris-result-head">
+                  <span class="juris-court">TST</span>
+                  <span class="juris-num">Ag-RR-1136-45.2023.5.09.0015</span>
+                  <span class="juris-date">15 mar 2024</span>
+                  <span class="juris-validated"><i data-lucide="check" width="11" height="11" stroke-width="2.4"></i>Validado</span>
+                </div>
+                <div class="juris-relevance"><span>Relevância</span><div class="juris-bar"><i style="width:92%"></i></div><b>Muito alta</b></div>
+                <p class="juris-quote">"A inversão de ônus da prova em matéria de horas extras recai sobre o empregador com mais de 10 funcionários, nos termos do art. 74, §2° da CLT, sendo ineficaz o cartão de ponto com horários invariáveis..."</p>
+                <div class="juris-tags"><span>art. 74 CLT</span><span>Ônus da prova</span><span>Cartão de ponto</span></div>
+              </div>
+
+              <div class="juris-result">
+                <div class="juris-result-head">
+                  <span class="juris-court alt">TRT12</span>
+                  <span class="juris-num">RO-0076-032-44.2025.5.12.0001</span>
+                  <span class="juris-date">12 jun 2024</span>
+                  <span class="juris-validated"><i data-lucide="check" width="11" height="11" stroke-width="2.4"></i>Validado</span>
+                </div>
+                <div class="juris-relevance"><span>Relevância</span><div class="juris-bar"><i style="width:74%"></i></div><b>Alta</b></div>
+                <p class="juris-quote">"Cartões de ponto com registros em horários britânicos fazem presumir a existência de fraude na jornada, cabendo ao empregador demonstrar a regularidade da jornada..."</p>
+                <div class="juris-tags"><span>cartão de ponto</span><span>hora extra</span><span>TRT12</span></div>
+              </div>
+
+            </div>
+            <div class="win-foot juris-foot">
+              <i data-lucide="refresh-cw" width="13" height="13" stroke-width="1.8"></i>
+              <span>Base atualizada continuamente · TST · TRT12 · TRT4 · STF · STJ e mais tribunais</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REDAÇÃO DE DOCUMENTOS — mockup detalhado ===== -->
+  <section id="feature-redacao" data-screen-label="Redação de Documentos">
+    <div class="shell">
+      <div class="feature-split reverse">
+        <div class="feature-visual reveal d1">
+          <div class="win redacao-win">
+            <div class="win-bar">
+              <div class="win-dots"><span></span><span></span><span></span></div>
+              <span class="win-title">Juris8 · Redação — Contestação Trabalhista</span>
+            </div>
+            <div class="win-body redacao-body">
+
+              <div class="redacao-block-title">Fluxo do agente</div>
+              <div class="redacao-steps">
+                <div class="redacao-step done">
+                  <div class="redacao-step-ic"><i data-lucide="check" width="12" height="12" stroke-width="3"></i></div>
+                  <div><b>Leitura e análise da demanda</b><span>Partes, pedidos, causa de pedir e fatos identificados</span></div>
+                </div>
+                <div class="redacao-step done">
+                  <div class="redacao-step-ic"><i data-lucide="check" width="12" height="12" stroke-width="3"></i></div>
+                  <div><b>Identificação de teses e precedentes</b><span>4 precedentes validados do TST e TRT12 selecionados</span></div>
+                </div>
+                <div class="redacao-step done">
+                  <div class="redacao-step-ic"><i data-lucide="check" width="12" height="12" stroke-width="3"></i></div>
+                  <div><b>Estruturação da peça</b><span>Preliminar · Mérito · Pedidos — no seu formato</span></div>
+                </div>
+                <div class="redacao-step done">
+                  <div class="redacao-step-ic"><i data-lucide="check" width="12" height="12" stroke-width="3"></i></div>
+                  <div><b>Elaboração seção por seção</b><span>Redigido no estilo e vocabulário do usuário</span></div>
+                </div>
+                <div class="redacao-step active">
+                  <div class="redacao-step-ic"><span class="redacao-dot"></span></div>
+                  <div><b>Revisão interna por critérios</b><span>Verificando coerência, precisão e fundamentação...</span></div>
+                </div>
+                <div class="redacao-step pending">
+                  <div class="redacao-step-ic"></div>
+                  <div><b>Pronto para revisão do advogado</b><span>Score geral e sugestões de melhoria</span></div>
+                </div>
+              </div>
+
+              <div class="redacao-block-title">Revisão por critérios de qualidade</div>
+              <div class="redacao-scores">
+                <div class="redacao-score"><span>Fundamentação jurídica</span><div class="redacao-bar"><i style="width:92%"></i></div><b>9.2</b></div>
+                <div class="redacao-score"><span>Precisão dos precedentes</span><div class="redacao-bar"><i style="width:96%"></i></div><b>9.6</b></div>
+                <div class="redacao-score"><span>Clareza argumentativa</span><div class="redacao-bar"><i style="width:89%"></i></div><b>8.9</b></div>
+                <div class="redacao-score"><span>Coerência interna</span><div class="redacao-bar"><i style="width:94%"></i></div><b>9.4</b></div>
+                <div class="redacao-score warn"><span>Adequação formal (CLT)</span><div class="redacao-bar"><i style="width:88%"></i></div><b>8.8</b></div>
+              </div>
+
+              <div class="redacao-suggestion">
+                <i data-lucide="lightbulb" width="15" height="15" stroke-width="1.8"></i>
+                <p><b>Sugestão · Adequação formal:</b> o pedido de condenação em honorários (§3°, art. 791-A CLT) não menciona o percentual mínimo de 5%. Recomenda-se especificar o intervalo de 5% a 15%.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-text reveal d2">
+          <h2>Redação com estrutura de <span class="grad">advogado sênior.</span></h2>
+          <p class="feature-lede">O Juris8 não apenas rascunha um texto — ele segue um fluxo de agente passo a passo que replica a atuação de um advogado experiente: análise, pesquisa, estruturação, redação e revisão crítica antes de entregar para você.</p>
+          <div class="feature-points">
+            <div class="feature-point"><b>Fluxo de agente em 6 etapas:</b> da leitura da demanda à revisão por critérios de qualidade — você vê cada passo e pode intervir a qualquer momento.</div>
+            <div class="feature-point"><b>Revisão por critérios:</b> a peça recebe notas em fundamentação, precisão dos precedentes, clareza, coerência e adequação formal — com sugestões específicas de melhoria.</div>
+            <div class="feature-point"><b>Aprende seu estilo:</b> vocabulário, estrutura de pedidos, estilo de citação e preferências argumentativas — quanto mais você usa, mais preciso fica.</div>
+            <div class="feature-point"><b>Anti-alucinação:</b> todos os precedentes citados na peça são os mesmos validados na pesquisa — o sistema bloqueia citações não validadas.</div>
+          </div>
+          <div class="feature-badge"><i data-lucide="shield-check" width="14" height="14" stroke-width="1.8"></i>Precedentes citados são bloqueados se não validados</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ANÁLISE DE DOCUMENTOS — mockup detalhado ===== -->
+  <section id="feature-analise" data-screen-label="Análise de Documentos">
+    <div class="shell">
+      <div class="feature-split">
+        <div class="feature-text reveal">
+          <h2>Revisão contratual com <span class="grad">guidelines do seu escritório.</span></h2>
+          <p class="feature-lede">Configure "skills" de revisão com os critérios que importam para o seu cliente ou área — e o Juris8 aplica essas guidelines cláusula por cláusula, com rastreabilidade total do que foi avaliado e por quê.</p>
+          <div class="feature-points">
+            <div class="feature-point"><b>Skills personalizáveis:</b> crie guidelines de revisão para responsabilidade civil, cláusulas de NDA, rescisão e multa, compliance regulatório — o sistema aplica os critérios consistentemente.</div>
+            <div class="feature-point"><b>Rastreabilidade completa:</b> cada cláusula revisada mostra o critério aplicado, o resultado e a justificativa — auditável a qualquer momento.</div>
+            <div class="feature-point"><b>Escala sem erro humano:</b> dezenas de cláusulas revisadas com os mesmos critérios, sem fadiga — impossível de replicar manualmente com a mesma consistência.</div>
+            <div class="feature-point"><b>Documentos suportados:</b> contratos, decisões judiciais, laudos periciais, registros imobiliários — qualquer PDF ou Word.</div>
+          </div>
+          <div class="feature-badge"><i data-lucide="shield-check" width="14" height="14" stroke-width="1.8"></i>Critérios aplicados de forma auditável e rastreável</div>
+        </div>
+
+        <div class="feature-visual reveal d2">
+          <div class="win analise-win">
+            <div class="win-bar">
+              <div class="win-dots"><span></span><span></span><span></span></div>
+              <span class="win-title">Juris8 · Análise de Documento</span>
+            </div>
+            <div class="win-body analise-body">
+              <div class="analise-grid">
+
+                <div class="analise-skills">
+                  <div class="analise-skills-title">Skills ativas</div>
+                  <div class="analise-skill active">Responsabilidade civil<span>2</span></div>
+                  <div class="analise-skill">Cláusulas de NDA<span>4</span></div>
+                  <div class="analise-skill">Rescisão e multa</div>
+                  <div class="analise-skill">Conformidade LGPD</div>
+                </div>
+
+                <div class="analise-clauses">
+                  <div class="analise-clauses-head"><span>Cláusulas revisadas</span><b>47 / 52</b></div>
+
+                  <div class="analise-clause ok">
+                    <i data-lucide="check-circle-2" width="15" height="15" stroke-width="1.8"></i>
+                    <div><b>Cláusula 2.1 — Objeto do contrato</b><span>Sem observações, conforme escopo acordado</span></div>
+                  </div>
+                  <div class="analise-clause risk">
+                    <i data-lucide="alert-triangle" width="15" height="15" stroke-width="1.8"></i>
+                    <div><b>Cláusula 4.3 — Responsabilidade</b><span>Risco identificado: responsabilidade ilimitada por danos indiretos</span></div>
+                  </div>
+                  <div class="analise-clause warn">
+                    <i data-lucide="alert-circle" width="15" height="15" stroke-width="1.8"></i>
+                    <div><b>Cláusula 7.1 — Caso fortuito</b><span>Atenção: exclusão não cobre atos de terceiros</span></div>
+                  </div>
+                  <div class="analise-clause ok">
+                    <i data-lucide="check-circle-2" width="15" height="15" stroke-width="1.8"></i>
+                    <div><b>Cláusula 9.2 — Confidencialidade (NDA)</b><span>Prazo e escopo conforme padrão do escritório</span></div>
+                  </div>
+                  <div class="analise-clause risk">
+                    <i data-lucide="alert-triangle" width="15" height="15" stroke-width="1.8"></i>
+                    <div><b>Cláusula 8.0 — Indenização</b><span>Risco identificado: ausência de teto de indenização</span></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRANSCRIÇÃO — mockup detalhado ===== -->
+  <section id="feature-transcricao" data-screen-label="Transcrição">
+    <div class="shell">
+      <div class="feature-split reverse">
+        <div class="feature-visual reveal d1">
+          <div class="win transc-win">
+            <div class="win-bar">
+              <div class="win-dots"><span></span><span></span><span></span></div>
+              <span class="win-title">Juris8 · Transcrição de Audiência</span>
+            </div>
+            <div class="win-body transc-body">
+
+              <div class="transc-status">
+                <i data-lucide="check-circle-2" width="15" height="15" stroke-width="1.8"></i>
+                <span>Transcrição concluída</span>
+                <b>39:14 min · 3 participantes</b>
+              </div>
+
+              <div class="transc-line">
+                <span class="transc-speaker juiz">Juiz</span>
+                <p>O reclamante pode esclarecer em que consistia a jornada habitual na empresa?</p>
+              </div>
+              <div class="transc-line">
+                <span class="transc-speaker reclamante">Reclamante</span>
+                <p>Trabalhava <mark>das 7h às 20h todos os dias, com apenas 30 minutos de intervalo</mark>. Nunca tive horas extras pagas. O gerente dizia que estava no banco de horas, mas nunca vi saldo.</p>
+              </div>
+              <div class="transc-line">
+                <span class="transc-speaker preposto">Preposto</span>
+                <p>A empresa contesta. Os cartões de ponto registravam saída às 18h e os registros eram assinados pelo próprio reclamante.</p>
+              </div>
+
+              <div class="transc-block-title">Análise gerada · pontos-chave</div>
+              <div class="transc-points">
+                <div class="transc-point"><i data-lucide="arrow-right" width="13" height="13" stroke-width="2"></i>Reclamante alega jornada 7h–20h sem pagamento — contradição com cartão de ponto</div>
+                <div class="transc-point"><i data-lucide="arrow-right" width="13" height="13" stroke-width="2"></i>Banco de horas: existência contestada — solicitar extratos (tarefa gerada)</div>
+                <div class="transc-point crit"><i data-lucide="zap" width="13" height="13" stroke-width="2"></i>Trecho crítico 00:12:44 — depoimento sobre jornada</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-text reveal d2">
+          <h2>Do áudio da audiência à <span class="grad">análise jurídica completa.</span></h2>
+          <p class="feature-lede">Envie o áudio gravado da audiência e o Juris8 entrega uma transcrição segmentada por locutor, com os trechos estratégicos marcados, um resumo estruturado e as tarefas que precisam ser tomadas — tudo em minutos.</p>
+          <div class="feature-points">
+            <div class="feature-point"><b>Transcrição por locutor:</b> identifica e diferencia falantes (juiz, reclamante, preposto, perito) e formata a transcrição por participante.</div>
+            <div class="feature-point"><b>Marcação de trechos críticos:</b> identifica afirmações relevantes para a tese e marca com timestamp — localiza o momento exato de um depoimento em segundos.</div>
+            <div class="feature-point"><b>Análise e resumo estruturado:</b> pontos-chave, contradições identificadas e lista de tarefas gerada automaticamente com os próximos passos processuais.</div>
+            <div class="feature-point"><b>Formatos aceitos:</b> MP3, MP4, WAV e qualquer gravação de celular, computador ou sistema de audiência do tribunal — sem hardware adicional.</div>
+          </div>
+          <div class="feature-badge"><i data-lucide="shield-check" width="14" height="14" stroke-width="1.8"></i>Muito além de notas — análise jurídica completa da audiência</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DJE MONITORAMENTO — mockup detalhado ===== -->
+  <section id="feature-dje" data-screen-label="DJE Monitoramento">
+    <div class="shell">
+      <div class="feature-split">
+        <div class="feature-text reveal">
+          <h2>Nunca perca um prazo por <span class="grad">falta de monitoramento</span></h2>
+          <p class="feature-lede">O Juris8 DJE monitora automaticamente todas as suas publicações nos Diários de Justiça Eletrônicos e te notifica em tempo real — com resumo do conteúdo e identificação automática de prazos.</p>
+          <div class="feature-points">
+            <div class="feature-point-check">
+              <div class="feature-point-check-ic"><i data-lucide="check" width="11" height="11" stroke-width="3"></i></div>
+              Monitoramento contínuo de publicações no DJE
+            </div>
+            <div class="feature-point-check">
+              <div class="feature-point-check-ic"><i data-lucide="check" width="11" height="11" stroke-width="3"></i></div>
+              Alertas instantâneos com resumo gerado por IA
+            </div>
+            <div class="feature-point-check">
+              <div class="feature-point-check-ic"><i data-lucide="check" width="11" height="11" stroke-width="3"></i></div>
+              Identificação automática de prazos processuais
+            </div>
+            <div class="feature-point-check">
+              <div class="feature-point-check-ic"><i data-lucide="check" width="11" height="11" stroke-width="3"></i></div>
+              Centralização de todos os processos monitorados
+            </div>
+          </div>
+          <a href="#cta" class="btn primary lg" style="margin-top: 14px;">Conhecer o Juris8 DJE</a>
+        </div>
+
+        <div class="feature-visual reveal d2">
+          <div class="dje-win">
+            <div class="dje-head">
+              <b>Publicações hoje</b>
+              <span class="dje-badge-new"><span class="dot"></span> 3 novas</span>
+            </div>
+            
+            <div class="dje-card">
+              <div class="dje-card-top">
+                <b>Proc. 0012847-31.2024.5.04.0001</b>
+                <span>há 12 min</span>
+              </div>
+              <p>Intimação para apresentação de razões finais — TRT 4ª Região</p>
+              <span class="dje-badge prazo"><i data-lucide="zap" width="10" height="10" stroke-width="3" style="display:inline-block;vertical-align:-1px;margin-right:2px;"></i> Prazo: 8 dias úteis</span>
+            </div>
+
+            <div class="dje-card">
+              <div class="dje-card-top">
+                <b>Proc. 0034512-18.2023.8.26.0100</b>
+                <span>há 1h</span>
+              </div>
+              <p>Despacho de juntada de documentos — TJSP 15ª Vara Cível</p>
+              <span class="dje-badge despacho">Despacho</span>
+            </div>
+
+            <div class="dje-card">
+              <div class="dje-card-top">
+                <b>Proc. 1009234-45.2022.8.26.0050</b>
+                <span>há 3h</span>
+              </div>
+              <p>Sentença de procedência parcial — TJSP 3ª Vara do Trabalho</p>
+              <span class="dje-badge sentenca">Sentença</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FLUXO COMPLETO ===== -->
+  <section id="fluxo-completo" class="flow-section">
+    <div class="shell">
+      <div class="flow-head reveal">
+        <h2>Todos os agentes.<br><span class="grad">Um único fluxo.</span></h2>
+        <p>Do alerta de publicação até a ata da audiência — veja como o Juris8 atua em cada etapa de um mesmo processo.</p>
+      </div>
+
+      <div class="flow-file reveal d1">
+        <i data-lucide="clock" width="16" height="16" stroke-width="2"></i>
+        <span>Caso: <b>Reclamação Trabalhista — horas extras e CTPS — TRT 12ª Região</b></span>
+      </div>
+
+      <div class="flow-timeline-wrap reveal d2">
+        <div class="flow-timeline">
+          <div class="flow-line"></div>
+          
+          <div class="flow-step">
+            <div class="flow-ic"><i data-lucide="megaphone" width="20" height="20"></i></div>
+            <div class="flow-title">1 · DJE</div>
+            <div class="flow-desc">Monitoramento automático de publicações</div>
+            <div class="flow-card">
+              <span class="flow-card-badge red"><i data-lucide="zap" width="10" height="10" style="display:inline-block;vertical-align:-1px;margin-right:2px;"></i> Prazo detectado</span>
+              <p>Proc. 0018432-44.2024.5.12 — TRT12<br>
+              Intimação para contestação<br>
+              <b class="flow-text-red">Prazo: 8 dias úteis</b></p>
+            </div>
+          </div>
+
+          <div class="flow-step">
+            <div class="flow-ic"><i data-lucide="folder-open" width="20" height="20"></i></div>
+            <div class="flow-title">2 · Documentos</div>
+            <div class="flow-desc">Análise da CTPS e cartão de ponto</div>
+            <div class="flow-card">
+              <span class="flow-card-badge red">2 riscos encontrados</span>
+              <p>Cláus. jornada: <span class="flow-text-red">ausente</span><br>
+              Registro CTPS: <span class="flow-text-yellow">inconsistente</span><br>
+              Horas banco: <span class="flow-text-green">OK</span></p>
+            </div>
+          </div>
+
+          <div class="flow-step">
+            <div class="flow-ic"><i data-lucide="scale" width="20" height="20"></i></div>
+            <div class="flow-title">3 · Jurisprudência</div>
+            <div class="flow-desc">Busca validada no TST e TRT12</div>
+            <div class="flow-card">
+              <span class="flow-card-badge yellow">4 precedentes válidos</span>
+              <p>TST - Súm. 338 — ônus da prova<br>
+              TRT12 · RO-00184 — cartão de ponto<br>
+              <span class="flow-text-green"><i data-lucide="check" width="12" height="12" style="display:inline-block;vertical-align:-2px;margin-right:2px;"></i> Todos com link verificado</span></p>
+            </div>
+          </div>
+
+          <div class="flow-step">
+            <div class="flow-ic"><i data-lucide="clipboard-check" width="20" height="20"></i></div>
+            <div class="flow-title">4 · Redação</div>
+            <div class="flow-desc">Contestação elaborada e revisada</div>
+            <div class="flow-card">
+              <span class="flow-card-badge yellow">Revisão concluída</span>
+              <p>Fundamentação: <b class="flow-text-yellow">9.2</b><br>
+              Precisão: <b class="flow-text-yellow">9.5</b><br>
+              Clareza: <b class="flow-text-yellow">8.9</b></p>
+            </div>
+          </div>
+
+          <div class="flow-step">
+            <div class="flow-ic"><i data-lucide="mic" width="20" height="20"></i></div>
+            <div class="flow-title">5 · Transcrição</div>
+            <div class="flow-desc">Audiência transcrita e estruturada</div>
+            <div class="flow-card">
+              <span class="flow-card-badge blue">Resumo gerado</span>
+              <p>3 pontos-chave identificados<br>
+              2 tarefas geradas<br>
+              Depoimento: trecho de <b class="flow-text-yellow">12:34</b> marcado</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMPARATIVO TABELA ===== -->
+  <section id="comparativo-tabela" class="comp-section">
+    <div class="shell comp-wrap">
+      <div class="comp-head reveal">
+        <h2>Feito para o direito brasileiro.<br><span class="grad">Não um ChatGPT genérico.</span></h2>
+        <p>O que diferencia uma IA construída para o direito de um modelo de linguagem genérico.</p>
+      </div>
+      
+      <div class="comp-table-wrap reveal d1">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th>Critério</th>
+              <th class="col-juris">Juris8</th>
+              <th>ChatGPT / Genérico</th>
+              <th>Processo Manual</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Acesso a jurisprudência real (STJ, STF, TRTs)</td>
+              <td class="col-juris"><i data-lucide="check" class="comp-ic-check" width="20" height="20" stroke-width="2.5"></i></td>
+              <td><i data-lucide="x" class="comp-ic-cross" width="20" height="20" stroke-width="2.5"></i></td>
+              <td class="comp-text-warn">Parcial</td>
+            </tr>
+            <tr>
+              <td>Aprende seu estilo de escrita</td>
+              <td class="col-juris"><i data-lucide="check" class="comp-ic-check" width="20" height="20" stroke-width="2.5"></i></td>
+              <td><i data-lucide="x" class="comp-ic-cross" width="20" height="20" stroke-width="2.5"></i></td>
+              <td class="comp-text-dim">—</td>
+            </tr>
+            <tr>
+              <td>Dados não usados para treinar IA de terceiros</td>
+              <td class="col-juris"><i data-lucide="check" class="comp-ic-check" width="20" height="20" stroke-width="2.5"></i></td>
+              <td><i data-lucide="x" class="comp-ic-cross" width="20" height="20" stroke-width="2.5"></i></td>
+              <td><i data-lucide="check" class="comp-ic-check" width="20" height="20" stroke-width="2.5"></i></td>
+            </tr>
+            <tr>
+              <td>Transcrição de audiências em tempo real</td>
+              <td class="col-juris"><i data-lucide="check" class="comp-ic-check" width="20" height="20" stroke-width="2.5"></i></td>
+              <td><i data-lucide="x" class="comp-ic-cross" width="20" height="20" stroke-width="2.5"></i></td>
+              <td><i data-lucide="x" class="comp-ic-cross" width="20" height="20" stroke-width="2.5"></i></td>
+            </tr>
+            <tr>
+              <td>Análise de PDF e Word jurídicos</td>
+              <td class="col-juris"><i data-lucide="check" class="comp-ic-check" width="20" height="20" stroke-width="2.5"></i></td>
+              <td class="comp-text-warn">Parcial</td>
+              <td><i data-lucide="x" class="comp-ic-cross" width="20" height="20" stroke-width="2.5"></i></td>
+            </tr>
+            <tr>
+              <td>Monitoramento de publicações no DJE</td>
+              <td class="col-juris"><i data-lucide="check" class="comp-ic-check" width="20" height="20" stroke-width="2.5"></i></td>
+              <td><i data-lucide="x" class="comp-ic-cross" width="20" height="20" stroke-width="2.5"></i></td>
+              <td class="comp-text-warn">Manual</td>
+            </tr>
+            <tr>
+              <td>Desenvolvido por advogados brasileiros</td>
+              <td class="col-juris"><i data-lucide="check" class="comp-ic-check" width="20" height="20" stroke-width="2.5"></i></td>
+              <td><i data-lucide="x" class="comp-ic-cross" width="20" height="20" stroke-width="2.5"></i></td>
+              <td class="comp-text-dim">—</td>
+            </tr>
+            <tr>
+              <td>Tempo médio para elaborar uma peça</td>
+              <td class="col-juris comp-text-warn">20 min</td>
+              <td class="comp-text-dim">1–2 h</td>
+              <td class="comp-text-dim">3–5 h</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+<!-- ==============================
+     ANTES E DEPOIS
+============================== -->
+<section id="comparativo" data-screen-label="Antes e depois">
+  <div class="shell">
+    <div class="sec-header reveal">
+
+      <h2 class="sec-h2">A mesma rotina, com <span class="grad">muito menos trabalho manual.</span></h2>
+      <p class="sec-lede">O Juris8 não muda a sua forma de advogar. Ele antecipa o trabalho operacional para você chegar mais rápido na parte que exige o seu critério.</p>
+    </div>
+
+    <div class="ba-grid">
+      <div class="ba-col reveal d1">
+        <span class="ba-tag without"><span class="t-dot"></span>Sem o Juris8</span>
+        <h3 class="ba-h">O tempo escorre antes da estratégia</h3>
+        <div class="ba-list">
+          <div class="ba-item"><span class="ba-mark x"><svg viewBox="0 0 12 12"><line x1="3" y1="3" x2="9" y2="9"/><line x1="9" y1="3" x2="3" y2="9"/></svg></span>Começar peças e contratos do zero</div>
+          <div class="ba-item"><span class="ba-mark x"><svg viewBox="0 0 12 12"><line x1="3" y1="3" x2="9" y2="9"/><line x1="9" y1="3" x2="3" y2="9"/></svg></span>Buscar fundamentos manualmente, abrindo várias fontes</div>
+          <div class="ba-item"><span class="ba-mark x"><svg viewBox="0 0 12 12"><line x1="3" y1="3" x2="9" y2="9"/><line x1="9" y1="3" x2="3" y2="9"/></svg></span>Revisar PDFs extensos linha por linha</div>
+          <div class="ba-item"><span class="ba-mark x"><svg viewBox="0 0 12 12"><line x1="3" y1="3" x2="9" y2="9"/><line x1="9" y1="3" x2="3" y2="9"/></svg></span>Sair da audiência com anotações soltas</div>
+          <div class="ba-item"><span class="ba-mark x"><svg viewBox="0 0 12 12"><line x1="3" y1="3" x2="9" y2="9"/><line x1="9" y1="3" x2="3" y2="9"/></svg></span>Repetir tarefas operacionais o dia inteiro</div>
+        </div>
+      </div>
+
+      <div class="ba-col with reveal d2">
+        <span class="ba-tag withj"><span class="t-dot"></span>Com o Juris8</span>
+        <h3 class="ba-h">O operacional já vem adiantado para revisão</h3>
+        <div class="ba-list">
+          <div class="ba-item"><span class="ba-mark c"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.5 10,3"/></svg></span>Rascunhos iniciais de peças e contratos em minutos</div>
+          <div class="ba-item"><span class="ba-mark c"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.5 10,3"/></svg></span>Pesquisa de fundamentos melhor estruturada</div>
+          <div class="ba-item"><span class="ba-mark c"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.5 10,3"/></svg></span>Documentos longos resumidos nos pontos críticos</div>
+          <div class="ba-item"><span class="ba-mark c"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.5 10,3"/></svg></span>Audiências transformadas em registros úteis</div>
+          <div class="ba-item"><span class="ba-mark c"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.5 10,3"/></svg></span>Mais tempo para estratégia e atendimento ao cliente</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     COMO FUNCIONA
+============================== -->
+<section id="como-funciona" data-screen-label="Como funciona">
+  <div class="shell">
+    <div class="sec-header reveal">
+
+      <h2 class="sec-h2">Três passos. <span class="grad">Você nunca sai do controle.</span></h2>
+      <p class="sec-lede">Um fluxo assistido, não uma decisão automática. A autoria e a responsabilidade continuam com o advogado.</p>
+    </div>
+
+    <div class="how-grid">
+      <div class="how-card reveal d1">
+        <span class="how-num">1</span>
+        <span class="how-kicker">Você entra</span>
+        <h3 class="how-title">Envie o contexto</h3>
+        <p class="how-desc">Peça, contrato, decisão, áudio, documento ou demanda. Você diz o que precisa e anexa o material do caso.</p>
+      </div>
+      <div class="how-card reveal d2">
+        <span class="how-num">2</span>
+        <span class="how-kicker">O Juris8 prepara</span>
+        <h3 class="how-title">Ele organiza o trabalho inicial</h3>
+        <p class="how-desc">Estrutura as informações, sugere caminhos e prepara materiais revisáveis — rascunhos, resumos e pontos de atenção.</p>
+      </div>
+      <div class="how-card reveal d3">
+        <span class="how-num">3</span>
+        <span class="how-kicker">Você decide</span>
+        <h3 class="how-title">Você revisa e decide</h3>
+        <p class="how-desc">A estratégia, a autoria e a responsabilidade continuam com você. O Juris8 dá os toques iniciais; você dá os finais.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     FAQ
+============================== -->
+<section id="faq" data-screen-label="FAQ">
+  <div class="shell">
+    <div class="sec-header reveal">
+
+      <h2 class="sec-h2">Dúvidas frequentes <span class="grad">antes de começar.</span></h2>
+      <p class="sec-lede">Respostas diretas sobre controle, segurança e o que o Juris8 faz — e o que ele não faz.</p>
+    </div>
+
+    <div class="faq-wrap" id="faq-wrap">
+      <div class="faq-item reveal d1">
+        <div class="faq-q"><span class="faq-q-num">01</span><span class="faq-q-txt">O Juris8 substitui o advogado?</span><svg class="faq-chevron" viewBox="0 0 16 16"><polyline points="4,6 8,10 12,6"/></svg></div>
+        <div class="faq-a"><div class="faq-a-inner">Não. O Juris8 antecipa tarefas operacionais e repetitivas para que você se concentre no que importa: estratégia, relacionamento com o cliente e tomada de decisão. A autoria e a responsabilidade continuam sendo suas — ele dá os toques iniciais, você dá os finais.</div></div>
+      </div>
+      <div class="faq-item reveal d1">
+        <div class="faq-q"><span class="faq-q-num">02</span><span class="faq-q-txt">Qual a diferença entre o Juris8 e o ChatGPT?</span><svg class="faq-chevron" viewBox="0 0 16 16"><polyline points="4,6 8,10 12,6"/></svg></div>
+        <div class="faq-a"><div class="faq-a-inner">O Juris8 é um ambiente voltado à prática jurídica brasileira: organiza redação, pesquisa, análise e transcrição em um fluxo pensado para a rotina do advogado, aprende com o seu estilo e mantém você no controle da revisão. Um modelo genérico não foi desenhado para esse fluxo nem para o seu jeito de escrever.</div></div>
+      </div>
+      <div class="faq-item reveal d2">
+        <div class="faq-q"><span class="faq-q-num">03</span><span class="faq-q-txt">Ele aprende o meu estilo de escrita?</span><svg class="faq-chevron" viewBox="0 0 16 16"><polyline points="4,6 8,10 12,6"/></svg></div>
+        <div class="faq-a"><div class="faq-a-inner">Sim. O Juris8 aprende com as peças que você já escreveu — estilo, vocabulário, formatação e preferências argumentativas. Você pode carregar peças antigas para acelerar esse aprendizado. Quanto mais você usa, mais ele reflete o seu jeito de escrever.</div></div>
+      </div>
+      <div class="faq-item reveal d2">
+        <div class="faq-q"><span class="faq-q-num">04</span><span class="faq-q-txt">Que documentos posso analisar?</span><svg class="faq-chevron" viewBox="0 0 16 16"><polyline points="4,6 8,10 12,6"/></svg></div>
+        <div class="faq-a"><div class="faq-a-inner">Contratos, decisões judiciais, laudos, procurações e outros documentos em PDF ou Word. O Juris8 ajuda a identificar pontos críticos, cruzar dados e destacar o que é relevante — mantendo cada detalhe sob a sua revisão.</div></div>
+      </div>
+      <div class="faq-item reveal d3">
+        <div class="faq-q"><span class="faq-q-num">05</span><span class="faq-q-txt">Como funciona a transcrição de audiências?</span><svg class="faq-chevron" viewBox="0 0 16 16"><polyline points="4,6 8,10 12,6"/></svg></div>
+        <div class="faq-a"><div class="faq-a-inner">O Juris8 transforma o áudio em texto e organiza o conteúdo em um resumo estruturado, com os pontos discutidos e as tarefas posteriores. Assim, em vez de anotações soltas, você sai da reunião ou da audiência com um registro pronto para revisar.</div></div>
+      </div>
+      <div class="faq-item reveal d3">
+        <div class="faq-q"><span class="faq-q-num">06</span><span class="faq-q-txt">Meus dados são usados para treinar outras IAs?</span><svg class="faq-chevron" viewBox="0 0 16 16"><polyline points="4,6 8,10 12,6"/></svg></div>
+        <div class="faq-a"><div class="faq-a-inner">Não. Seus documentos e dados não são usados para treinar modelos de IA de terceiros. As informações ficam no seu ambiente, com criptografia em trânsito e em repouso. Seus dados são seus, sempre.</div></div>
+      </div>
+      <div class="faq-item reveal d4">
+        <div class="faq-q"><span class="faq-q-num">07</span><span class="faq-q-txt">Posso revisar tudo antes de usar?</span><svg class="faq-chevron" viewBox="0 0 16 16"><polyline points="4,6 8,10 12,6"/></svg></div>
+        <div class="faq-a"><div class="faq-a-inner">Sim — esse é o princípio do produto. O Juris8 entrega materiais revisáveis: rascunhos, resumos e pontos de atenção. Nada é tratado como pronto para protocolo sem a sua revisão. Você ajusta, complementa e decide.</div></div>
+      </div>
+      <div class="faq-item reveal d4">
+        <div class="faq-q"><span class="faq-q-num">08</span><span class="faq-q-txt">Serve para quais áreas do direito?</span><svg class="faq-chevron" viewBox="0 0 16 16"><polyline points="4,6 8,10 12,6"/></svg></div>
+        <div class="faq-a"><div class="faq-a-inner">O Juris8 apoia tarefas de redação, pesquisa, análise e transcrição que aparecem na rotina de diversas áreas — trabalhista, cível, empresarial e outras. Você não precisa mudar a sua forma de trabalhar: o contexto que você envia orienta o material que ele prepara.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ===== CTA FINAL (mesmo do DET · formulário Supabase) ===== -->
+  <section data-screen-label="CTA final">
+    <div class="shell">
+      <div id="cta" class="cta-final cta-final-split reveal">
+        <div class="cta-final-info">
+          <div class="cta-icon">
+            <i data-lucide="arrow-right" width="26" height="26" stroke-width="1.4"></i>
+          </div>
+          <p class="cta-final-h">Pronto para acelerar a prática jurídica com a <span class="grad">IA Juris8.</span></p>
+          <p class="cta-final-p">Peças, jurisprudência, análise de documentos, transcrição e soluções que conversam entre si — do DET ao WhatsApp.</p>
+          <p class="cta-final-p strong">Devolva o tempo do escritório ao que só o advogado pode fazer: estratégia, cliente e decisão.</p>
+          <div class="cta-seals">
+            <span class="cta-seal"><i data-lucide="check" width="11" height="11" stroke-width="2.2"></i>Demonstração gratuita</span>
+            <span class="cta-seal"><i data-lucide="lock" width="11" height="11" stroke-width="1.8"></i>Sem compromisso</span>
+            <span class="cta-seal"><i data-lucide="message-circle" width="11" height="11" stroke-width="1.8"></i>Suporte em português</span>
+          </div>
+        </div>
+
+        <div class="cta-final-formcard">
+          <div class="modal-header">
+            <div class="modal-eyebrow">CONTATO COMERCIAL</div>
+            <h3>Falar com um especialista</h3>
+            <p class="modal-subtitle">Preencha os dados abaixo. Nossa equipe entrará em contato para apresentar o Juris8 e entender o momento do seu escritório.</p>
+          </div>
+
+          <form id="cta-final-form" novalidate>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="ctaf-name">Nome completo</label>
+                <input id="ctaf-name" name="name" type="text" placeholder="Seu nome" required autocomplete="name" />
+              </div>
+              <div class="form-field">
+                <label for="ctaf-email">E-mail profissional</label>
+                <input id="ctaf-email" name="email" type="email" placeholder="voce@escritorio.com.br" required autocomplete="email" />
+              </div>
+
+              <div class="form-field">
+                <label for="ctaf-phone">Telefone / WhatsApp</label>
+                <input id="ctaf-phone" name="phone" type="tel" placeholder="(11) 99999-0000" required autocomplete="tel" />
+              </div>
+              <div class="form-field">
+                <label for="ctaf-office">Nome do escritório</label>
+                <input id="ctaf-office" name="office" type="text" placeholder="Escritório de Advocacia" required />
+              </div>
+
+              <div class="form-field full">
+                <label for="ctaf-cnpjs">Qual o porte do seu escritório?</label>
+                <select id="ctaf-cnpjs" name="cnpjs" required>
+                  <option value="">Selecione...</option>
+                  <option value="1-5">1 a 5 advogados</option>
+                  <option value="6-15">6 a 15 advogados</option>
+                  <option value="16-30">16 a 30 advogados</option>
+                  <option value="31-50">31 a 50 advogados</option>
+                  <option value="50+">Mais de 50 advogados</option>
+                </select>
+              </div>
+
+              <div class="form-field full">
+                <label for="ctaf-message">Mensagem (opcional)</label>
+                <textarea id="ctaf-message" name="message" rows="3" placeholder="Conte um pouco sobre o escritório ou o que gostaria de saber..."></textarea>
+              </div>
+
+              <div class="form-field full">
+                <label class="consent-label">
+                  <input type="checkbox" id="ctaf-consent" required />
+                  <span>Concordo em receber contato comercial e que meus dados sejam tratados conforme a LGPD.</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn primary">
+                <span class="btn-label">Enviar solicitação</span>
+              </button>
+            </div>
+
+            <p class="form-note">Seus dados são tratados com confidencialidade e não serão compartilhados.</p>
+          </form>
+
+          <div id="cta-final-form-success" class="form-success" hidden>
+            <div class="success-icon">
+              <i data-lucide="check-circle" width="42" height="42" stroke-width="1.8"></i>
+            </div>
+            <h4>Obrigado!</h4>
+            <p>Sua solicitação foi enviada com sucesso. Um especialista entrará em contato em até 1 dia útil.</p>
+            <button type="button" class="btn secondary" id="cta-final-form-reset">Enviar outra solicitação</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="shell">
+    <div class="footer-top">
+      <div class="footer-brand-col">
+        <a href="/" aria-label="Juris8 — Home"><img src="/DET/logo.png" alt="Juris 8" class="footer-logo" /></a>
+        <p class="footer-tag">A mais completa IA jurídica do Brasil. Pré-elaboração de peças, pesquisa, análise de documentos e transcrição — desenvolvidas por advogados, para advogados.</p>
+        <div class="footer-seals">
+          <span class="footer-seal"><i data-lucide="lock" width="11" height="11" stroke-width="1.8"></i>LGPD</span>
+          <span class="footer-seal"><i data-lucide="sparkles" width="11" height="11" stroke-width="1.8"></i>IA jurídica</span>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/juris8.ai?igsh=cDRkZnIxc3h1NXdi" target="_blank" rel="noopener" aria-label="Instagram">
+            <i data-lucide="instagram" width="15" height="15" stroke-width="1.5"></i>
+          </a>
+          <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Juris8." target="_blank" rel="noopener" aria-label="WhatsApp">
+            <i data-lucide="message-circle" width="15" height="15" stroke-width="1.5"></i>
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer-links" aria-label="Rodapé">
+        <div class="footer-group">
+          <div class="footer-col-title">Soluções</div>
+          <div class="footer-col">
+            <a href="/DET/">DET Monitor</a>
+            <a href="/crm/">CRM com IA</a>
+            <a href="/secretariajuridica/">Secretaria jurídica</a>
+            <a href="/newsletter/">Newsletter mensal</a>
+            <a href="/trabalhistaempresarial/">Trabalhista empresarial</a>
+          </div>
+        </div>
+        <div class="footer-group">
+          <div class="footer-col-title">Plataforma</div>
+          <div class="footer-col">
+            <a href="/#funcionalidades">Pré-elaboração de peças</a>
+            <a href="/#funcionalidades">Pesquisa de jurisprudência</a>
+            <a href="/#funcionalidades">Análise de documentos</a>
+            <a href="/#funcionalidades">Transcrição de audiências</a>
+            <a href="/crm/">CRM com IA</a>
+            <a href="/secretariajuridica/">Secretaria jurídica</a>
+          </div>
+        </div>
+        <div class="footer-group">
+          <div class="footer-col-title">Contato</div>
+          <div class="footer-col">
+            <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Juris8." target="_blank" rel="noopener">WhatsApp</a>
+            <a href="https://www.instagram.com/juris8.ai?igsh=cDRkZnIxc3h1NXdi" target="_blank" rel="noopener">Instagram</a>
+            <a href="/#faq">FAQ</a>
+            <a href="/#solucoes">Soluções</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Juris8 · Todos os direitos reservados.</span>
+      <span class="footer-made"><span class="fm-dot"></span>Desenvolvido por advogados, para advogados</span>
+      <a href="#top" class="footer-top-link">Voltar ao topo<i data-lucide="chevron-up" width="13" height="13" stroke-width="1.8"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  lucide.createIcons();
+</script>
+<script>
+/* ===== Reveal on scroll ===== */
+const observer = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
+  { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+);
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* ===== Mobile nav ===== */
+const burger = document.getElementById('nav-burger');
+const mobileMenu = document.getElementById('nav-mobile');
+function closeMenu(){ burger.setAttribute('aria-expanded','false'); mobileMenu.classList.remove('open'); }
+burger.addEventListener('click', () => {
+  const open = burger.getAttribute('aria-expanded') === 'true';
+  burger.setAttribute('aria-expanded', String(!open));
+  mobileMenu.classList.toggle('open', !open);
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+/* ===== FAQ accordion ===== */
+document.querySelectorAll('#faq-wrap .faq-item').forEach(item => {
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  q.addEventListener('click', () => {
+    const open = item.classList.contains('open');
+    document.querySelectorAll('#faq-wrap .faq-item').forEach(other => {
+      other.classList.remove('open');
+      other.querySelector('.faq-a').style.maxHeight = null;
+    });
+    if (!open) { item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+  });
+});
+
+/* ===== Agente trabalhando (workspace) ===== */
+const PIECES = [
+  {
+    prompt: 'Elabore uma contestação trabalhista para reclamação de horas extras, com fundamentos nos arts. 58 e 59 da CLT.',
+    file: 'Contestacao_horas-extras.docx',
+    crumb: 'Contestação trabalhista',
+    files: ['peticao-inicial.pdf', 'cartao-ponto.pdf', 'contrato.docx'],
+    think: 'Analisando os fatos do caso e mapeando as teses de defesa cabíveis para horas extras…',
+    intro: 'Entendi. Vou preparar uma minuta de Contestação Trabalhista com preliminares, mérito e pedidos, com base nos documentos anexados.',
+    tools: [
+      { txt: 'Lendo documentos do caso', meta: '3 arquivos · PDF, Word', tag: 'contexto', r: 'reclamação + 2 documentos lidos' },
+      { txt: 'Consultando legislação', meta: 'CLT · arts. 58 e 59', tag: 'pesquisa', r: 'art. 58 e art. 59, §1º localizados' },
+      { txt: 'Verificando entendimento', meta: 'jurisprudência do TST', tag: 'pesquisa', r: 'Súmula 338 do TST aplicável' },
+      { txt: 'Estruturando a peça', meta: 'preliminares · mérito · pedidos', tag: 'redação', r: 'estrutura definida' }
+    ],
+    doc: [
+      { t: 'h', x: 'EXCELENTÍSSIMO(A) SENHOR(A) JUIZ(A) DA ___ VARA DO TRABALHO' },
+      { t: 'c', x: 'CONTESTAÇÃO' },
+      { t: 'p', x: 'A reclamada, já qualificada nos autos da reclamação trabalhista movida pela parte autora, vem, respeitosamente, apresentar CONTESTAÇÃO, pelos fundamentos a seguir expostos.' },
+      { t: 'h2', x: 'I — DA SÍNTESE DOS FATOS' },
+      { t: 'p', x: 'A reclamante alega ter laborado em jornada extraordinária habitual, sem a devida contraprestação. Os fatos, contudo, não se sustentam diante da prova documental anexada.' },
+      { t: 'h2', x: 'II — DO MÉRITO · DAS HORAS EXTRAS' },
+      { t: 'p', x: 'Nos termos do art. 58 da CLT, a duração normal do trabalho observa o limite legal, e eventual prorrogação subordina-se ao art. 59 da CLT. Os controles de jornada demonstram a inexistência de labor extraordinário não quitado.' }
+    ]
+  },
+  {
+    prompt: 'Prepare um recurso ordinário contra sentença que julgou procedente o pedido de horas extras.',
+    file: 'Recurso-ordinario_horas-extras.docx',
+    crumb: 'Recurso ordinário',
+    files: ['sentenca.pdf', 'ata-audiencia.pdf'],
+    think: 'Lendo a sentença recorrida e identificando os pontos de reforma e a fundamentação aplicável…',
+    intro: 'Certo. Vou estruturar as razões do Recurso Ordinário, com os pontos de reforma da sentença e a fundamentação cabível.',
+    tools: [
+      { txt: 'Lendo a sentença recorrida', meta: 'decisão de 1º grau', tag: 'contexto', r: 'fundamentos da sentença mapeados' },
+      { txt: 'Conferindo prazo recursal', meta: 'tempestividade e preparo', tag: 'pressupostos', r: 'recurso tempestivo' },
+      { txt: 'Consultando legislação', meta: 'CLT · arts. 58 e 59', tag: 'pesquisa', r: 'dispositivos confirmados' },
+      { txt: 'Estruturando as razões', meta: 'pontos de reforma · pedido', tag: 'redação', r: 'pontos de reforma definidos' }
+    ],
+    doc: [
+      { t: 'h', x: 'EGRÉGIO TRIBUNAL REGIONAL DO TRABALHO DA ___ REGIÃO' },
+      { t: 'c', x: 'RAZÕES DE RECURSO ORDINÁRIO' },
+      { t: 'p', x: 'A recorrente, inconformada com a r. sentença que julgou procedente o pedido de horas extras, interpõe o presente RECURSO ORDINÁRIO, requerendo a reforma da decisão.' },
+      { t: 'h2', x: 'I — DA TEMPESTIVIDADE' },
+      { t: 'p', x: 'O presente recurso é tempestivo, observado o prazo legal, encontrando-se devidamente preparado, razão pela qual merece conhecimento.' },
+      { t: 'h2', x: 'II — DAS RAZÕES DE REFORMA' },
+      { t: 'p', x: 'A sentença merece reforma quanto às horas extras, pois os controles de jornada juntados aos autos, à luz dos arts. 58 e 59 da CLT, demonstram a regularidade da jornada praticada.' }
+    ]
+  },
+  {
+    prompt: 'Monte um recurso de revista apontando divergência jurisprudencial e violação de dispositivo legal.',
+    file: 'Recurso-de-revista.docx',
+    crumb: 'Recurso de revista',
+    files: ['acordao-trt.pdf', 'aresto-paradigma.pdf'],
+    think: 'Analisando o acórdão regional e verificando os pressupostos específicos de admissibilidade da revista…',
+    intro: 'Entendi. Vou organizar o Recurso de Revista, verificando os pressupostos e apontando a divergência e a violação legal.',
+    tools: [
+      { txt: 'Lendo o acórdão regional', meta: 'decisão do TRT', tag: 'contexto', r: 'tese do acórdão identificada' },
+      { txt: 'Verificando admissibilidade', meta: 'transcendência · prequestionamento', tag: 'pressupostos', r: 'prequestionamento atendido' },
+      { txt: 'Cotejando divergência', meta: 'aresto paradigma', tag: 'pesquisa', r: 'paradigma compatível' },
+      { txt: 'Estruturando a peça', meta: 'violação legal · pedido', tag: 'redação', r: 'estrutura definida' }
+    ],
+    doc: [
+      { t: 'h', x: 'EGRÉGIO TRIBUNAL SUPERIOR DO TRABALHO' },
+      { t: 'c', x: 'RAZÕES DE RECURSO DE REVISTA' },
+      { t: 'p', x: 'A recorrente interpõe RECURSO DE REVISTA em face do v. acórdão regional, com fundamento na divergência jurisprudencial e na violação de dispositivo legal, nos termos do art. 896 da CLT.' },
+      { t: 'h2', x: 'I — DO CABIMENTO E DA TRANSCENDÊNCIA' },
+      { t: 'p', x: 'Presentes os pressupostos de admissibilidade, a matéria devolvida apresenta transcendência, devendo o presente recurso ser conhecido e provido.' },
+      { t: 'h2', x: 'II — DA DIVERGÊNCIA JURISPRUDENCIAL' },
+      { t: 'p', x: 'O acórdão recorrido diverge do entendimento consolidado em aresto paradigma, configurando a divergência apta a ensejar o conhecimento da revista, à luz dos arts. 58 e 59 da CLT.' }
+    ]
+  },
+  {
+    prompt: 'Redija um contrato de trabalho com cláusulas de jornada, remuneração e confidencialidade.',
+    file: 'Contrato-de-trabalho.docx',
+    crumb: 'Contrato de trabalho',
+    files: ['condicoes-admissao.pdf', 'modelo-escritorio.docx'],
+    think: 'Organizando as cláusulas essenciais do contrato a partir das condições informadas…',
+    intro: 'Combinado. Vou preparar um rascunho de Contrato de Trabalho com cláusulas de jornada, remuneração e confidencialidade.',
+    tools: [
+      { txt: 'Lendo as condições informadas', meta: 'cargo · jornada · remuneração', tag: 'contexto', r: 'condições extraídas' },
+      { txt: 'Consultando legislação', meta: 'CLT · cláusulas obrigatórias', tag: 'pesquisa', r: 'cláusulas obrigatórias conferidas' },
+      { txt: 'Aplicando modelo do escritório', meta: 'padrão e estilo salvos', tag: 'estilo', r: 'estilo do escritório aplicado' },
+      { txt: 'Estruturando as cláusulas', meta: 'jornada · remuneração · sigilo', tag: 'redação', r: 'cláusulas organizadas' }
+    ],
+    doc: [
+      { t: 'h', x: 'CONTRATO INDIVIDUAL DE TRABALHO' },
+      { t: 'p', x: 'Pelo presente instrumento, as partes a seguir qualificadas — EMPREGADOR e EMPREGADO(A) — celebram o presente contrato de trabalho, regido pela CLT e pelas cláusulas seguintes.' },
+      { t: 'h2', x: 'CLÁUSULA 1ª — DA JORNADA' },
+      { t: 'p', x: 'A jornada de trabalho observará o limite legal previsto no art. 58 da CLT, admitida a prorrogação nos termos do art. 59, mediante o respectivo acordo e controle de horário.' },
+      { t: 'h2', x: 'CLÁUSULA 2ª — DA REMUNERAÇÃO' },
+      { t: 'p', x: 'O(a) empregado(a) perceberá a remuneração mensal ajustada entre as partes, paga até o 5º dia útil do mês subsequente, com os demais direitos assegurados em lei.' },
+      { t: 'h2', x: 'CLÁUSULA 3ª — DA CONFIDENCIALIDADE' },
+      { t: 'p', x: 'O(a) empregado(a) obriga-se a manter sigilo sobre as informações confidenciais a que tiver acesso, durante a vigência do contrato e após o seu término.' }
+    ]
+  }
+];
+
+const A = {
+  root: document.getElementById('agent'),
+  status: document.getElementById('agent-status'),
+  crumb: document.getElementById('agent-crumb'),
+  progress: document.getElementById('agent-progress'),
+  ptr: document.getElementById('agent-cursorptr'),
+  chat: document.getElementById('agent-chat'),
+  empty: document.getElementById('agent-empty'),
+  promptMsg: document.getElementById('agent-prompt-msg'),
+  prompt: document.getElementById('agent-prompt'),
+  files: document.getElementById('agent-files'),
+  reply: document.getElementById('agent-reply'),
+  typing: document.getElementById('agent-typing'),
+  intro: document.getElementById('agent-intro'),
+  introTxt: document.getElementById('agent-intro-txt'),
+  introCursor: document.getElementById('intro-cursor'),
+  think: document.getElementById('agent-think'),
+  thinkTxt: document.getElementById('agent-think-txt'),
+  thinkCursor: document.getElementById('think-cursor'),
+  tools: [...document.querySelectorAll('#agent-tools .agent-tool')],
+  toolsWrap: document.getElementById('agent-tools'),
+  doc: document.getElementById('agent-doc'),
+  docName: document.getElementById('agent-doc-name'),
+  docMeta: document.getElementById('agent-doc-meta'),
+  docBody: document.getElementById('agent-doc-body'),
+  docSave: document.getElementById('agent-doc-save-txt'),
+  docPages: document.getElementById('agent-doc-pages'),
+  done: document.getElementById('agent-done'),
+  // composer
+  composer: document.getElementById('agent-composer'),
+  picker: document.getElementById('agent-picker'),
+  pickerItems: [...document.querySelectorAll('#agent-picker .agent-picker-item')],
+  compFiles: document.getElementById('agent-comp-files'),
+  attach: document.getElementById('agent-attach'),
+  input: document.getElementById('agent-input'),
+  inputTxt: document.getElementById('agent-input-txt'),
+  send: document.getElementById('agent-send')
+};
+
+const FILE_SVG = '<svg viewBox="0 0 12 12"><path d="M3 1h4l2 2v8H3z"/><path d="M7 1v2h2"/></svg>';
+let timers = [];
+let typer = null;
+let running = false;
+let current = 0;
+let gen = 0;
+class AgentAbort {}
+
+const wait = (ms) => new Promise((res, rej) => {
+  const myGen = gen;
+  const t = setTimeout(() => { myGen === gen ? res() : rej(new AgentAbort()); }, ms);
+  timers.push(t);
+});
+
+/* ---- cursor helpers ---- */
+function movePtrTo(target, offX, offY) {
+  const r = target.getBoundingClientRect();
+  const rootR = A.root.getBoundingClientRect();
+  const x = r.left - rootR.left + (offX != null ? offX : r.width / 2);
+  const y = r.top - rootR.top + (offY != null ? offY : r.height / 2);
+  A.ptr.style.transform = 'translate(' + x + 'px,' + y + 'px)';
+  A.ptr.style.setProperty('--cx', x + 'px');
+  A.ptr.style.setProperty('--cy', y + 'px');
+  return wait(560);
+}
+async function clickPtr() {
+  A.ptr.classList.add('click');
+  await wait(150);
+  A.ptr.classList.remove('click');
+  await wait(120);
+}
+
+function hardReset() {
+  gen++;
+  timers.forEach(clearTimeout); timers = [];
+  if (typer) { clearInterval(typer); typer = null; }
+  A.progress.classList.remove('on');
+  A.progress.style.width = '0';
+  A.chat.classList.remove('on');
+  A.empty.classList.remove('hide');
+  A.empty.style.display = '';
+  A.promptMsg.classList.remove('on');
+  A.prompt.textContent = '';
+  A.files.innerHTML = '';
+  A.reply.classList.remove('on', 'thinking');
+  A.typing.style.display = 'none';
+  A.intro.classList.remove('on');
+  A.introTxt.textContent = '';
+  A.introCursor.style.display = 'none';
+  A.think.classList.remove('on', 'done');
+  A.thinkTxt.textContent = '';
+  A.thinkCursor.style.display = 'none';
+  A.tools.forEach(t => { t.classList.remove('on', 'done'); const r = t.querySelector('.agent-tool-result'); if (r) r.textContent = ''; });
+  A.toolsWrap.classList.remove('on');
+  A.doc.classList.remove('on', 'saved');
+  A.docBody.innerHTML = '';
+  A.done.classList.remove('on');
+  // composer reset
+  A.ptr.classList.remove('visible', 'click');
+  A.picker.classList.remove('on');
+  A.pickerItems.forEach(it => it.classList.remove('picked', 'hover'));
+  A.compFiles.innerHTML = '';
+  A.attach.classList.remove('lit');
+  A.send.classList.remove('lit');
+  A.input.classList.remove('focus');
+  A.inputTxt.textContent = '';
+  A.status.textContent = 'Pronto';
+}
+
+function typeInto(el, text, speed) {
+  return new Promise((res, rej) => {
+    let i = 0;
+    const myGen = gen;
+    typer = setInterval(() => {
+      if (gen !== myGen) { clearInterval(typer); typer = null; rej(new AgentAbort()); return; }
+      i++;
+      el.textContent = text.slice(0, i);
+      if (i >= text.length) { clearInterval(typer); typer = null; res(); }
+    }, speed);
+  });
+}
+
+function streamBlock(block) {
+  return new Promise((res, rej) => {
+    const myGen = gen;
+    const el = document.createElement('div');
+    el.className = 'doc-line ' + (block.t === 'h' ? 'dl-h' : block.t === 'c' ? 'dl-c' : block.t === 'h2' ? 'dl-h2' : 'dl-p');
+    const span = document.createElement('span');
+    el.appendChild(span);
+    const cur = document.createElement('span');
+    cur.className = 'agent-cursor doc-cursor';
+    el.appendChild(cur);
+    A.docBody.appendChild(el);
+    A.chat.scrollTop = A.chat.scrollHeight;
+    const words = block.x.split(' ');
+    let w = 0;
+    typer = setInterval(() => {
+      if (gen !== myGen) { clearInterval(typer); typer = null; cur.remove(); rej(new AgentAbort()); return; }
+      span.textContent = words.slice(0, w + 1).join(' ');
+      w++;
+      A.chat.scrollTop = A.chat.scrollHeight;
+      if (w >= words.length) {
+        clearInterval(typer); typer = null;
+        cur.remove();
+        res();
+      }
+    }, 42);
+  });
+}
+
+const scrollChat = () => { A.chat.scrollTop = A.chat.scrollHeight; };
+function setProgress(pct) { A.progress.classList.add('on'); A.progress.style.width = pct + '%'; }
+
+async function runAgent() {
+  hardReset();
+  running = true;
+  try {
+  const p = PIECES[current];
+  A.docName.textContent = p.file;
+  A.crumb.textContent = p.crumb || 'Redação assistida';
+  A.docPages.textContent = 'pág. 1';
+
+  // fill picker with this piece's files
+  A.pickerItems.forEach((it, i) => {
+    const has = i < p.files.length;
+    it.style.display = has ? 'flex' : 'none';
+    if (has) it.querySelector('.apk-name').textContent = p.files[i];
+  });
+
+  await wait(500);
+
+  /* ===== PHASE 1 · cursor digita o pedido ===== */
+  A.ptr.classList.add('visible');
+  await movePtrTo(A.input, 90, 16);
+  await clickPtr();
+  A.input.classList.add('focus');
+  await wait(200);
+  await typeInto(A.inputTxt, p.prompt, 12);
+  await wait(280);
+
+  /* ===== PHASE 2 · clica em anexar e seleciona arquivos ===== */
+  await movePtrTo(A.attach);
+  await clickPtr();
+  A.attach.classList.add('lit');
+  A.picker.classList.add('on');
+  await wait(360);
+
+  for (let i = 0; i < p.files.length; i++) {
+    const item = A.pickerItems[i];
+    await movePtrTo(item);
+    item.classList.add('hover');
+    await clickPtr();
+    item.classList.add('picked');
+    // add chip to composer
+    const chip = document.createElement('span');
+    chip.className = 'agent-comp-file';
+    chip.innerHTML = FILE_SVG + p.files[i] +
+      '<svg class="cf-x" viewBox="0 0 12 12"><line x1="3" y1="3" x2="9" y2="9"/><line x1="9" y1="3" x2="3" y2="9"/></svg>';
+    A.compFiles.appendChild(chip);
+    await wait(300);
+  }
+  await wait(220);
+  A.picker.classList.remove('on');
+  A.attach.classList.remove('lit');
+  await wait(300);
+
+  /* ===== PHASE 3 · clica em enviar ===== */
+  await movePtrTo(A.send);
+  A.send.classList.add('lit');
+  await clickPtr();
+  A.send.classList.remove('lit');
+
+  // monta a mensagem do advogado e limpa o composer
+  A.prompt.textContent = p.prompt;
+  A.files.innerHTML = p.files.map(f => '<span class="agent-file">' + FILE_SVG + f + '</span>').join('');
+  A.input.classList.remove('focus');
+  A.inputTxt.textContent = '';
+  A.compFiles.innerHTML = '';
+  A.chat.classList.add('on');
+  A.empty.classList.add('hide');
+  await wait(60);
+  A.empty.style.display = 'none';
+  A.promptMsg.classList.add('on');
+  A.ptr.classList.remove('visible');
+  await wait(550);
+  scrollChat();
+
+  /* ===== PHASE 4 · assistente responde ===== */
+  A.reply.classList.add('on', 'thinking');
+  A.typing.style.display = 'inline-flex';
+  A.status.textContent = 'Pensando';
+  setProgress(12);
+  await wait(1100);
+  scrollChat();
+
+  // raciocínio
+  A.typing.style.display = 'none';
+  A.reply.classList.remove('thinking');
+  A.think.classList.add('on');
+  A.thinkCursor.style.display = 'inline-block';
+  await wait(180);
+  await typeInto(A.thinkTxt, p.think, 18);
+  scrollChat();
+  await wait(420);
+  A.thinkCursor.style.display = 'none';
+  A.think.classList.add('done');
+
+  // intro do assistente (texto curto, streaming)
+  A.intro.classList.add('on');
+  A.introCursor.style.display = 'inline-block';
+  await wait(160);
+  await typeInto(A.introTxt, p.intro, 14);
+  scrollChat();
+  await wait(360);
+  A.introCursor.style.display = 'none';
+
+  // ferramentas
+  A.status.textContent = 'Trabalhando';
+  A.toolsWrap.classList.add('on');
+  await wait(120);
+  for (let i = 0; i < A.tools.length; i++) {
+    const tool = A.tools[i];
+    const data = p.tools[i];
+    tool.querySelector('.agent-tool-txt').textContent = data.txt;
+    tool.querySelector('.agent-tool-meta').textContent = data.meta;
+    tool.querySelector('.agent-tool-tag').textContent = data.tag;
+    const resEl = tool.querySelector('.agent-tool-result');
+    if (resEl) resEl.textContent = '';
+    tool.classList.add('on');
+    scrollChat();
+    await wait(680);
+    if (resEl && data.r) resEl.textContent = data.r;
+    tool.classList.add('done');
+    setProgress(28 + Math.round((i + 1) / A.tools.length * 32));
+    await wait(160);
+  }
+
+  // documento
+  await wait(280);
+  A.status.textContent = 'Redigindo';
+  A.doc.classList.add('on');
+  A.docMeta.textContent = 'redigindo…';
+  A.docSave.textContent = 'salvando…';
+  scrollChat();
+  for (let bi = 0; bi < p.doc.length; bi++) {
+    await streamBlock(p.doc[bi]);
+    A.docPages.textContent = 'pág. ' + (1 + Math.floor(bi / 4));
+    setProgress(62 + Math.round((bi + 1) / p.doc.length * 34));
+    scrollChat();
+    await wait(150);
+  }
+
+  // pronto
+  A.docMeta.textContent = 'rascunho';
+  A.doc.classList.add('saved');
+  A.docSave.textContent = 'salvo';
+  A.status.textContent = 'Pronto p/ revisão';
+  setProgress(100);
+  await wait(350);
+  A.done.classList.add('on');
+  scrollChat();
+  await wait(260);
+  scrollChat();
+  await wait(320);
+  scrollChat();
+
+  // loop · avança para a próxima peça para mostrar variedade
+  await wait(4200);
+  if (running) {
+    current = (current + 1) % PIECES.length;
+    document.querySelectorAll('.demo-peca').forEach(b => b.classList.toggle('active', parseInt(b.dataset.piece, 10) === current));
+    runAgent();
+  }
+  } catch (e) {
+    if (!(e instanceof AgentAbort)) throw e;
+  }
+}
+
+document.querySelectorAll('.demo-peca').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.demo-peca').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    current = parseInt(btn.dataset.piece, 10);
+    runAgent();
+  });
+});
+
+/* start when agent enters view */
+const agentObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting && !running) runAgent();
+    else if (!e.isIntersecting) { running = false; hardReset(); }
+  });
+}, { threshold: 0.2 });
+agentObserver.observe(document.getElementById('agent'));
+</script>
+<script>
+/* ===== Reveal on scroll ===== */
+const observer = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
+  { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+);
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* ===== Mobile nav ===== */
+const burger = document.getElementById('nav-burger');
+const mobileMenu = document.getElementById('nav-mobile');
+function closeMenu(){ burger.setAttribute('aria-expanded','false'); mobileMenu.classList.remove('open'); }
+burger.addEventListener('click', () => {
+  const open = burger.getAttribute('aria-expanded') === 'true';
+  burger.setAttribute('aria-expanded', String(!open));
+  mobileMenu.classList.toggle('open', !open);
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+/* ===== FAQ accordion ===== */
+document.querySelectorAll('#faq-wrap .faq-item').forEach(item => {
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  q.addEventListener('click', () => {
+    const open = item.classList.contains('open');
+    document.querySelectorAll('#faq-wrap .faq-item').forEach(other => {
+      other.classList.remove('open');
+      other.querySelector('.faq-a').style.maxHeight = null;
+    });
+    if (!open) { item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+  });
+});
+
+/* ===== Agente trabalhando (workspace) ===== */
+const PIECES = [
+  {
+    prompt: 'Elabore uma contestação trabalhista para reclamação de horas extras, com fundamentos nos arts. 58 e 59 da CLT.',
+    file: 'Contestacao_horas-extras.docx',
+    crumb: 'Contestação trabalhista',
+    files: ['peticao-inicial.pdf', 'cartao-ponto.pdf', 'contrato.docx'],
+    think: 'Analisando os fatos do caso e mapeando as teses de defesa cabíveis para horas extras…',
+    intro: 'Entendi. Vou preparar uma minuta de Contestação Trabalhista com preliminares, mérito e pedidos, com base nos documentos anexados.',
+    tools: [
+      { txt: 'Lendo documentos do caso', meta: '3 arquivos · PDF, Word', tag: 'contexto', r: 'reclamação + 2 documentos lidos' },
+      { txt: 'Consultando legislação', meta: 'CLT · arts. 58 e 59', tag: 'pesquisa', r: 'art. 58 e art. 59, §1º localizados' },
+      { txt: 'Verificando entendimento', meta: 'jurisprudência do TST', tag: 'pesquisa', r: 'Súmula 338 do TST aplicável' },
+      { txt: 'Estruturando a peça', meta: 'preliminares · mérito · pedidos', tag: 'redação', r: 'estrutura definida' }
+    ],
+    doc: [
+      { t: 'h', x: 'EXCELENTÍSSIMO(A) SENHOR(A) JUIZ(A) DA ___ VARA DO TRABALHO' },
+      { t: 'c', x: 'CONTESTAÇÃO' },
+      { t: 'p', x: 'A reclamada, já qualificada nos autos da reclamação trabalhista movida pela parte autora, vem, respeitosamente, apresentar CONTESTAÇÃO, pelos fundamentos a seguir expostos.' },
+      { t: 'h2', x: 'I — DA SÍNTESE DOS FATOS' },
+      { t: 'p', x: 'A reclamante alega ter laborado em jornada extraordinária habitual, sem a devida contraprestação. Os fatos, contudo, não se sustentam diante da prova documental anexada.' },
+      { t: 'h2', x: 'II — DO MÉRITO · DAS HORAS EXTRAS' },
+      { t: 'p', x: 'Nos termos do art. 58 da CLT, a duração normal do trabalho observa o limite legal, e eventual prorrogação subordina-se ao art. 59 da CLT. Os controles de jornada demonstram a inexistência de labor extraordinário não quitado.' }
+    ]
+  },
+  {
+    prompt: 'Prepare um recurso ordinário contra sentença que julgou procedente o pedido de horas extras.',
+    file: 'Recurso-ordinario_horas-extras.docx',
+    crumb: 'Recurso ordinário',
+    files: ['sentenca.pdf', 'ata-audiencia.pdf'],
+    think: 'Lendo a sentença recorrida e identificando os pontos de reforma e a fundamentação aplicável…',
+    intro: 'Certo. Vou estruturar as razões do Recurso Ordinário, com os pontos de reforma da sentença e a fundamentação cabível.',
+    tools: [
+      { txt: 'Lendo a sentença recorrida', meta: 'decisão de 1º grau', tag: 'contexto', r: 'fundamentos da sentença mapeados' },
+      { txt: 'Conferindo prazo recursal', meta: 'tempestividade e preparo', tag: 'pressupostos', r: 'recurso tempestivo' },
+      { txt: 'Consultando legislação', meta: 'CLT · arts. 58 e 59', tag: 'pesquisa', r: 'dispositivos confirmados' },
+      { txt: 'Estruturando as razões', meta: 'pontos de reforma · pedido', tag: 'redação', r: 'pontos de reforma definidos' }
+    ],
+    doc: [
+      { t: 'h', x: 'EGRÉGIO TRIBUNAL REGIONAL DO TRABALHO DA ___ REGIÃO' },
+      { t: 'c', x: 'RAZÕES DE RECURSO ORDINÁRIO' },
+      { t: 'p', x: 'A recorrente, inconformada com a r. sentença que julgou procedente o pedido de horas extras, interpõe o presente RECURSO ORDINÁRIO, requerendo a reforma da decisão.' },
+      { t: 'h2', x: 'I — DA TEMPESTIVIDADE' },
+      { t: 'p', x: 'O presente recurso é tempestivo, observado o prazo legal, encontrando-se devidamente preparado, razão pela qual merece conhecimento.' },
+      { t: 'h2', x: 'II — DAS RAZÕES DE REFORMA' },
+      { t: 'p', x: 'A sentença merece reforma quanto às horas extras, pois os controles de jornada juntados aos autos, à luz dos arts. 58 e 59 da CLT, demonstram a regularidade da jornada praticada.' }
+    ]
+  },
+  {
+    prompt: 'Monte um recurso de revista apontando divergência jurisprudencial e violação de dispositivo legal.',
+    file: 'Recurso-de-revista.docx',
+    crumb: 'Recurso de revista',
+    files: ['acordao-trt.pdf', 'aresto-paradigma.pdf'],
+    think: 'Analisando o acórdão regional e verificando os pressupostos específicos de admissibilidade da revista…',
+    intro: 'Entendi. Vou organizar o Recurso de Revista, verificando os pressupostos e apontando a divergência e a violação legal.',
+    tools: [
+      { txt: 'Lendo o acórdão regional', meta: 'decisão do TRT', tag: 'contexto', r: 'tese do acórdão identificada' },
+      { txt: 'Verificando admissibilidade', meta: 'transcendência · prequestionamento', tag: 'pressupostos', r: 'prequestionamento atendido' },
+      { txt: 'Cotejando divergência', meta: 'aresto paradigma', tag: 'pesquisa', r: 'paradigma compatível' },
+      { txt: 'Estruturando a peça', meta: 'violação legal · pedido', tag: 'redação', r: 'estrutura definida' }
+    ],
+    doc: [
+      { t: 'h', x: 'EGRÉGIO TRIBUNAL SUPERIOR DO TRABALHO' },
+      { t: 'c', x: 'RAZÕES DE RECURSO DE REVISTA' },
+      { t: 'p', x: 'A recorrente interpõe RECURSO DE REVISTA em face do v. acórdão regional, com fundamento na divergência jurisprudencial e na violação de dispositivo legal, nos termos do art. 896 da CLT.' },
+      { t: 'h2', x: 'I — DO CABIMENTO E DA TRANSCENDÊNCIA' },
+      { t: 'p', x: 'Presentes os pressupostos de admissibilidade, a matéria devolvida apresenta transcendência, devendo o presente recurso ser conhecido e provido.' },
+      { t: 'h2', x: 'II — DA DIVERGÊNCIA JURISPRUDENCIAL' },
+      { t: 'p', x: 'O acórdão recorrido diverge do entendimento consolidado em aresto paradigma, configurando a divergência apta a ensejar o conhecimento da revista, à luz dos arts. 58 e 59 da CLT.' }
+    ]
+  },
+  {
+    prompt: 'Redija um contrato de trabalho com cláusulas de jornada, remuneração e confidencialidade.',
+    file: 'Contrato-de-trabalho.docx',
+    crumb: 'Contrato de trabalho',
+    files: ['condicoes-admissao.pdf', 'modelo-escritorio.docx'],
+    think: 'Organizando as cláusulas essenciais do contrato a partir das condições informadas…',
+    intro: 'Combinado. Vou preparar um rascunho de Contrato de Trabalho com cláusulas de jornada, remuneração e confidencialidade.',
+    tools: [
+      { txt: 'Lendo as condições informadas', meta: 'cargo · jornada · remuneração', tag: 'contexto', r: 'condições extraídas' },
+      { txt: 'Consultando legislação', meta: 'CLT · cláusulas obrigatórias', tag: 'pesquisa', r: 'cláusulas obrigatórias conferidas' },
+      { txt: 'Aplicando modelo do escritório', meta: 'padrão e estilo salvos', tag: 'estilo', r: 'estilo do escritório aplicado' },
+      { txt: 'Estruturando as cláusulas', meta: 'jornada · remuneração · sigilo', tag: 'redação', r: 'cláusulas organizadas' }
+    ],
+    doc: [
+      { t: 'h', x: 'CONTRATO INDIVIDUAL DE TRABALHO' },
+      { t: 'p', x: 'Pelo presente instrumento, as partes a seguir qualificadas — EMPREGADOR e EMPREGADO(A) — celebram o presente contrato de trabalho, regido pela CLT e pelas cláusulas seguintes.' },
+      { t: 'h2', x: 'CLÁUSULA 1ª — DA JORNADA' },
+      { t: 'p', x: 'A jornada de trabalho observará o limite legal previsto no art. 58 da CLT, admitida a prorrogação nos termos do art. 59, mediante o respectivo acordo e controle de horário.' },
+      { t: 'h2', x: 'CLÁUSULA 2ª — DA REMUNERAÇÃO' },
+      { t: 'p', x: 'O(a) empregado(a) perceberá a remuneração mensal ajustada entre as partes, paga até o 5º dia útil do mês subsequente, com os demais direitos assegurados em lei.' },
+      { t: 'h2', x: 'CLÁUSULA 3ª — DA CONFIDENCIALIDADE' },
+      { t: 'p', x: 'O(a) empregado(a) obriga-se a manter sigilo sobre as informações confidenciais a que tiver acesso, durante a vigência do contrato e após o seu término.' }
+    ]
+  }
+];
+
+const A = {
+  root: document.getElementById('agent'),
+  status: document.getElementById('agent-status'),
+  crumb: document.getElementById('agent-crumb'),
+  progress: document.getElementById('agent-progress'),
+  ptr: document.getElementById('agent-cursorptr'),
+  chat: document.getElementById('agent-chat'),
+  empty: document.getElementById('agent-empty'),
+  promptMsg: document.getElementById('agent-prompt-msg'),
+  prompt: document.getElementById('agent-prompt'),
+  files: document.getElementById('agent-files'),
+  reply: document.getElementById('agent-reply'),
+  typing: document.getElementById('agent-typing'),
+  intro: document.getElementById('agent-intro'),
+  introTxt: document.getElementById('agent-intro-txt'),
+  introCursor: document.getElementById('intro-cursor'),
+  think: document.getElementById('agent-think'),
+  thinkTxt: document.getElementById('agent-think-txt'),
+  thinkCursor: document.getElementById('think-cursor'),
+  tools: [...document.querySelectorAll('#agent-tools .agent-tool')],
+  toolsWrap: document.getElementById('agent-tools'),
+  doc: document.getElementById('agent-doc'),
+  docName: document.getElementById('agent-doc-name'),
+  docMeta: document.getElementById('agent-doc-meta'),
+  docBody: document.getElementById('agent-doc-body'),
+  docSave: document.getElementById('agent-doc-save-txt'),
+  docPages: document.getElementById('agent-doc-pages'),
+  done: document.getElementById('agent-done'),
+  // composer
+  composer: document.getElementById('agent-composer'),
+  picker: document.getElementById('agent-picker'),
+  pickerItems: [...document.querySelectorAll('#agent-picker .agent-picker-item')],
+  compFiles: document.getElementById('agent-comp-files'),
+  attach: document.getElementById('agent-attach'),
+  input: document.getElementById('agent-input'),
+  inputTxt: document.getElementById('agent-input-txt'),
+  send: document.getElementById('agent-send')
+};
+
+const FILE_SVG = '<svg viewBox="0 0 12 12"><path d="M3 1h4l2 2v8H3z"/><path d="M7 1v2h2"/></svg>';
+let timers = [];
+let typer = null;
+let running = false;
+let current = 0;
+let gen = 0;
+class AgentAbort {}
+
+const wait = (ms) => new Promise((res, rej) => {
+  const myGen = gen;
+  const t = setTimeout(() => { myGen === gen ? res() : rej(new AgentAbort()); }, ms);
+  timers.push(t);
+});
+
+/* ---- cursor helpers ---- */
+function movePtrTo(target, offX, offY) {
+  const r = target.getBoundingClientRect();
+  const rootR = A.root.getBoundingClientRect();
+  const x = r.left - rootR.left + (offX != null ? offX : r.width / 2);
+  const y = r.top - rootR.top + (offY != null ? offY : r.height / 2);
+  A.ptr.style.transform = 'translate(' + x + 'px,' + y + 'px)';
+  A.ptr.style.setProperty('--cx', x + 'px');
+  A.ptr.style.setProperty('--cy', y + 'px');
+  return wait(560);
+}
+async function clickPtr() {
+  A.ptr.classList.add('click');
+  await wait(150);
+  A.ptr.classList.remove('click');
+  await wait(120);
+}
+
+function hardReset() {
+  gen++;
+  timers.forEach(clearTimeout); timers = [];
+  if (typer) { clearInterval(typer); typer = null; }
+  A.progress.classList.remove('on');
+  A.progress.style.width = '0';
+  A.chat.classList.remove('on');
+  A.empty.classList.remove('hide');
+  A.empty.style.display = '';
+  A.promptMsg.classList.remove('on');
+  A.prompt.textContent = '';
+  A.files.innerHTML = '';
+  A.reply.classList.remove('on', 'thinking');
+  A.typing.style.display = 'none';
+  A.intro.classList.remove('on');
+  A.introTxt.textContent = '';
+  A.introCursor.style.display = 'none';
+  A.think.classList.remove('on', 'done');
+  A.thinkTxt.textContent = '';
+  A.thinkCursor.style.display = 'none';
+  A.tools.forEach(t => { t.classList.remove('on', 'done'); const r = t.querySelector('.agent-tool-result'); if (r) r.textContent = ''; });
+  A.toolsWrap.classList.remove('on');
+  A.doc.classList.remove('on', 'saved');
+  A.docBody.innerHTML = '';
+  A.done.classList.remove('on');
+  // composer reset
+  A.ptr.classList.remove('visible', 'click');
+  A.picker.classList.remove('on');
+  A.pickerItems.forEach(it => it.classList.remove('picked', 'hover'));
+  A.compFiles.innerHTML = '';
+  A.attach.classList.remove('lit');
+  A.send.classList.remove('lit');
+  A.input.classList.remove('focus');
+  A.inputTxt.textContent = '';
+  A.status.textContent = 'Pronto';
+}
+
+function typeInto(el, text, speed) {
+  return new Promise((res, rej) => {
+    let i = 0;
+    const myGen = gen;
+    typer = setInterval(() => {
+      if (gen !== myGen) { clearInterval(typer); typer = null; rej(new AgentAbort()); return; }
+      i++;
+      el.textContent = text.slice(0, i);
+      if (i >= text.length) { clearInterval(typer); typer = null; res(); }
+    }, speed);
+  });
+}
+
+function streamBlock(block) {
+  return new Promise((res, rej) => {
+    const myGen = gen;
+    const el = document.createElement('div');
+    el.className = 'doc-line ' + (block.t === 'h' ? 'dl-h' : block.t === 'c' ? 'dl-c' : block.t === 'h2' ? 'dl-h2' : 'dl-p');
+    const span = document.createElement('span');
+    el.appendChild(span);
+    const cur = document.createElement('span');
+    cur.className = 'agent-cursor doc-cursor';
+    el.appendChild(cur);
+    A.docBody.appendChild(el);
+    A.chat.scrollTop = A.chat.scrollHeight;
+    const words = block.x.split(' ');
+    let w = 0;
+    typer = setInterval(() => {
+      if (gen !== myGen) { clearInterval(typer); typer = null; cur.remove(); rej(new AgentAbort()); return; }
+      span.textContent = words.slice(0, w + 1).join(' ');
+      w++;
+      A.chat.scrollTop = A.chat.scrollHeight;
+      if (w >= words.length) {
+        clearInterval(typer); typer = null;
+        cur.remove();
+        res();
+      }
+    }, 42);
+  });
+}
+
+const scrollChat = () => { A.chat.scrollTop = A.chat.scrollHeight; };
+function setProgress(pct) { A.progress.classList.add('on'); A.progress.style.width = pct + '%'; }
+
+async function runAgent() {
+  hardReset();
+  running = true;
+  try {
+  const p = PIECES[current];
+  A.docName.textContent = p.file;
+  A.crumb.textContent = p.crumb || 'Redação assistida';
+  A.docPages.textContent = 'pág. 1';
+
+  // fill picker with this piece's files
+  A.pickerItems.forEach((it, i) => {
+    const has = i < p.files.length;
+    it.style.display = has ? 'flex' : 'none';
+    if (has) it.querySelector('.apk-name').textContent = p.files[i];
+  });
+
+  await wait(500);
+
+  /* ===== PHASE 1 · cursor digita o pedido ===== */
+  A.ptr.classList.add('visible');
+  await movePtrTo(A.input, 90, 16);
+  await clickPtr();
+  A.input.classList.add('focus');
+  await wait(200);
+  await typeInto(A.inputTxt, p.prompt, 12);
+  await wait(280);
+
+  /* ===== PHASE 2 · clica em anexar e seleciona arquivos ===== */
+  await movePtrTo(A.attach);
+  await clickPtr();
+  A.attach.classList.add('lit');
+  A.picker.classList.add('on');
+  await wait(360);
+
+  for (let i = 0; i < p.files.length; i++) {
+    const item = A.pickerItems[i];
+    await movePtrTo(item);
+    item.classList.add('hover');
+    await clickPtr();
+    item.classList.add('picked');
+    // add chip to composer
+    const chip = document.createElement('span');
+    chip.className = 'agent-comp-file';
+    chip.innerHTML = FILE_SVG + p.files[i] +
+      '<svg class="cf-x" viewBox="0 0 12 12"><line x1="3" y1="3" x2="9" y2="9"/><line x1="9" y1="3" x2="3" y2="9"/></svg>';
+    A.compFiles.appendChild(chip);
+    await wait(300);
+  }
+  await wait(220);
+  A.picker.classList.remove('on');
+  A.attach.classList.remove('lit');
+  await wait(300);
+
+  /* ===== PHASE 3 · clica em enviar ===== */
+  await movePtrTo(A.send);
+  A.send.classList.add('lit');
+  await clickPtr();
+  A.send.classList.remove('lit');
+
+  // monta a mensagem do advogado e limpa o composer
+  A.prompt.textContent = p.prompt;
+  A.files.innerHTML = p.files.map(f => '<span class="agent-file">' + FILE_SVG + f + '</span>').join('');
+  A.input.classList.remove('focus');
+  A.inputTxt.textContent = '';
+  A.compFiles.innerHTML = '';
+  A.chat.classList.add('on');
+  A.empty.classList.add('hide');
+  await wait(60);
+  A.empty.style.display = 'none';
+  A.promptMsg.classList.add('on');
+  A.ptr.classList.remove('visible');
+  await wait(550);
+  scrollChat();
+
+  /* ===== PHASE 4 · assistente responde ===== */
+  A.reply.classList.add('on', 'thinking');
+  A.typing.style.display = 'inline-flex';
+  A.status.textContent = 'Pensando';
+  setProgress(12);
+  await wait(1100);
+  scrollChat();
+
+  // raciocínio
+  A.typing.style.display = 'none';
+  A.reply.classList.remove('thinking');
+  A.think.classList.add('on');
+  A.thinkCursor.style.display = 'inline-block';
+  await wait(180);
+  await typeInto(A.thinkTxt, p.think, 18);
+  scrollChat();
+  await wait(420);
+  A.thinkCursor.style.display = 'none';
+  A.think.classList.add('done');
+
+  // intro do assistente (texto curto, streaming)
+  A.intro.classList.add('on');
+  A.introCursor.style.display = 'inline-block';
+  await wait(160);
+  await typeInto(A.introTxt, p.intro, 14);
+  scrollChat();
+  await wait(360);
+  A.introCursor.style.display = 'none';
+
+  // ferramentas
+  A.status.textContent = 'Trabalhando';
+  A.toolsWrap.classList.add('on');
+  await wait(120);
+  for (let i = 0; i < A.tools.length; i++) {
+    const tool = A.tools[i];
+    const data = p.tools[i];
+    tool.querySelector('.agent-tool-txt').textContent = data.txt;
+    tool.querySelector('.agent-tool-meta').textContent = data.meta;
+    tool.querySelector('.agent-tool-tag').textContent = data.tag;
+    const resEl = tool.querySelector('.agent-tool-result');
+    if (resEl) resEl.textContent = '';
+    tool.classList.add('on');
+    scrollChat();
+    await wait(680);
+    if (resEl && data.r) resEl.textContent = data.r;
+    tool.classList.add('done');
+    setProgress(28 + Math.round((i + 1) / A.tools.length * 32));
+    await wait(160);
+  }
+
+  // documento
+  await wait(280);
+  A.status.textContent = 'Redigindo';
+  A.doc.classList.add('on');
+  A.docMeta.textContent = 'redigindo…';
+  A.docSave.textContent = 'salvando…';
+  scrollChat();
+  for (let bi = 0; bi < p.doc.length; bi++) {
+    await streamBlock(p.doc[bi]);
+    A.docPages.textContent = 'pág. ' + (1 + Math.floor(bi / 4));
+    setProgress(62 + Math.round((bi + 1) / p.doc.length * 34));
+    scrollChat();
+    await wait(150);
+  }
+
+  // pronto
+  A.docMeta.textContent = 'rascunho';
+  A.doc.classList.add('saved');
+  A.docSave.textContent = 'salvo';
+  A.status.textContent = 'Pronto p/ revisão';
+  setProgress(100);
+  await wait(350);
+  A.done.classList.add('on');
+  scrollChat();
+  await wait(260);
+  scrollChat();
+  await wait(320);
+  scrollChat();
+
+  // loop · avança para a próxima peça para mostrar variedade
+  await wait(4200);
+  if (running) {
+    current = (current + 1) % PIECES.length;
+    document.querySelectorAll('.demo-peca').forEach(b => b.classList.toggle('active', parseInt(b.dataset.piece, 10) === current));
+    runAgent();
+  }
+  } catch (e) {
+    if (!(e instanceof AgentAbort)) throw e;
+  }
+}
+
+document.querySelectorAll('.demo-peca').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.demo-peca').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    current = parseInt(btn.dataset.piece, 10);
+    runAgent();
+  });
+});
+
+/* start when agent enters view */
+const agentObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting && !running) runAgent();
+    else if (!e.isIntersecting) { running = false; hardReset(); }
+  });
+}, { threshold: 0.2 });
+agentObserver.observe(document.getElementById('agent'));
+</script>
+
+<script>
+// FORMULÁRIO CTA FINAL — Supabase (mesmo do DET)
+// Tabela public.leads · source: home-cta-final
+// ============================================
+(function initCtaFinalForm() {
+  var form = document.getElementById('cta-final-form');
+  if (!form) return;
+
+  var success = document.getElementById('cta-final-form-success');
+  var resetBtn = document.getElementById('cta-final-form-reset');
+
+  var SUPABASE_URL = 'https://hvbndvwwibhtuknbfmyh.supabase.co';
+  var SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2Ym5kdnd3aWJodHVrbmJmbXloIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIyODUyNzAsImV4cCI6MjA5Nzg2MTI3MH0.7-9eHbms6AEoX_4HfbDwiY9rpXjHI7UMl0xcYRvBECA';
+
+  var supabaseClient = null;
+  if (window.supabase) {
+    supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var required = form.querySelectorAll('[required]');
+    var valid = true;
+    required.forEach(function (field) {
+      if (field.type === 'checkbox') {
+        if (!field.checked) valid = false;
+      } else if (!field.value.trim()) {
+        valid = false;
+      }
+    });
+    if (!valid) {
+      form.reportValidity();
+      return;
+    }
+
+    var payload = {
+      name: document.getElementById('ctaf-name').value.trim(),
+      office: document.getElementById('ctaf-office').value.trim(),
+      email: document.getElementById('ctaf-email').value.trim(),
+      phone: document.getElementById('ctaf-phone').value.trim() || null,
+      cnpjs: document.getElementById('ctaf-cnpjs').value,
+      message: document.getElementById('ctaf-message').value.trim() || '',
+      consent: !!document.getElementById('ctaf-consent').checked,
+      source: 'lp-agente-juridico-cta-final',
+    };
+
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var originalText = submitBtn ? submitBtn.innerHTML : '';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Enviando...';
+    }
+
+    async function sendToSupabase() {
+      try {
+        if (!supabaseClient) {
+          throw new Error('Supabase não inicializado');
+        }
+
+        var result = await supabaseClient.from('leads').insert([payload]);
+        if (result.error) throw result.error;
+
+        form.hidden = true;
+        if (success) success.hidden = false;
+
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+        }
+
+        if (window.lucide) lucide.createIcons();
+      } catch (err) {
+        console.error('Erro ao salvar no Supabase:', err);
+        alert('Ocorreu um erro ao enviar sua solicitação. Por favor, tente novamente em alguns minutos ou entre em contato diretamente.');
+
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+        }
+      }
+    }
+
+    sendToSupabase();
+  });
+
+  var phoneInput = document.getElementById('ctaf-phone');
+  if (phoneInput) {
+    phoneInput.addEventListener('input', function () {
+      var v = phoneInput.value.replace(/\D/g, '');
+      if (v.length > 11) v = v.slice(0, 11);
+      if (v.length > 6) {
+        phoneInput.value = '(' + v.slice(0, 2) + ') ' + v.slice(2, 7) + '-' + v.slice(7);
+      } else if (v.length > 2) {
+        phoneInput.value = '(' + v.slice(0, 2) + ') ' + v.slice(2);
+      } else if (v.length > 0) {
+        phoneInput.value = '(' + v;
+      }
+    });
+  }
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function () {
+      form.reset();
+      form.hidden = false;
+      if (success) success.hidden = true;
+    });
+  }
+})();
+
+// ============================================
+// BALÃOZINHO WHATSAPP (mesmo do DET)
+// ============================================
+(function initWaFab() {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initWaFab);
+    return;
+  }
+  var fab = document.querySelector('[data-wa]');
+  if (!fab) return;
+  var bubble = fab.querySelector('.wa-bubble');
+  var closeBtn = fab.querySelector('.wa-bubble-close');
+  var link = fab.querySelector('.wa-btn');
+  var KEY = 'juris8_wa_bubble_dismissed';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  setTimeout(function () { fab.classList.add('in'); }, 500);
+
+  var dismissed = false;
+  try { dismissed = localStorage.getItem(KEY) === '1'; } catch (e) {}
+
+  if (!dismissed) {
+    setTimeout(function () { fab.classList.add('show-bubble'); }, reduce ? 900 : 3200);
+  }
+
+  if (window.matchMedia('(hover: hover)').matches) {
+    fab.addEventListener('mouseenter', function () { fab.classList.add('show-bubble'); });
+    fab.addEventListener('mouseleave', function () { if (dismissed) fab.classList.remove('show-bubble'); });
+  }
+
+  bubble.addEventListener('click', function (e) {
+    if (e.target.closest('.wa-bubble-close')) return;
+    window.open(link.href, '_blank', 'noopener');
+  });
+
+  closeBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    fab.classList.remove('show-bubble');
+    dismissed = true;
+    try { localStorage.setItem(KEY, '1'); } catch (err) {}
+  });
+
+  if (window.lucide) lucide.createIcons();
+})();
+</script>
+</body>
+</html>

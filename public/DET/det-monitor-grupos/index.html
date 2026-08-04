@@ -1,0 +1,1181 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>Juris8 DET Monitor — DET unificado para grupos empresariais e holdings</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="Grupos e holdings com múltiplos CNPJs monitoram o Domicílio Eletrônico Trabalhista empresa por empresa. A Juris8 centraliza matriz e filiais numa caixa única, com alerta antes de qualquer prazo correr." />
+<link rel="canonical" href="https://juris8.ai/DET/det-monitor-grupos.html" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:url" content="https://juris8.ai/DET/det-monitor-grupos.html" />
+<meta property="og:site_name" content="Juris8" />
+<meta property="og:title" content="Juris8 DET Monitor — DET unificado para grupos empresariais e holdings" />
+<meta property="og:description" content="Grupos e holdings com múltiplos CNPJs monitoram o Domicílio Eletrônico Trabalhista empresa por empresa. A Juris8 centraliza matriz e filiais numa caixa única, com alerta antes de qualquer prazo correr." />
+<meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6aae5549-7e09-4ffe-b1f2-dff0d5ba84ee/id-preview-f096470d--5b102cab-70db-40a5-a84d-a754ba0a2af3.lovable.app-1778874475637.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Juris8 DET Monitor — DET unificado para grupos empresariais e holdings" />
+<meta name="twitter:description" content="Grupos e holdings com múltiplos CNPJs monitoram o Domicílio Eletrônico Trabalhista empresa por empresa. A Juris8 centraliza matriz e filiais numa caixa única." />
+<meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6aae5549-7e09-4ffe-b1f2-dff0d5ba84ee/id-preview-f096470d--5b102cab-70db-40a5-a84d-a754ba0a2af3.lovable.app-1778874475637.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/DET/home-styles.css" />
+<style id="lp-grupos-theme">
+/* ===== DET Monitor · Grupos empresariais — mesma paleta/marca; hero multi-CNPJ ===== */
+.lp-grupos .hero-visual{perspective:none;}
+.lp-grupos .cnpj-stage{
+  position:relative;z-index:1;display:flex;flex-direction:column;
+  padding:22px;border-radius:22px;
+  background:linear-gradient(180deg,rgba(20,17,42,0.9),rgba(13,11,28,0.92));
+  border:1px solid var(--hairline-strong);
+  box-shadow:0 40px 90px -50px rgba(0,0,0,0.9),0 0 0 1px rgba(124,58,237,0.1);
+}
+.lp-grupos .cnpj-stage-label{
+  display:inline-flex;align-items:center;gap:8px;align-self:flex-start;
+  font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--juris-300);margin-bottom:15px;
+}
+.lp-grupos .cs-dot{width:5px;height:5px;border-radius:50%;background:var(--juris-400);box-shadow:0 0 8px rgba(124,58,237,0.7);animation:pulse-dot 2s ease infinite;}
+.lp-grupos .cnpj-nodes{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.lp-grupos .cnpj-node{
+  position:relative;display:flex;flex-direction:column;gap:3px;
+  padding:12px 13px;border-radius:13px;
+  background:var(--surface-2);border:1px solid var(--hairline);
+}
+.lp-grupos .cnpj-node.matriz{border-color:rgba(124,58,237,0.34);background:linear-gradient(180deg,rgba(124,58,237,0.1),var(--surface-2));}
+.lp-grupos .cn-tag{font-size:12.5px;font-weight:600;color:var(--text);}
+.lp-grupos .cn-id{font-family:var(--font-mono);font-size:10px;color:var(--dim);letter-spacing:0.04em;}
+.lp-grupos .cn-state{display:inline-flex;align-items:center;gap:5px;margin-top:3px;font-family:var(--font-mono);font-size:9.5px;text-transform:uppercase;letter-spacing:0.07em;}
+.lp-grupos .cn-state svg{width:11px;height:11px;}
+.lp-grupos .cn-state.urgent{color:#FB7185;}
+.lp-grupos .cn-state.alert{color:#F5B454;}
+.lp-grupos .cn-state.ok{color:#4ADE80;}
+.lp-grupos .cnpj-node.more{align-items:center;justify-content:center;text-align:center;font-family:var(--font-mono);font-size:11px;letter-spacing:0.05em;color:var(--muted);border-style:dashed;background:transparent;}
+.lp-grupos .cnpj-funnel{display:flex;justify-content:center;align-items:flex-end;gap:5px;height:30px;padding:8px 0 6px;}
+.lp-grupos .cnpj-funnel span{width:2px;border-radius:2px;background:linear-gradient(180deg,rgba(124,58,237,0.6),rgba(124,58,237,0.12));}
+.lp-grupos .cnpj-funnel span:nth-child(1){height:13px;}
+.lp-grupos .cnpj-funnel span:nth-child(2){height:22px;}
+.lp-grupos .cnpj-funnel span:nth-child(3){height:13px;}
+.lp-grupos .cnpj-unified{border-radius:15px;overflow:hidden;background:linear-gradient(180deg,rgba(124,58,237,0.08),rgba(13,11,28,0.6));border:1px solid rgba(124,58,237,0.24);}
+.lp-grupos .cu-head{display:flex;align-items:center;gap:11px;padding:13px 15px;border-bottom:1px solid var(--hairline);}
+.lp-grupos .cu-icon{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:rgba(124,58,237,0.16);color:var(--juris-300);flex-shrink:0;}
+.lp-grupos .cu-icon svg{width:18px;height:18px;}
+.lp-grupos .cu-title{display:flex;flex-direction:column;gap:1px;flex:1;}
+.lp-grupos .cu-title strong{font-size:13.5px;color:var(--text);font-weight:600;}
+.lp-grupos .cu-title small{font-family:var(--font-mono);font-size:10px;color:var(--dim);letter-spacing:0.03em;}
+.lp-grupos .cu-live{display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono);font-size:9.5px;text-transform:uppercase;letter-spacing:0.08em;color:var(--juris-300);}
+.lp-grupos .cu-live-dot{width:6px;height:6px;border-radius:50%;background:var(--juris-400);box-shadow:0 0 7px rgba(124,58,237,0.75);animation:pulse-dot 2s ease infinite;}
+.lp-grupos .cu-row{display:flex;align-items:center;gap:11px;padding:11px 15px;border-bottom:1px solid var(--hairline);}
+.lp-grupos .cu-row:last-of-type{border-bottom:none;}
+.lp-grupos .cu-row-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.lp-grupos .cu-row.urgent .cu-row-dot{background:#FB7185;box-shadow:0 0 8px rgba(251,113,133,0.6);}
+.lp-grupos .cu-row.warn .cu-row-dot{background:#F5B454;box-shadow:0 0 8px rgba(245,180,84,0.55);}
+.lp-grupos .cu-row-main{display:flex;flex-direction:column;gap:1px;flex:1;}
+.lp-grupos .cu-row-main strong{font-size:12.5px;color:var(--text);font-weight:600;}
+.lp-grupos .cu-row-main small{font-size:11px;color:var(--muted);}
+.lp-grupos .cu-row-flag{font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:0.07em;padding:3px 8px;border-radius:6px;}
+.lp-grupos .cu-row.urgent .cu-row-flag{color:#FB7185;background:rgba(251,113,133,0.12);}
+.lp-grupos .cu-row.warn .cu-row-flag{color:#F5B454;background:rgba(245,180,84,0.12);}
+.lp-grupos .cu-foot{padding:10px 15px;font-family:var(--font-mono);font-size:10px;letter-spacing:0.03em;color:var(--muted);background:rgba(255,255,255,0.015);}
+@media(max-width:480px){.lp-grupos .cnpj-nodes{grid-template-columns:1fr;}}
+
+/* Simulador — nota de rodapé em destaque */
+.sim-callout{margin:14px 0 0;padding:14px 16px;border:1px solid rgba(245,180,84,.22);border-radius:12px;background:rgba(245,180,84,.06);font-size:12.5px;line-height:1.55;color:var(--ink-200);}
+/* Chips de público-alvo */
+.aud-tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:1000px;margin:0 auto;}
+.aud-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 18px;border-radius:999px;font-size:13.5px;font-weight:500;color:var(--ink-200);
+  background:var(--surface-2);border:1px solid var(--hairline-strong);transition:border-color .18s ease,color .18s ease,background .18s ease;
+}
+.aud-tag:hover{color:var(--text);border-color:rgba(179,136,251,0.35);background:var(--surface-3);}
+.aud-tag i{color:var(--juris-300);}
+/* Passos: ancora botões/mocks ao rodapé para não deixar vão quando os cards esticam */
+.lp-grupos .revenue-step{display:flex;flex-direction:column;}
+.lp-grupos .revenue-step p{margin-bottom:0;}
+.lp-grupos .revenue-step .resource-btn,
+.lp-grupos .revenue-step .revenue-mock,
+.lp-grupos .revenue-step .revenue-inbox{margin-top:auto;}
+/* Passos em 2×2 */
+.lp-grupos .revenue-journey{grid-template-columns:repeat(2,1fr);}
+.lp-grupos .revenue-journey .revenue-step,
+.lp-grupos .revenue-journey .revenue-step-wide{grid-column:auto;}
+@media(max-width:720px){.lp-grupos .revenue-journey{grid-template-columns:1fr;}}
+/* Segurança em 2×2 */
+.lp-grupos .security-grid{grid-template-columns:repeat(2,1fr);}
+@media(max-width:720px){.lp-grupos .security-grid{grid-template-columns:1fr;}}
+/* Benefícios em 3 colunas (3×2) */
+.lp-grupos #beneficios .who-grid{grid-template-columns:repeat(3,1fr);}
+@media(max-width:900px){.lp-grupos #beneficios .who-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.lp-grupos #beneficios .who-grid{grid-template-columns:1fr;}}
+
+
+
+</style>
+<script src="https://unpkg.com/lucide@0.511.0/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="lp-grupos">
+
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <rect width="200" height="200" fill="#07050F"/>
+    <rect x="60" y="60" width="80" height="80" rx="20" fill="#7C3AED"/>
+    <text x="100" y="118" font-family="Geist, sans-serif" font-size="40" font-weight="700" fill="#fff" text-anchor="middle">j8</text>
+  </svg>
+</template>
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="/" class="nav-brand" aria-label="Juris8 — Home">
+      <img src="/DET/logo.png" alt="Juris8" class="nav-logo" />
+    </a>
+    <div class="nav-links">
+      <a href="#riscos" class="nav-link">O risco</a>
+      <a href="#como-funciona" class="nav-link">Como funciona</a>
+      <a href="#seguranca" class="nav-link">Segurança</a>
+      <a href="#simulador" class="nav-link">Simulador</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+    </div>
+    <div class="nav-right">
+      <a href="#" class="nav-ghost js-specialist-cta">Entrar</a>
+      <a href="#" class="nav-cta js-specialist-cta">
+        <i data-lucide="arrow-right" width="14" height="14" stroke-width="1.7"></i>
+        Falar com um especialista
+      </a>
+      <button class="nav-burger" id="nav-burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="#riscos" class="nav-mobile-link">O risco</a>
+    <a href="#como-funciona" class="nav-mobile-link">Como funciona</a>
+    <a href="#seguranca" class="nav-mobile-link">Segurança</a>
+    <a href="#faq" class="nav-mobile-link">FAQ</a>
+    <div class="nav-mobile-actions">
+      <a href="#" class="btn secondary js-specialist-cta">Entrar</a>
+      <a href="#" class="btn primary js-specialist-cta">Falar com um especialista</a>
+    </div>
+  </div>
+  <div class="nav-progress"><span id="nav-progress-bar"></span></div>
+</nav>
+
+<section class="hero-section" id="top" data-screen-label="Hero">
+  <div class="shell">
+    <div class="hero-grid">
+      <div class="hero-content reveal">
+        <div class="hero-badges">
+          <span class="hb-badge"><span class="hb-live"></span>DET Monitor · grupos e holdings com múltiplos CNPJs</span>
+        </div>
+
+        <h1 class="hero-h1">
+          Não está monitorando todos os seus CNPJs no DET?
+          <span class="accent">Você pode ter perdido prazos</span>
+        </h1>
+
+        <p class="hero-sub">
+          Hoje cada CNPJ do grupo monitora o <a href="https://www.gov.br/trabalho-e-emprego/pt-br/servicos/empregador/domicilio-eletronico-trabalhista-det/conheca-o-det/conheca-o-det/" class="hero-sub-link" target="_blank" rel="noopener noreferrer">Domicílio Eletrônico Trabalhista</a> por conta própria — ou não monitora nenhum. Centralize o DET de todas as empresas do grupo numa caixa só, com alerta por CNPJ e prioridade por prazo.
+        </p>
+
+        <p class="hero-microcopy">
+          O DET não avisa duas vezes. <b>O prazo corre mesmo que ninguém abra a comunicação.</b>
+        </p>
+
+        <div class="btn-group">
+          <a href="#cta" class="btn primary lg det-cta-main">
+            Quero centralizar o DET do meu grupo
+          </a>
+          <a href="#como-funciona" class="btn secondary lg">Ver como funciona</a>
+        </div>
+
+        <div class="hero-logos">
+          <span class="hero-logos-label">Demonstração gratuita · Sem compromisso · Suporte em português</span>
+          <div class="hero-logos-row">
+            <span class="hero-logo-pill"><i data-lucide="layout-grid" width="12" height="12" stroke-width="1.8"></i>Caixa única do grupo</span>
+            <span class="hero-logo-pill"><i data-lucide="bell-ring" width="12" height="12" stroke-width="1.8"></i>Alerta por CNPJ</span>
+            <span class="hero-logo-pill"><i data-lucide="network" width="12" height="12" stroke-width="1.8"></i>Matriz + filiais</span>
+            <span class="hero-logo-pill"><i data-lucide="lock" width="12" height="12" stroke-width="1.8"></i>LGPD</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal d2" id="hero-visual">
+        <div class="cnpj-stage">
+          <div class="cnpj-stage-label"><span class="cs-dot"></span>Cada CNPJ tem o seu DET</div>
+          <div class="cnpj-nodes">
+            <div class="cnpj-node matriz">
+              <span class="cn-tag">Matriz · SP</span>
+              <span class="cn-id">12.345.678/0001-90</span>
+              <span class="cn-state ok"><i data-lucide="check" width="11" height="11" stroke-width="2.2"></i>em dia</span>
+            </div>
+            <div class="cnpj-node">
+              <span class="cn-tag">Filial · MG</span>
+              <span class="cn-id">22.111.444/0001-05</span>
+              <span class="cn-state urgent"><i data-lucide="triangle-alert" width="11" height="11" stroke-width="1.9"></i>prazo correndo</span>
+            </div>
+            <div class="cnpj-node">
+              <span class="cn-tag">Filial · RJ</span>
+              <span class="cn-id">98.765.432/0001-11</span>
+              <span class="cn-state alert"><i data-lucide="bell" width="11" height="11" stroke-width="1.9"></i>1 nova</span>
+            </div>
+            <div class="cnpj-node more">+ 11 CNPJs do grupo</div>
+          </div>
+          <div class="cnpj-funnel" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="cnpj-unified">
+            <div class="cu-head">
+              <span class="cu-icon"><i data-lucide="layout-grid" width="18" height="18" stroke-width="1.8"></i></span>
+              <div class="cu-title">
+                <strong>Caixa única do grupo</strong>
+                <small>14 CNPJs · matriz + filiais</small>
+              </div>
+              <span class="cu-live"><span class="cu-live-dot"></span>ao vivo</span>
+            </div>
+            <div class="cu-row urgent">
+              <span class="cu-row-dot"></span>
+              <span class="cu-row-main"><strong>Filial · MG</strong><small>Intimação trabalhista — prazo: 10 dias úteis</small></span>
+              <span class="cu-row-flag">Urgente</span>
+            </div>
+            <div class="cu-row warn">
+              <span class="cu-row-dot"></span>
+              <span class="cu-row-main"><strong>Filial · RJ</strong><small>Notificação de fiscalização</small></span>
+              <span class="cu-row-flag">Atenção</span>
+            </div>
+            <div class="cu-foot">O alerta dispara antes do prazo legal correr — em qualquer CNPJ do grupo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="trust-track">
+    <span class="trust-pill hi"><i data-lucide="layout-grid"></i>Caixa única multi-CNPJ</span>
+    <span class="trust-pill"><i data-lucide="scan-search"></i>Monitoramento diário do DET</span>
+    <span class="trust-pill green"><i data-lucide="check"></i>Alerta antes do prazo</span>
+    <span class="trust-pill"><i data-lucide="network"></i>Matriz + filiais</span>
+    <span class="trust-pill"><i data-lucide="history"></i>Histórico por CNPJ</span>
+    <span class="trust-pill"><i data-lucide="lock"></i>LGPD</span>
+    <span class="trust-pill hi"><i data-lucide="layout-grid"></i>Caixa única multi-CNPJ</span>
+    <span class="trust-pill"><i data-lucide="scan-search"></i>Monitoramento diário do DET</span>
+    <span class="trust-pill green"><i data-lucide="check"></i>Alerta antes do prazo</span>
+    <span class="trust-pill"><i data-lucide="network"></i>Matriz + filiais</span>
+    <span class="trust-pill"><i data-lucide="history"></i>Histórico por CNPJ</span>
+    <span class="trust-pill"><i data-lucide="lock"></i>LGPD</span>
+  </div>
+</div>
+
+<section id="reposicionamento" data-screen-label="Reposicionamento">
+  <div class="shell">
+    <div class="shift-card reveal">
+      <div class="shift-side without">
+        <span>Monitorar CNPJ por CNPJ</span>
+        <p>Cada empresa do grupo confere — ou esquece de conferir — o próprio DET. Quanto mais filiais, mais pontos cegos.</p>
+      </div>
+      <div class="shift-arrow">
+        <i data-lucide="arrow-right" width="22" height="22" stroke-width="1.6"></i>
+        <small>centralize</small>
+      </div>
+      <div class="shift-side with">
+        <span>Monitorar o grupo inteiro</span>
+        <p>Todos os CNPJs numa caixa só, com alerta por empresa e prioridade por prazo. Nada depende da memória de uma filial.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="riscos" data-screen-label="O risco">
+  <div class="shell">
+    <div class="sec-header reveal">
+      <h2 class="sec-h2">O DET não avisa duas vezes — <span class="grad">e não sabe quantos CNPJs o grupo tem.</span></h2>
+      <p class="sec-lede">O Domicílio Eletrônico Trabalhista substituiu boa parte das citações físicas. O prazo corre a partir da ciência na caixa postal eletrônica — não do dia em que alguém decide checar o portal. E cada inscrição do grupo tem a sua própria caixa.</p>
+    </div>
+
+    <div class="client-gains">
+      <article class="client-gain reveal d1">
+        <span class="client-gain-number">01</span>
+        <div><h3>Uma caixa postal por CNPJ</h3><p>Cada empresa do grupo é uma caixa postal própria no DET. Monitorar a matriz não monitora as filiais.</p></div>
+      </article>
+      <article class="client-gain reveal d2">
+        <span class="client-gain-number">02</span>
+        <div><h3>O prazo corre sozinho</h3><p>A contagem começa independentemente de alguém ter aberto ou lido a comunicação. O relógio corre em silêncio.</p></div>
+      </article>
+      <article class="client-gain reveal d3">
+        <span class="client-gain-number">03</span>
+        <div><h3>Revelia não perdoa atraso</h3><p>Sem resposta no prazo, o processo segue à revelia: presunção de veracidade dos fatos e decisão sem a versão da empresa nos autos.</p></div>
+      </article>
+      <article class="client-gain reveal d1">
+        <span class="client-gain-number">04</span>
+        <div><h3>Risco multiplicado por CNPJ</h3><p>Quanto mais inscrições o grupo tem, mais portas podem ficar destrancadas ao mesmo tempo — e o risco não fica contido em uma unidade.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="antes-depois" data-screen-label="Antes e depois">
+  <div class="shell">
+    <div class="sec-header reveal">
+      <h2 class="sec-h2">Monitorar CNPJ por CNPJ, ou monitorar <span class="grad">o grupo inteiro de uma vez.</span></h2>
+    </div>
+
+    <div class="ba-grid">
+      <div class="ba-col reveal d1">
+        <span class="ba-tag without"><span class="t-dot"></span>Antes — CNPJ por CNPJ</span>
+        <h3 class="ba-h">O jurídico enxerga tarde</h3>
+        <div class="ba-list">
+          <div class="ba-item"><span class="ba-mark x"><i data-lucide="x" width="10" height="10"></i></span>Cada filial confere, ou esquece de conferir, seu próprio DET.</div>
+          <div class="ba-item"><span class="ba-mark x"><i data-lucide="x" width="10" height="10"></i></span>Certificado e acesso diferentes para cada inscrição.</div>
+          <div class="ba-item"><span class="ba-mark x"><i data-lucide="x" width="10" height="10"></i></span>O jurídico central não tem visão consolidada do grupo.</div>
+          <div class="ba-item"><span class="ba-mark x"><i data-lucide="x" width="10" height="10"></i></span>A intimação é descoberta tarde, geralmente por print no WhatsApp.</div>
+          <div class="ba-item"><span class="ba-mark x"><i data-lucide="x" width="10" height="10"></i></span>Revelia e multa entram como surpresa no fechamento.</div>
+        </div>
+      </div>
+
+      <div class="ba-col with reveal d2">
+        <span class="ba-tag withj"><span class="t-dot"></span>Depois — caixa única do grupo</span>
+        <h3 class="ba-h">O grupo chega antes do prazo</h3>
+        <div class="ba-list">
+          <div class="ba-item"><span class="ba-mark c"><i data-lucide="check" width="10" height="10"></i></span>Todos os CNPJs monitorados a partir de um único painel.</div>
+          <div class="ba-item"><span class="ba-mark c"><i data-lucide="check" width="10" height="10"></i></span>O alerta chega no dia, com prazo e urgência já classificados.</div>
+          <div class="ba-item"><span class="ba-mark c"><i data-lucide="check" width="10" height="10"></i></span>Prioridade imediata para o CNPJ de prazo mais curto.</div>
+          <div class="ba-item"><span class="ba-mark c"><i data-lucide="check" width="10" height="10"></i></span>Histórico organizado por empresa, disponível para compliance.</div>
+          <div class="ba-item"><span class="ba-mark c"><i data-lucide="check" width="10" height="10"></i></span>Nenhuma filial fica invisível para quem responde pelo grupo.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="como-funciona" data-screen-label="Como funciona">
+  <div class="shell">
+    <div class="sec-header reveal">
+      <h2 class="sec-h2">Setup simples por procuração <span class="grad">ou certificado do grupo.</span></h2>
+      <p class="sec-lede">Outorgue procuração eletrônica do DET para a Juris8 (setup mais rápido, sem subir certificados) ou concentre as empresas em um certificado do próprio grupo. Acompanhe tudo em uma caixa única.</p>
+    </div>
+
+    <div class="revenue-journey">
+      <article class="revenue-step reveal d1">
+        <span class="revenue-step-number">01</span>
+        <h3>Emita a procuração por CNPJ</h3>
+        <p>O grupo outorga a procuração eletrônica do DET para as empresas que deseja monitorar — diretamente para a Juris8 (setup mais rápido) ou para um CNPJ concentrador do grupo.</p>
+        <button class="resource-btn js-specialist-cta" type="button" data-resource="procuracao"><i data-lucide="file-badge-2" width="15" height="15"></i>Entender o passo a passo</button>
+      </article>
+
+      <article class="revenue-step reveal d2">
+        <span class="revenue-step-number">02</span>
+        <h3>Procuração Juris8 ou Certificado Único</h3>
+        <p>Com procuração para a Juris8, o monitoramento utiliza a nossa infraestrutura e certificado. Se preferir, também é possível subir um único certificado do seu grupo.</p>
+        <button class="resource-btn js-specialist-cta" type="button" data-resource="certificado"><i data-lucide="key-round" width="15" height="15"></i>Conhecer as opções</button>
+      </article>
+
+      <article class="revenue-step reveal d3">
+        <span class="revenue-step-number">03</span>
+        <h3>Selecione os CNPJs</h3>
+        <p>Todo CNPJ com procuração ativa aparece disponível na tela. Comece pelos mais críticos e adicione o resto no seu tempo.</p>
+        <div class="revenue-mock" aria-label="Exemplo de seleção de CNPJs do grupo">
+          <div><span>Matriz · SP</span><strong>ativo</strong></div>
+          <div><span>Filial · RJ</span><strong>ativo</strong></div>
+          <div class="pending"><span>Filial · MG</span><strong>pendente</strong></div>
+        </div>
+      </article>
+
+      <article class="revenue-step revenue-step-wide reveal d1">
+        <span class="revenue-step-number">04</span>
+        <h3>Acompanhe tudo em uma caixa única</h3>
+        <p>Toda nova comunicação, de qualquer CNPJ do grupo, chega classificada por empresa, prazo e urgência — num painel só.</p>
+        <div class="revenue-inbox" aria-label="Exemplo de caixa de entrada unificada do grupo">
+          <div class="unread"><span class="inbox-status"></span><span><strong>Filial · MG</strong><small>Nova intimação — prazo de 10 dias úteis</small></span><time>2h</time></div>
+          <div><span class="inbox-status"></span><span><strong>Matriz · SP</strong><small>Sem novas comunicações</small></span><time>1d</time></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="det-section-close reveal d3" style="margin-top:8px">
+      Procuração direta para a Juris8 ou certificado do grupo. Todos os CNPJs numa caixa só — sem depender de alguém lembrar de abrir cada portal.
+    </div>
+  </div>
+</section>
+
+<section id="seguranca" class="security-section" data-screen-label="Segurança do certificado">
+  <div class="shell">
+    <div class="sec-header reveal">
+      <h2 class="sec-h2">Setup flexível e seguro. <span class="grad">Dados isolados por empresa.</span></h2>
+      <p class="sec-lede">Entendemos a sensibilidade de credenciais e certificados. Você pode optar pelo setup rápido via procuração para a Juris8 ou subir seu certificado próprio com total segurança.</p>
+    </div>
+
+    <div class="security-grid">
+      <article class="security-card reveal d1">
+        <span class="security-icon"><i data-lucide="file-check-2" width="22" height="22"></i></span>
+        <h3>Procuração direta para a Juris8</h3>
+        <p>A forma mais rápida de iniciar. Ao emitir procuração para a Juris8, o monitoramento é feito com a nossa infraestrutura — sem você precisar enviar arquivos de certificado.</p>
+      </article>
+      <article class="security-card reveal d2">
+        <span class="security-icon"><i data-lucide="lock-keyhole" width="22" height="22"></i></span>
+        <h3>Armazenamento criptografado</h3>
+        <p>Caso prefira utilizar o certificado do próprio grupo, ele é armazenado com criptografia de ponta a ponta, isolado por conta e revogável a qualquer momento.</p>
+      </article>
+      <article class="security-card reveal d3">
+        <span class="security-icon"><i data-lucide="user-round-check" width="22" height="22"></i></span>
+        <h3>Acesso restrito e auditável</h3>
+        <p>O uso fica limitado às consultas automatizadas ao DET. Cada acesso, por CNPJ, fica registrado para auditoria do grupo.</p>
+      </article>
+      <article class="security-card reveal d1">
+        <span class="security-icon"><i data-lucide="split" width="22" height="22"></i></span>
+        <h3>Dados isolados por CNPJ</h3>
+        <p>Alertas, relatórios e histórico de cada empresa permanecem totalmente separados — nenhuma filial enxerga o DET de outra sem permissão.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="beneficios" data-screen-label="Benefícios">
+  <div class="shell">
+    <div class="sec-header reveal">
+      <h2 class="sec-h2">O que muda quando o grupo para de olhar <span class="grad">CNPJ por CNPJ.</span></h2>
+    </div>
+
+    <div class="who-grid four reveal stagger">
+      <div class="who-card">
+        <span class="who-ic"><i data-lucide="eye" width="20" height="20" stroke-width="1.5"></i></span>
+        <h3 class="who-t">Visão de matriz</h3>
+        <p class="who-d">O jurídico central enxerga o DET de todas as empresas, sem depender de cada unidade lembrar de avisar.</p>
+      </div>
+      <div class="who-card">
+        <span class="who-ic"><i data-lucide="list-ordered" width="20" height="20" stroke-width="1.5"></i></span>
+        <h3 class="who-t">Prioridade entre unidades</h3>
+        <p class="who-d">Veja de imediato qual CNPJ tem o prazo mais curto e direcione atenção para onde o risco é maior primeiro.</p>
+      </div>
+      <div class="who-card">
+        <span class="who-ic"><i data-lucide="trending-up" width="20" height="20" stroke-width="1.5"></i></span>
+        <h3 class="who-t">Escala com o grupo</h3>
+        <p class="who-d">Nova filial, aquisição ou fusão: adicionar um CNPJ é rápido, sem repetir toda a configuração.</p>
+      </div>
+      <div class="who-card">
+        <span class="who-ic"><i data-lucide="git-merge" width="20" height="20" stroke-width="1.5"></i></span>
+        <h3 class="who-t">Processo padronizado</h3>
+        <p class="who-d">Todas as unidades seguem o mesmo fluxo de triagem e resposta, em vez do costume particular de cada filial.</p>
+      </div>
+      <div class="who-card">
+        <span class="who-ic"><i data-lucide="history" width="20" height="20" stroke-width="1.5"></i></span>
+        <h3 class="who-t">Auditoria centralizada</h3>
+        <p class="who-d">Histórico, status e responsável de cada comunicação ficam registrados por CNPJ e disponíveis para compliance.</p>
+      </div>
+      <div class="who-card">
+        <span class="who-ic"><i data-lucide="clock-3" width="20" height="20" stroke-width="1.5"></i></span>
+        <h3 class="who-t">Menos conferência manual</h3>
+        <p class="who-d">A equipe para de checar portal por portal e passa a agir apenas quando existe um alerta real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="para-quem" data-screen-label="Para quem">
+  <div class="shell">
+    <div class="sec-header reveal">
+      <h2 class="sec-h2">Feito para grupos que <span class="grad">levam resultados a sério.</span></h2>
+    </div>
+
+    <div class="aud-tags reveal">
+      <span class="aud-tag"><i data-lucide="network" width="15" height="15" stroke-width="1.7"></i>Holdings com múltiplas filiais</span>
+      <span class="aud-tag"><i data-lucide="trending-up" width="15" height="15" stroke-width="1.7"></i>Grupos econômicos em expansão</span>
+      <span class="aud-tag"><i data-lucide="map-pin" width="15" height="15" stroke-width="1.7"></i>Redes com unidades em vários estados</span>
+      <span class="aud-tag"><i data-lucide="scale" width="15" height="15" stroke-width="1.7"></i>Departamentos jurídicos internos</span>
+      <span class="aud-tag"><i data-lucide="building-2" width="15" height="15" stroke-width="1.7"></i>CNPJ por unidade operacional</span>
+      <span class="aud-tag"><i data-lucide="git-merge" width="15" height="15" stroke-width="1.7"></i>Grupos pós fusão ou aquisição</span>
+    </div>
+  </div>
+</section>
+
+<section id="faq" data-screen-label="FAQ">
+  <div class="shell">
+    <div class="sec-header reveal">
+      <h2 class="sec-h2">Perguntas frequentes <span class="grad">antes de configurar o grupo inteiro.</span></h2>
+    </div>
+
+    <div class="faq-wrap" id="faq-wrap">
+      <div class="faq-item reveal d1">
+        <div class="faq-q"><span class="faq-q-num">01</span><span class="faq-q-txt">Preciso de procuração para cada CNPJ do grupo?</span><i data-lucide="chevron-down" class="faq-chevron" width="16" height="16" stroke-width="1.8"></i></div>
+        <div class="faq-a"><div class="faq-a-inner">Sim. A procuração eletrônica do DET é emitida por CNPJ — é o mecanismo que autoriza o acesso àquela caixa postal específica, mesmo dentro do mesmo grupo econômico.</div></div>
+      </div>
+      <div class="faq-item reveal d1">
+        <div class="faq-q"><span class="faq-q-num">02</span><span class="faq-q-txt">Um único certificado digital serve para todos os CNPJs?</span><i data-lucide="chevron-down" class="faq-chevron" width="16" height="16" stroke-width="1.8"></i></div>
+        <div class="faq-a"><div class="faq-a-inner">Sim, desde que a procuração de cada CNPJ esteja ativa. O certificado autentica o acesso; a procuração é o que autoriza a consulta de cada empresa.</div></div>
+      </div>
+      <div class="faq-item reveal d2">
+        <div class="faq-q"><span class="faq-q-num">03</span><span class="faq-q-txt">As filiais enxergam o DET umas das outras?</span><i data-lucide="chevron-down" class="faq-chevron" width="16" height="16" stroke-width="1.8"></i></div>
+        <div class="faq-a"><div class="faq-a-inner">Não. Mesmo com um certificado único autenticando o grupo, os dados, alertas e histórico de cada CNPJ ficam segregados no painel.</div></div>
+      </div>
+      <div class="faq-item reveal d2">
+        <div class="faq-q"><span class="faq-q-num">04</span><span class="faq-q-txt">Como adiciono uma nova empresa (aquisição, nova filial)?</span><i data-lucide="chevron-down" class="faq-chevron" width="16" height="16" stroke-width="1.8"></i></div>
+        <div class="faq-a"><div class="faq-a-inner">Basta emitir a procuração eletrônica do novo CNPJ e selecioná-lo no painel. O certificado já cadastrado continua servindo para autenticar o acesso.</div></div>
+      </div>
+      <div class="faq-item reveal d3">
+        <div class="faq-q"><span class="faq-q-num">05</span><span class="faq-q-txt">Quanto tempo leva para configurar um grupo com muitos CNPJs?</span><i data-lucide="chevron-down" class="faq-chevron" width="16" height="16" stroke-width="1.8"></i></div>
+        <div class="faq-a"><div class="faq-a-inner">A configuração da ferramenta leva minutos. O tempo total depende do ritmo de emissão das procurações de cada empresa, que pode ser feito de forma gradual.</div></div>
+      </div>
+      <div class="faq-item reveal d3">
+        <div class="faq-q"><span class="faq-q-num">06</span><span class="faq-q-txt">O certificado fica salvo para sempre?</span><i data-lucide="chevron-down" class="faq-chevron" width="16" height="16" stroke-width="1.8"></i></div>
+        <div class="faq-a"><div class="faq-a-inner">Não. O certificado pode ser revogado pelo grupo a qualquer momento, diretamente na ferramenta.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="CTA final">
+  <div class="shell">
+    <div id="cta" class="cta-final cta-final-split reveal d1">
+      <div class="cta-final-info">
+        <div class="cta-icon">
+          <i data-lucide="arrow-right" width="26" height="26" stroke-width="1.4"></i>
+        </div>
+        <p class="cta-final-h">O próximo prazo perdido não precisa acontecer em <span class="grad">nenhuma das suas empresas.</span></p>
+        <p class="cta-final-p">Grupos com múltiplos CNPJs não precisam de mais um portal para checar. Precisam de um único lugar que já avisa antes do prazo apertar.</p>
+        <p class="cta-final-p strong">O grupo não precisa esperar o problema chegar. Ele pode chegar antes do prazo.</p>
+        <div class="cta-seals">
+          <span class="cta-seal"><i data-lucide="check" width="11" height="11" stroke-width="2.2"></i>Demonstração gratuita</span>
+          <span class="cta-seal"><i data-lucide="lock" width="11" height="11" stroke-width="1.8"></i>Sem compromisso</span>
+          <span class="cta-seal"><i data-lucide="message-circle" width="11" height="11" stroke-width="1.8"></i>Suporte em português</span>
+        </div>
+      </div>
+
+      <div class="cta-final-formcard">
+        <div class="modal-header">
+          <div class="modal-eyebrow">CONTATO COMERCIAL — GRUPOS E HOLDINGS</div>
+          <h3>Solicitar demonstração para o grupo</h3>
+          <p class="modal-subtitle">Preencha os dados abaixo. Nossa equipe entra em contato para apresentar o DET Monitor para grupos e calcular o cenário do seu portfólio de CNPJs.</p>
+        </div>
+
+        <form id="cta-final-form" novalidate>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="ctaf-name">Nome completo</label>
+              <input id="ctaf-name" name="name" type="text" placeholder="Seu nome" required autocomplete="name" />
+            </div>
+            <div class="form-field">
+              <label for="ctaf-email">E-mail corporativo</label>
+              <input id="ctaf-email" name="email" type="email" placeholder="voce@empresa.com.br" required autocomplete="email" />
+            </div>
+
+            <div class="form-field">
+              <label for="ctaf-phone">Telefone / WhatsApp</label>
+              <input id="ctaf-phone" name="phone" type="tel" placeholder="(11) 99999-0000" required autocomplete="tel" />
+            </div>
+            <div class="form-field">
+              <label for="ctaf-office">Nome do grupo / holding</label>
+              <input id="ctaf-office" name="office" type="text" placeholder="Nome do grupo ou holding" required />
+            </div>
+
+            <div class="form-field full">
+              <label for="ctaf-cnpjs">Quantos CNPJs o grupo pretende monitorar?</label>
+              <select id="ctaf-cnpjs" name="cnpjs" required>
+                <option value="">Selecione...</option>
+                <option value="1-10">Até 10 CNPJs</option>
+                <option value="11-30">De 11 a 30 CNPJs</option>
+                <option value="31-60">De 31 a 60 CNPJs</option>
+                <option value="60+">Mais de 60 CNPJs</option>
+              </select>
+            </div>
+
+            <div class="form-field full">
+              <label for="ctaf-message">Mensagem (opcional)</label>
+              <textarea id="ctaf-message" name="message" rows="3" placeholder="Conte um pouco sobre o grupo, quantas filiais ou o que gostaria de saber..."></textarea>
+            </div>
+
+            <div class="form-field full">
+              <label class="consent-label">
+                <input type="checkbox" id="ctaf-consent" required />
+                <span>Concordo em receber contato comercial e que meus dados sejam tratados conforme a LGPD.</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn primary">
+              <span class="btn-label">Enviar solicitação</span>
+            </button>
+          </div>
+
+          <p class="form-note">Seus dados são tratados com confidencialidade e não serão compartilhados.</p>
+        </form>
+
+        <div id="cta-final-form-success" class="form-success" hidden>
+          <div class="success-icon">
+            <i data-lucide="check-circle" width="42" height="42" stroke-width="1.8"></i>
+          </div>
+          <h4>Obrigado!</h4>
+          <p>Sua solicitação foi enviada com sucesso. Um especialista entrará em contato em até 1 dia útil.</p>
+          <button type="button" class="btn secondary" id="cta-final-form-reset">Enviar outra solicitação</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER (home · compartilhado) ===== -->
+<footer>
+  <div class="shell">
+    <div class="footer-top">
+      <div class="footer-brand-col">
+        <a href="/" aria-label="Juris8 — Home"><img src="/DET/logo.png" alt="Juris 8" class="footer-logo" /></a>
+        <p class="footer-tag">A mais completa IA jurídica do Brasil. Pré-elaboração de peças, pesquisa, análise de documentos e transcrição — desenvolvidas por advogados, para advogados.</p>
+        <div class="footer-seals">
+          <span class="footer-seal"><i data-lucide="lock" width="11" height="11" stroke-width="1.8"></i>LGPD</span>
+          <span class="footer-seal"><i data-lucide="sparkles" width="11" height="11" stroke-width="1.8"></i>IA jurídica</span>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/juris8.ai?igsh=cDRkZnIxc3h1NXdi" target="_blank" rel="noopener" aria-label="Instagram">
+            <i data-lucide="instagram" width="15" height="15" stroke-width="1.5"></i>
+          </a>
+          <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Juris8." target="_blank" rel="noopener" aria-label="WhatsApp">
+            <i data-lucide="message-circle" width="15" height="15" stroke-width="1.5"></i>
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer-links" aria-label="Rodapé">
+        <div class="footer-group">
+          <div class="footer-col-title">Soluções</div>
+          <div class="footer-col">
+            <a href="/DET/">DET Monitor</a>
+            <a href="/crm/">CRM com IA</a>
+            <a href="/secretariajuridica/">Secretaria jurídica</a>
+            <a href="/newsletter/">Newsletter mensal</a>
+            <a href="/trabalhistaempresarial/">Trabalhista empresarial</a>
+          </div>
+        </div>
+        <div class="footer-group">
+          <div class="footer-col-title">Plataforma</div>
+          <div class="footer-col">
+            <a href="/#funcionalidades">Pré-elaboração de peças</a>
+            <a href="/#funcionalidades">Pesquisa de jurisprudência</a>
+            <a href="/#funcionalidades">Análise de documentos</a>
+            <a href="/#funcionalidades">Transcrição de audiências</a>
+          </div>
+        </div>
+        <div class="footer-group">
+          <div class="footer-col-title">Contato</div>
+          <div class="footer-col">
+            <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Juris8." target="_blank" rel="noopener">WhatsApp</a>
+            <a href="https://www.instagram.com/juris8.ai?igsh=cDRkZnIxc3h1NXdi" target="_blank" rel="noopener">Instagram</a>
+            <a href="/#faq">FAQ</a>
+            <a href="/#solucoes">Soluções</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Juris8 · Todos os direitos reservados.</span>
+      <span class="footer-made"><span class="fm-dot"></span>Desenvolvido por advogados, para advogados</span>
+      <a href="#top" class="footer-top-link">Voltar ao topo<i data-lucide="chevron-up" width="13" height="13" stroke-width="1.8"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- Modal: Falar com Especialista -->
+<div id="specialist-modal" class="modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button type="button" class="modal-close" aria-label="Fechar" data-close>
+      <i data-lucide="x" width="18" height="18" stroke-width="2.2"></i>
+    </button>
+
+    <div class="modal-header">
+      <div class="modal-eyebrow">CONTATO COMERCIAL — GRUPOS E HOLDINGS</div>
+      <h3 id="modal-title">Falar com um especialista</h3>
+      <p class="modal-subtitle">Preencha os dados abaixo. Nossa equipe entra em contato para apresentar o DET Monitor para grupos e calcular o cenário do seu portfólio de CNPJs.</p>
+    </div>
+
+    <form id="specialist-form" novalidate>
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="f-name">Nome completo</label>
+          <input id="f-name" name="name" type="text" placeholder="Seu nome" required autocomplete="name" />
+        </div>
+        <div class="form-field">
+          <label for="f-email">E-mail corporativo</label>
+          <input id="f-email" name="email" type="email" placeholder="voce@empresa.com.br" required autocomplete="email" />
+        </div>
+
+        <div class="form-field">
+          <label for="f-phone">Telefone / WhatsApp</label>
+          <input id="f-phone" name="phone" type="tel" placeholder="(11) 99999-0000" required autocomplete="tel" />
+        </div>
+        <div class="form-field">
+          <label for="f-office">Nome do grupo / holding</label>
+          <input id="f-office" name="office" type="text" placeholder="Nome do grupo ou holding" required />
+        </div>
+
+        <div class="form-field full">
+          <label for="f-cnpjs">Quantos CNPJs o grupo pretende monitorar?</label>
+          <select id="f-cnpjs" name="cnpjs" required>
+            <option value="">Selecione...</option>
+            <option value="1-10">Até 10 CNPJs</option>
+            <option value="11-30">De 11 a 30 CNPJs</option>
+            <option value="31-60">De 31 a 60 CNPJs</option>
+            <option value="60+">Mais de 60 CNPJs</option>
+          </select>
+        </div>
+
+        <div class="form-field full">
+          <label for="f-message">Mensagem (opcional)</label>
+          <textarea id="f-message" name="message" rows="3" placeholder="Conte um pouco sobre o grupo, quantas filiais ou o que gostaria de saber..."></textarea>
+        </div>
+
+        <div class="form-field full">
+          <label class="consent-label">
+            <input type="checkbox" id="f-consent" required />
+            <span>Concordo em receber contato comercial e que meus dados sejam tratados conforme a LGPD.</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn secondary" id="modal-cancel" data-close>Cancelar</button>
+        <button type="submit" class="btn primary">
+          <span class="btn-label">Enviar solicitação</span>
+        </button>
+      </div>
+
+      <p class="form-note">Seus dados são tratados com confidencialidade e não serão compartilhados.</p>
+    </form>
+
+    <div id="form-success" class="form-success" hidden>
+      <div class="success-icon">
+        <i data-lucide="check-circle" width="42" height="42" stroke-width="1.8"></i>
+      </div>
+      <h4>Obrigado!</h4>
+      <p>Sua solicitação foi enviada com sucesso. Um especialista entrará em contato em até 1 dia útil.</p>
+      <button type="button" class="btn primary" id="success-close" data-close>Fechar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+if (window.lucide) lucide.createIcons();
+
+const navBurger = document.getElementById('nav-burger');
+const navMobile = document.getElementById('nav-mobile');
+if (navBurger && navMobile) {
+  navBurger.addEventListener('click', () => {
+    const open = navMobile.classList.toggle('open');
+    navBurger.setAttribute('aria-expanded', String(open));
+  });
+  navMobile.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navMobile.classList.remove('open');
+      navBurger.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+/* Reveal estável: sem animar posição ao rolar */
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach((el) => el.classList.add('visible'));
+
+// barra de progresso de leitura + navbar com peso ao rolar
+const navbar = document.querySelector('.navbar');
+const progressBar = document.getElementById('nav-progress-bar');
+let ticking = false;
+window.addEventListener('scroll', () => {
+  if (ticking) return;
+  ticking = true;
+  requestAnimationFrame(() => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    if (progressBar && max > 0) progressBar.style.width = (window.scrollY / max * 100) + '%';
+    if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 12);
+    ticking = false;
+  });
+}, { passive: true });
+
+// scrollspy: destaca no menu a seção visível
+const spyLinks = Array.from(document.querySelectorAll('.nav-link[href^="#"]'));
+const spySections = spyLinks
+  .map((link) => document.querySelector(link.getAttribute('href')))
+  .filter(Boolean);
+const spyObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    spyLinks.forEach((link) => {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+    });
+  });
+}, { rootMargin: '-30% 0px -60% 0px' });
+spySections.forEach((sec) => spyObserver.observe(sec));
+
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach((item) => {
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  q.setAttribute('role', 'button');
+  q.setAttribute('tabindex', '0');
+  q.setAttribute('aria-expanded', 'false');
+  const toggleFaq = () => {
+    const isOpen = item.classList.toggle('open');
+    q.setAttribute('aria-expanded', String(isOpen));
+    a.style.maxHeight = isOpen ? a.scrollHeight + 'px' : '0px';
+  };
+  q.addEventListener('click', toggleFaq);
+  q.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      toggleFaq();
+    }
+  });
+});
+
+// spotlight: brilho que segue o mouse nos cards
+if (window.matchMedia('(hover: hover)').matches) {
+  document.querySelectorAll('.who-card, .ba-col, .shift-card, .security-card, .client-gain, .revenue-step').forEach((card) => {
+    const glow = document.createElement('span');
+    glow.className = 'spot-glow';
+    card.appendChild(glow);
+    card.addEventListener('mousemove', (e) => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+}
+
+// simulador de investimento do grupo
+const simCalc = document.getElementById('sim-calculator');
+if (simCalc) {
+  const cnpjInput = document.getElementById('sim-cnpjs');
+  const priceInput = document.getElementById('sim-price');
+  const money = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+
+  function updateSim() {
+    const cnpjs = Number(cnpjInput.value);
+    const price = Number(priceInput.value);
+    const monthly = cnpjs * price;
+    const yearly = monthly * 12;
+    document.getElementById('sim-cnpjs-value').textContent = cnpjs;
+    document.getElementById('sim-price-value').textContent = money.format(price);
+    document.getElementById('sim-count').textContent = cnpjs;
+    document.getElementById('sim-monthly').textContent = money.format(monthly);
+    document.getElementById('sim-yearly').textContent = money.format(yearly);
+  }
+  cnpjInput.addEventListener('input', updateSim);
+  priceInput.addEventListener('input', updateSim);
+  updateSim();
+}
+
+// ============================================
+// MODAL DE CONTATO COM ESPECIALISTA
+// ============================================
+(function initSpecialistForm() {
+  const modal = document.getElementById('specialist-modal');
+  if (!modal) return;
+
+  const form = document.getElementById('specialist-form');
+  const success = document.getElementById('form-success');
+
+  const SUPABASE_URL = 'https://hvbndvwwibhtuknbfmyh.supabase.co';
+  const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2Ym5kdnd3aWJodHVrbmJmbXloIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIyODUyNzAsImV4cCI6MjA5Nzg2MTI3MH0.7-9eHbms6AEoX_4HfbDwiY9rpXjHI7UMl0xcYRvBECA';
+
+  let supabaseClient = null;
+  if (window.supabase) {
+    supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+  }
+
+  function openModal() {
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    if (window.lucide) lucide.createIcons();
+    setTimeout(() => {
+      if (form) {
+        const first = form.querySelector('input');
+        if (first) first.focus();
+      }
+    }, 120);
+  }
+
+  function closeModal() {
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (form) form.style.display = '';
+    if (success) success.hidden = true;
+    if (form) form.reset();
+  }
+
+  document.addEventListener('click', (e) => {
+    const target = e.target.closest('.js-specialist-cta');
+    if (!target) return;
+    const mobile = document.getElementById('nav-mobile');
+    if (mobile && mobile.classList.contains('open')) {
+      mobile.classList.remove('open');
+      const burger = document.getElementById('nav-burger');
+      if (burger) burger.setAttribute('aria-expanded', 'false');
+    }
+    e.preventDefault();
+    openModal();
+  });
+
+  modal.querySelectorAll('[data-close]').forEach((el) => {
+    el.addEventListener('click', closeModal);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
+      closeModal();
+    }
+  });
+
+  const dialog = modal.querySelector('.modal-dialog');
+  if (dialog) {
+    dialog.addEventListener('click', (e) => e.stopPropagation());
+  }
+
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const required = form.querySelectorAll('[required]');
+      let valid = true;
+      required.forEach((field) => {
+        if (field.type === 'checkbox') {
+          if (!field.checked) valid = false;
+        } else if (!field.value.trim()) {
+          valid = false;
+        }
+      });
+      if (!valid) {
+        form.reportValidity();
+        return;
+      }
+
+      const payload = {
+        name: document.getElementById('f-name').value.trim(),
+        office: document.getElementById('f-office').value.trim(),
+        email: document.getElementById('f-email').value.trim(),
+        phone: document.getElementById('f-phone').value.trim() || null,
+        cnpjs: document.getElementById('f-cnpjs').value,
+        message: document.getElementById('f-message').value.trim() || '',
+        consent: !!document.getElementById('f-consent').checked,
+        source: 'lp-det-grupos',
+      };
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Enviando...';
+      }
+
+      async function sendToSupabase() {
+        try {
+          if (!supabaseClient) {
+            throw new Error('Supabase não inicializado');
+          }
+          const { error } = await supabaseClient.from('leads').insert([payload]);
+          if (error) throw error;
+
+          form.style.display = 'none';
+          if (success) success.hidden = false;
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+          }
+          if (window.lucide) lucide.createIcons();
+        } catch (err) {
+          console.error('Erro ao salvar no Supabase:', err);
+          alert('Ocorreu um erro ao enviar sua solicitação. Por favor, tente novamente em alguns minutos ou entre em contato diretamente.');
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+          }
+        }
+      }
+
+      sendToSupabase();
+    });
+
+    const phoneInput = document.getElementById('f-phone');
+    if (phoneInput) {
+      phoneInput.addEventListener('input', () => {
+        let v = phoneInput.value.replace(/\D/g, '');
+        if (v.length > 11) v = v.slice(0,11);
+        if (v.length > 6) {
+          phoneInput.value = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+        } else if (v.length > 2) {
+          phoneInput.value = `(${v.slice(0,2)}) ${v.slice(2)}`;
+        } else if (v.length > 0) {
+          phoneInput.value = `(${v}`;
+        }
+      });
+    }
+  }
+})();
+
+// ============================================
+// FORMULÁRIO FIXO — SEÇÃO CTA FINAL
+// ============================================
+(function initCtaFinalForm() {
+  const form = document.getElementById('cta-final-form');
+  if (!form) return;
+
+  const success = document.getElementById('cta-final-form-success');
+  const resetBtn = document.getElementById('cta-final-form-reset');
+
+  const SUPABASE_URL = 'https://hvbndvwwibhtuknbfmyh.supabase.co';
+  const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2Ym5kdnd3aWJodHVrbmJmbXloIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIyODUyNzAsImV4cCI6MjA5Nzg2MTI3MH0.7-9eHbms6AEoX_4HfbDwiY9rpXjHI7UMl0xcYRvBECA';
+
+  let supabaseClient = null;
+  if (window.supabase) {
+    supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const required = form.querySelectorAll('[required]');
+    let valid = true;
+    required.forEach((field) => {
+      if (field.type === 'checkbox') {
+        if (!field.checked) valid = false;
+      } else if (!field.value.trim()) {
+        valid = false;
+      }
+    });
+    if (!valid) {
+      form.reportValidity();
+      return;
+    }
+
+    const payload = {
+      name: document.getElementById('ctaf-name').value.trim(),
+      office: document.getElementById('ctaf-office').value.trim(),
+      email: document.getElementById('ctaf-email').value.trim(),
+      phone: document.getElementById('ctaf-phone').value.trim() || null,
+      cnpjs: document.getElementById('ctaf-cnpjs').value,
+      message: document.getElementById('ctaf-message').value.trim() || '',
+      consent: !!document.getElementById('ctaf-consent').checked,
+      source: 'lp-det-grupos-cta-final',
+    };
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn ? submitBtn.innerHTML : '';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Enviando...';
+    }
+
+    async function sendToSupabase() {
+      try {
+        if (!supabaseClient) {
+          throw new Error('Supabase não inicializado');
+        }
+        const { error } = await supabaseClient.from('leads').insert([payload]);
+        if (error) throw error;
+
+        form.hidden = true;
+        if (success) success.hidden = false;
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+        }
+        if (window.lucide) lucide.createIcons();
+      } catch (err) {
+        console.error('Erro ao salvar no Supabase:', err);
+        alert('Ocorreu um erro ao enviar sua solicitação. Por favor, tente novamente em alguns minutos ou entre em contato diretamente.');
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+        }
+      }
+    }
+
+    sendToSupabase();
+  });
+
+  const phoneInput = document.getElementById('ctaf-phone');
+  if (phoneInput) {
+    phoneInput.addEventListener('input', () => {
+      let v = phoneInput.value.replace(/\D/g, '');
+      if (v.length > 11) v = v.slice(0,11);
+      if (v.length > 6) {
+        phoneInput.value = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+      } else if (v.length > 2) {
+        phoneInput.value = `(${v.slice(0,2)}) ${v.slice(2)}`;
+      } else if (v.length > 0) {
+        phoneInput.value = `(${v}`;
+      }
+    });
+  }
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      form.reset();
+      form.hidden = false;
+      if (success) success.hidden = true;
+    });
+  }
+})();
+
+// ============================================
+// BALÃOZINHO WHATSAPP
+// ============================================
+(function initWaFab() {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initWaFab);
+    return;
+  }
+  const fab = document.querySelector('[data-wa]');
+  if (!fab) return;
+  const bubble = fab.querySelector('.wa-bubble');
+  const closeBtn = fab.querySelector('.wa-bubble-close');
+  const link = fab.querySelector('.wa-btn');
+  const KEY = 'juris8_wa_bubble_dismissed';
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  setTimeout(() => fab.classList.add('in'), 500);
+
+  let dismissed = false;
+  try { dismissed = localStorage.getItem(KEY) === '1'; } catch (e) {}
+
+  if (!dismissed) {
+    setTimeout(() => fab.classList.add('show-bubble'), reduce ? 900 : 3200);
+  }
+
+  if (window.matchMedia('(hover: hover)').matches) {
+    fab.addEventListener('mouseenter', () => fab.classList.add('show-bubble'));
+    fab.addEventListener('mouseleave', () => { if (dismissed) fab.classList.remove('show-bubble'); });
+  }
+
+  bubble.addEventListener('click', (e) => {
+    if (e.target.closest('.wa-bubble-close')) return;
+    window.open(link.href, '_blank', 'noopener');
+  });
+
+  closeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    fab.classList.remove('show-bubble');
+    dismissed = true;
+    try { localStorage.setItem(KEY, '1'); } catch (e) {}
+  });
+
+  if (window.lucide) lucide.createIcons();
+})();
+</script>
+
+<!-- Balãozinho WhatsApp — número: 5547988061278 -->
+<div class="wa-fab" data-wa>
+  <div class="wa-bubble" role="dialog" aria-label="Atendimento no WhatsApp">
+    <button class="wa-bubble-close" type="button" aria-label="Fechar"><i data-lucide="x"></i></button>
+    <p class="wa-bubble-title">Dúvidas sobre o DET do grupo?</p>
+    <p class="wa-bubble-text">Fale com um especialista agora — resposta em minutos.</p>
+    <span class="wa-bubble-cta">Iniciar conversa <i data-lucide="arrow-right"></i></span>
+  </div>
+  <a class="wa-btn" href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Quero%20centralizar%20o%20DET%20de%20todos%20os%20CNPJs%20do%20meu%20grupo." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <span class="wa-btn-ring" aria-hidden="true"></span>
+    <svg class="wa-btn-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.04 4C9.93 4 4.97 8.96 4.97 15.07c0 2.13.6 4.13 1.64 5.83L4.5 28l7.27-2.06a11.03 11.03 0 0 0 4.27.85h.01c6.11 0 11.07-4.96 11.07-11.07S22.15 4 16.04 4zm0 20.2h-.01a9.1 9.1 0 0 1-4.64-1.27l-.33-.2-3.86 1.09 1.1-3.76-.22-.35a9.11 9.11 0 1 1 8.96 4.49zm5.1-6.83c-.28-.14-1.65-.81-1.9-.9-.26-.1-.45-.14-.63.14-.19.28-.72.9-.88 1.08-.16.19-.32.21-.6.07-.28-.14-1.18-.43-2.25-1.39-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.49.14-.16.18-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.48l-.54-.01c-.19 0-.49.07-.74.35-.26.28-.97.95-.97 2.32s1 2.69 1.14 2.88c.14.19 1.96 2.99 4.75 4.19.66.29 1.18.46 1.58.59.66.21 1.27.18 1.74.11.53-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.26-.19-.54-.33z"/></svg>
+  </a>
+</div>
+
+</body>
+</html>

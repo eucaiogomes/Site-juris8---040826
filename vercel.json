@@ -1,0 +1,44 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "rewrites": [
+    {
+      "source": "/DET/det-monitor-grupos",
+      "destination": "/DET/det-monitor-grupos.html"
+    },
+    {
+      "source": "/DET/det-monitor-grupos/",
+      "destination": "/DET/det-monitor-grupos.html"
+    },
+    {
+      "source": "/DET/empresas",
+      "destination": "/DET/empresas.html"
+    },
+    {
+      "source": "/DET/empresas/",
+      "destination": "/DET/empresas.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/secretariajurídica",
+      "destination": "/secretariajuridica/",
+      "permanent": true
+    },
+    {
+      "source": "/secretariajurídica/",
+      "destination": "/secretariajuridica/",
+      "permanent": true
+    },
+    {
+      "source": "/secretariajur%C3%ADdica",
+      "destination": "/secretariajuridica/",
+      "permanent": true
+    },
+    {
+      "source": "/secretariajur%C3%ADdica/",
+      "destination": "/secretariajuridica/",
+      "permanent": true
+    }
+  ]
+}

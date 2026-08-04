@@ -1,0 +1,1161 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>Júlia — A secretária com IA que atende seus clientes 24 horas no WhatsApp</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="Júlia é a secretária jurídica com IA do Juris8: atende cada cliente na hora pelo WhatsApp e e-mail, agenda reuniões, mantém o cliente informado sobre o processo e mede a satisfação — no seu tom, 24 horas por dia." />
+<link rel="canonical" href="https://juris8.ai/secretariajuridica/" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:url" content="https://juris8.ai/secretariajuridica/" />
+<meta property="og:site_name" content="Juris8" />
+<meta property="og:title" content="Júlia — A secretária com IA que atende seus clientes 24 horas no WhatsApp" />
+<meta property="og:description" content="Júlia é a secretária jurídica com IA do Juris8: atende cada cliente na hora pelo WhatsApp e e-mail, agenda reuniões, mantém o cliente informado sobre o processo e mede a satisfação — no seu tom, 24 horas por dia." />
+<meta property="og:image" content="https://juris8.ai/secretariajuridica/images/hero.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Júlia — A secretária com IA que atende seus clientes 24 horas no WhatsApp" />
+<meta name="twitter:description" content="Júlia é a secretária jurídica com IA do Juris8: atende cada cliente na hora pelo WhatsApp e e-mail, agenda reuniões, mantém o cliente informado sobre o processo e mede a satisfação — no seu tom, 24 horas por dia." />
+<meta name="twitter:image" content="https://juris8.ai/secretariajuridica/images/hero.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/lucide@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="/" class="nav-brand" aria-label="Juris8 — Home">
+      <img src="/DET/logo.png" alt="Juris8" class="nav-logo" />
+    </a>
+    <div class="nav-links">
+      <a href="#trabalho" class="nav-link">Como ela trabalha</a>
+      <a href="#caixa" class="nav-link">Caixa unificada</a>
+      <a href="#tom" class="nav-link">No seu tom</a>
+      <a href="#testar" class="nav-link">Testar a Júlia</a>
+    </div>
+    <div class="nav-right">
+      <a href="#ativar" class="nav-cta nav-cta-desktop">Conhecer a Júlia (7 dias grátis)</a>
+      <button class="nav-burger" id="navBurger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="#trabalho">Como ela trabalha</a>
+    <a href="#caixa">Caixa unificada</a>
+    <a href="#tom">No seu tom</a>
+    <a href="#testar">Testar a Júlia</a>
+    <div class="nav-mobile-cta"><a href="#ativar" class="nav-cta">Conhecer a Júlia (7 dias grátis)</a></div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="julia-hero" id="top" data-screen-label="Hero">
+  <div class="shell">
+    <div class="jh-grid no-visual">
+      <div class="jh-text reveal">
+        <h1 class="jh-h1">
+          A <span class="accent">Júlia</span> atende cada<br class="jh-mobile-br"> cliente do seu escritório,<br class="jh-mobile-br"> 24 horas por dia.
+        </h1>
+        <p class="jh-sub">
+          Ela responde na hora pelo WhatsApp e e-mail, agenda reuniões, mantém o cliente informado sobre o processo e mede a satisfação — sempre no seu tom de voz. Você só entra quando importa.
+        </p>
+        <div class="btn-group">
+          <a href="#ativar" class="btn primary lg">Conhecer a Júlia (7 dias grátis)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST STRIP ===== -->
+<div class="trust-strip">
+  <div class="trust-track">
+    <!-- SET 1 -->
+    <span class="trust-pill hi"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 2H3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"/><polyline points="5,7 6.5,8.5 9,5.5"/></svg>WhatsApp API Oficial Meta</span>
+    <span class="trust-pill"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="7" cy="7" r="6"/><polyline points="7,4 7,7 9,9"/></svg>Atende 24 horas por dia</span>
+    <span class="trust-pill"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="10" height="9" rx="1"/><line x1="2" y1="6" x2="12" y2="6"/></svg>Agenda reuniões sozinha</span>
+    <span class="trust-pill"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="7" cy="4" r="2.5"/><path d="M2 13a5 5 0 0 1 10 0"/><line x1="2" y1="9" x2="12" y2="9"/></svg>Conforme OAB · Provimento 205/2021</span>
+    <span class="trust-pill"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="5" width="10" height="8" rx="1"/><path d="M5 5V3.5a2.5 2.5 0 0 1 5 0V5"/></svg>LGPD · dados criptografados</span>
+    <span class="trust-pill green"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 8l3 3 7-8"/></svg>E-mail + WhatsApp numa caixa só</span>
+    <span class="trust-pill hi"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 1l1.4 3.6L12 6 8.4 7.4 7 11 5.6 7.4 2 6l3.6-1.4z"/></svg>Escreve no seu tom de voz</span>
+    <span class="trust-pill"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 12s-5-3.2-5-6.5A2.5 2.5 0 0 1 7 4a2.5 2.5 0 0 1 5 1.5C12 8.8 7 12 7 12z"/></svg>Mede a satisfação do cliente</span>
+    <!-- SET 2 (duplicado para marquee contínuo) -->
+    <span class="trust-pill hi"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 2H3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"/><polyline points="5,7 6.5,8.5 9,5.5"/></svg>WhatsApp API Oficial Meta</span>
+    <span class="trust-pill"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="7" cy="7" r="6"/><polyline points="7,4 7,7 9,9"/></svg>Atende 24 horas por dia</span>
+    <span class="trust-pill"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="10" height="9" rx="1"/><line x1="2" y1="6" x2="12" y2="6"/></svg>Agenda reuniões sozinha</span>
+    <span class="trust-pill"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="7" cy="4" r="2.5"/><path d="M2 13a5 5 0 0 1 10 0"/><line x1="2" y1="9" x2="12" y2="9"/></svg>Conforme OAB · Provimento 205/2021</span>
+    <span class="trust-pill"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="5" width="10" height="8" rx="1"/><path d="M5 5V3.5a2.5 2.5 0 0 1 5 0V5"/></svg>LGPD · dados criptografados</span>
+    <span class="trust-pill green"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 8l3 3 7-8"/></svg>E-mail + WhatsApp numa caixa só</span>
+    <span class="trust-pill hi"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 1l1.4 3.6L12 6 8.4 7.4 7 11 5.6 7.4 2 6l3.6-1.4z"/></svg>Escreve no seu tom de voz</span>
+    <span class="trust-pill"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 12s-5-3.2-5-6.5A2.5 2.5 0 0 1 7 4a2.5 2.5 0 0 1 5 1.5C12 8.8 7 12 7 12z"/></svg>Mede a satisfação do cliente</span>
+  </div>
+</div>
+
+<!-- ===== COMO A JÚLIA TRABALHA ===== -->
+<section id="trabalho" data-screen-label="Como a Júlia trabalha">
+  <div class="shell">
+    <div class="sec-header reveal">
+      <h2 class="sec-h2">Tudo o que uma ótima secretária faria. <span class="grad">Sem nunca sair do plantão.</span></h2>
+      <p class="sec-lede">Da primeira mensagem ao acompanhamento do processo, a Júlia conduz o relacionamento com o cliente — e te chama só quando precisa de você.</p>
+    </div>
+
+    <div class="work-flow">
+
+      <!-- 1 · PRIMEIRO CONTATO -->
+      <div class="work-row reveal">
+        <div class="wr-text">
+          <div class="wr-step"><div class="wr-num">1</div><span class="wr-kicker">Primeiro contato</span></div>
+          <div class="wr-title">Conhece o cliente e já oferece horários</div>
+          <p class="wr-desc">Júlia reconhece o cliente cadastrado pelo número, entende o pedido, consulta a agenda do advogado e responde com opções de horário pelo Meet.</p>
+          <div class="wr-points">
+            <div class="wr-point"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Reconhece o cliente pelo número de WhatsApp</div>
+            <div class="wr-point"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Consulta a agenda do advogado em tempo real</div>
+            <div class="wr-point"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Oferece 3 opções de Meet para o cliente escolher</div>
+          </div>
+        </div>
+        <div class="wr-visual">
+          <div class="wa-phone">
+            <div class="wa-head">
+              <span class="wa-back">‹</span><span class="wa-avatar">HE</span>
+              <span class="wa-contact"><b>Henrique · cliente</b><span>online</span></span>
+              <span class="wa-icons"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.08 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L9.09 10.91a16 16 0 0 0 6 6l1.74-1.82a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68A2 2 0 0 1 22 16.92z"/></svg></span>
+            </div>
+            <div class="wa-body">
+              <div class="wa-meta">Hoje · 10:12</div>
+              <div class="wa-msg wa-in">Oi! Preciso marcar uma conversa com o advogado essa semana.<span class="wa-t">10:12</span></div>
+              <div class="wa-msg wa-out"><span class="wa-ai"><svg viewBox="0 0 14 14"><path d="M7 1l1.4 3.6L12 6 8.4 7.4 7 11 5.6 7.4 2 6l3.6-1.4z"/></svg>Júlia</span><br>Claro! Consultei a agenda — tenho estes horários pelo Meet:
+                <div class="wa-slots"><span class="wa-slot">Ter · 10h</span><span class="wa-slot">Qua · 14h</span><span class="wa-slot">Qui · 16h30</span></div>
+                <span class="wa-t">10:12</span></div>
+              <div class="wa-msg wa-in">Qua às 14h está ótimo!<span class="wa-t">10:13</span></div>
+              <div class="wa-msg wa-out"><span class="wa-ai"><svg viewBox="0 0 14 14"><path d="M7 1l1.4 3.6L12 6 8.4 7.4 7 11 5.6 7.4 2 6l3.6-1.4z"/></svg>Júlia</span><br>Reservado! 📅 Já te aviso com o link e um lembrete antes da reunião.<span class="wa-t">10:13</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 · CONFIRMAÇÃO DA REUNIÃO -->
+      <div class="work-row reverse reveal">
+        <div class="wr-text">
+          <div class="wr-step"><div class="wr-num">2</div><span class="wr-kicker">Confirmação</span></div>
+          <div class="wr-title">Confirma a reunião 24h antes</div>
+          <p class="wr-desc">24 horas antes do horário marcado, a Júlia envia o lembrete automático com o link da chamada — sem que ninguém do escritório precise revisar a agenda manualmente.</p>
+          <div class="wr-points">
+            <div class="wr-point"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Lembrete automático 24 horas antes</div>
+            <div class="wr-point"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Envia o link do Meet ou o endereço do escritório</div>
+            <div class="wr-point"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Reduz faltas e reagendamentos de última hora</div>
+          </div>
+        </div>
+        <div class="wr-visual">
+          <div class="wa-phone">
+            <div class="wa-head">
+              <span class="wa-back">‹</span><span class="wa-avatar">HE</span>
+              <span class="wa-contact"><b>Henrique · cliente</b><span>online</span></span>
+              <span class="wa-icons"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.08 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L9.09 10.91a16 16 0 0 0 6 6l1.74-1.82a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68A2 2 0 0 1 22 16.92z"/></svg></span>
+            </div>
+            <div class="wa-body">
+              <div class="wa-meta">Hoje · 09:00</div>
+              <div class="wa-msg wa-out"><span class="wa-ai"><svg viewBox="0 0 14 14"><path d="M7 1l1.4 3.6L12 6 8.4 7.4 7 11 5.6 7.4 2 6l3.6-1.4z"/></svg>Júlia</span><br>Henrique, lembrando da nossa reunião amanhã às 14h pelo Meet. Link: meet.google.com/abc-defg-hij<span class="wa-t">09:00</span></div>
+              <div class="wa-msg wa-in">Combinado, obrigado pelo lembrete!<span class="wa-t">09:02</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 · COBRANÇA DE HONORÁRIOS -->
+      <div class="work-row reveal">
+        <div class="wr-text">
+          <div class="wr-step"><div class="wr-num">3</div><span class="wr-kicker">Honorários</span></div>
+          <div class="wr-title">Cobra parcelas no tom da banca</div>
+          <p class="wr-desc">Júlia lembra o cliente sobre parcelas e vencimentos de honorários — sem soar como uma cobrança automática de boleto.</p>
+          <div class="wr-points">
+            <div class="wr-point"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Lembretes de vencimento automáticos</div>
+            <div class="wr-point"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Já envia a chave Pix junto do lembrete</div>
+            <div class="wr-point"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Reduz atraso de pagamento sem desgaste</div>
+          </div>
+        </div>
+        <div class="wr-visual">
+          <div class="wa-phone">
+            <div class="wa-head">
+              <span class="wa-back">‹</span><span class="wa-avatar">HE</span>
+              <span class="wa-contact"><b>Henrique · cliente</b><span>online</span></span>
+              <span class="wa-icons"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.08 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L9.09 10.91a16 16 0 0 0 6 6l1.74-1.82a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68A2 2 0 0 1 22 16.92z"/></svg></span>
+            </div>
+            <div class="wa-body">
+              <div class="wa-meta">Hoje · 08:30</div>
+              <div class="wa-msg wa-out"><span class="wa-ai"><svg viewBox="0 0 14 14"><path d="M7 1l1.4 3.6L12 6 8.4 7.4 7 11 5.6 7.4 2 6l3.6-1.4z"/></svg>Júlia</span><br>Henrique, lembrando do pagamento da parcela #2, que vence sexta-feira. Chave Pix: contato@escritorio.com.br<span class="wa-t">08:30</span></div>
+              <div class="wa-msg wa-in">Beleza, já vou fazer o Pix. Obrigado!<span class="wa-t">08:35</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 · ATUALIZAÇÃO PROCESSUAL — REATIVA E PROATIVA -->
+      <div class="work-row reverse reveal">
+        <div class="wr-text">
+          <div class="wr-step"><div class="wr-num">4</div><span class="wr-kicker">Atualização processual</span></div>
+          <div class="wr-title">Atualiza o cliente — reativa ou proativa</div>
+          <p class="wr-desc">Quando o cliente pergunta, a Júlia responde com o andamento real. Quando o processo se move sozinho, ela identifica a movimentação e já deixa a mensagem pronta — o advogado só aprova antes de enviar.</p>
+          <div class="wr-points">
+            <div class="wr-point"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Reativa: responde quando o cliente pergunta</div>
+            <div class="wr-point"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Proativa: identifica a movimentação sozinha</div>
+            <div class="wr-point"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>O advogado sempre aprova antes do envio</div>
+          </div>
+        </div>
+        <div class="wr-visual wr-visual-dual">
+          <div class="wa-phone">
+            <div class="wa-head">
+              <span class="wa-back">‹</span><span class="wa-avatar">HE</span>
+              <span class="wa-contact"><b>Henrique · cliente</b><span>online</span></span>
+              <span class="wa-icons"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.08 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L9.09 10.91a16 16 0 0 0 6 6l1.74-1.82a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68A2 2 0 0 1 22 16.92z"/></svg></span>
+            </div>
+            <div class="wa-body">
+              <div class="wa-meta">Reativa · 11:02</div>
+              <div class="wa-msg wa-in">Meu processo teve alguma novidade?<span class="wa-t">11:02</span></div>
+              <div class="wa-msg wa-out"><span class="wa-ai"><svg viewBox="0 0 14 14"><path d="M7 1l1.4 3.6L12 6 8.4 7.4 7 11 5.6 7.4 2 6l3.6-1.4z"/></svg>Júlia</span><br>Teve sim! Saiu uma decisão ontem, favorável ao seu pedido. Já te explico os detalhes por aqui.<span class="wa-t">11:03</span></div>
+            </div>
+          </div>
+          <div class="wa-phone">
+            <div class="wa-head">
+              <span class="wa-back">‹</span><span class="wa-avatar" style="background:linear-gradient(135deg,#5C2BBA,#9A63F0)">DR</span>
+              <span class="wa-contact"><b>Júlia → Dr. Pedro</b><span>aprovação pendente</span></span>
+              <span class="wa-icons"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.08 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L9.09 10.91a16 16 0 0 0 6 6l1.74-1.82a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68A2 2 0 0 1 22 16.92z"/></svg></span>
+            </div>
+            <div class="wa-body">
+              <div class="wa-meta">Proativa · 11:24</div>
+              <div class="wa-msg wa-in"><span class="wa-ai"><svg viewBox="0 0 14 14"><path d="M7 1l1.4 3.6L12 6 8.4 7.4 7 11 5.6 7.4 2 6l3.6-1.4z"/></svg>Júlia</span><br>Dr., houve movimentação no processo do Henrique. Preparei este aviso para ele:<span class="wa-t">11:24</span></div>
+              <div class="wa-msg wa-in" style="border:1px dashed rgba(124,58,237,0.4);background:rgba(124,58,237,0.08)">"Oi, Henrique! Passando para avisar que houve uma nova movimentação no seu processo. Qualquer dúvida, estou por aqui 🙂"<span class="wa-t">11:24</span></div>
+              <div class="wa-approve">
+                <span class="wa-btn edit"><svg viewBox="0 0 14 14"><path d="M9 2l3 3-7 7H2v-3z"/></svg>Editar</span>
+                <span class="wa-btn ok"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Aprovar e enviar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 · NPS / SATISFAÇÃO -->
+      <div class="work-row reveal">
+        <div class="wr-text">
+          <div class="wr-step"><div class="wr-num">5</div><span class="wr-kicker">Satisfação</span></div>
+          <div class="wr-title">Mede como o cliente se sentiu</div>
+          <p class="wr-desc">Após reuniões importantes — ou periodicamente, a cada 90 dias — a Júlia pergunta o quanto o cliente recomendaria o escritório e te entrega esse retorno organizado no painel.</p>
+          <div class="wr-points">
+            <div class="wr-point"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Pesquisa de satisfação automática (NPS)</div>
+            <div class="wr-point"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Identifica clientes satisfeitos e insatisfeitos</div>
+            <div class="wr-point"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Sinaliza para você os casos sensíveis</div>
+          </div>
+        </div>
+        <div class="wr-visual">
+          <div class="wa-phone">
+            <div class="wa-head">
+              <span class="wa-back">‹</span><span class="wa-avatar">HE</span>
+              <span class="wa-contact"><b>Henrique · cliente</b><span>online</span></span>
+              <span class="wa-icons"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.08 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L9.09 10.91a16 16 0 0 0 6 6l1.74-1.82a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68A2 2 0 0 1 22 16.92z"/></svg></span>
+            </div>
+            <div class="wa-body">
+              <div class="wa-meta">Hoje · 17:40</div>
+              <div class="wa-msg wa-out"><span class="wa-ai"><svg viewBox="0 0 14 14"><path d="M7 1l1.4 3.6L12 6 8.4 7.4 7 11 5.6 7.4 2 6l3.6-1.4z"/></svg>Júlia</span><br>Henrique, foi um prazer te atender hoje! 💜<span class="wa-t">17:40</span></div>
+              <div class="wa-nps">
+                <div class="nps-q">De 0 a 10, qual a chance de você indicar nosso escritório para um amigo?</div>
+                <div class="nps-scale"><span class="nps-n">7</span><span class="nps-n">8</span><span class="nps-n">9</span><span class="nps-n sel">10</span></div>
+              </div>
+              <div class="wa-msg wa-in">10! Atendimento impecável 👏<span class="wa-t">17:41</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CAIXA UNIFICADA ===== -->
+<section id="caixa" data-screen-label="Caixa unificada">
+  <div class="shell">
+    <div class="sec-header reveal">
+      <h2 class="sec-h2">E-mail e WhatsApp, <span class="grad">no mesmo lugar.</span></h2>
+      <p class="sec-lede">A Júlia reúne todas as conversas — não importa por onde o cliente chegou. Você acompanha o que ela respondeu e assume quando quiser.</p>
+    </div>
+
+    <div class="ui-inbox reveal d1" data-ui-inbox style="margin-top:46px;">
+      <div class="ui-inbox-bar">
+        <span class="mock-dots"><i></i><i></i><i></i></span>
+        <span class="ui-inbox-title">Caixa unificada · Júlia</span>
+        <span class="ui-inbox-live"><span class="lv-dot"></span><span data-ui-count>4 conversas ativas</span></span>
+      </div>
+
+      <div class="ui-inbox-tabs">
+        <div class="ui-tabset" role="tablist" aria-label="Filtrar conversas">
+          <button class="ui-tab active" type="button" data-tab="all" aria-selected="true">
+            <svg viewBox="0 0 18 18"><rect x="3" y="4" width="12" height="10" rx="2"/><path d="M6 7h6M6 10h4"/></svg>
+            Todas <span>4</span>
+          </button>
+          <button class="ui-tab" type="button" data-tab="wa" aria-selected="false">
+            <svg viewBox="0 0 18 18"><path d="M9 2.8a6.2 6.2 0 0 0-5.36 9.32L2.8 15.2l3.16-.82A6.2 6.2 0 1 0 9 2.8z"/></svg>
+            WhatsApp <span>2</span>
+          </button>
+          <button class="ui-tab" type="button" data-tab="mail" aria-selected="false">
+            <svg viewBox="0 0 18 18"><rect x="3" y="5" width="12" height="9" rx="2"/><path d="m3.4 6.1 5.6 4 5.6-4"/></svg>
+            E-mail <span>2</span>
+          </button>
+        </div>
+        <div class="ui-search" aria-hidden="true">
+          <svg viewBox="0 0 18 18"><circle cx="8" cy="8" r="4.5"/><path d="m11.4 11.4 3 3"/></svg>
+          <span>Buscar conversas, clientes, e-mails…</span>
+          <kbd>⌘K</kbd>
+        </div>
+      </div>
+
+      <div class="ui-inbox-grid">
+        <div class="ui-conversation-list" aria-label="Conversas">
+          <button class="ui-conv active" type="button" data-conv="carla" data-channel="wa">
+            <span class="ui-avatar rose">CM<span class="ui-channel wa"><svg viewBox="0 0 18 18"><path d="M9 2.8a6.2 6.2 0 0 0-5.36 9.32L2.8 15.2l3.16-.82A6.2 6.2 0 1 0 9 2.8z"/></svg></span></span>
+            <span class="ui-conv-copy"><span class="ui-conv-top"><b>Carla Menezes</b><em>23:18</em></span><span>Ufa, muito obrigada!</span></span>
+          </button>
+          <button class="ui-conv" type="button" data-conv="rafael" data-channel="mail">
+            <span class="ui-avatar sky">RL<span class="ui-channel mail"><svg viewBox="0 0 18 18"><rect x="3" y="5" width="12" height="9" rx="2"/><path d="m3.4 6.1 5.6 4 5.6-4"/></svg></span></span>
+            <span class="ui-conv-copy"><span class="ui-conv-top"><b>Rafael Lima</b><em>09:06</em></span><span>Show, obrigado pela atenção!</span></span>
+          </button>
+          <button class="ui-conv" type="button" data-conv="sofia" data-channel="wa">
+            <span class="ui-avatar mint">SA<span class="ui-channel wa"><svg viewBox="0 0 18 18"><path d="M9 2.8a6.2 6.2 0 0 0-5.36 9.32L2.8 15.2l3.16-.82A6.2 6.2 0 1 0 9 2.8z"/></svg></span></span>
+            <span class="ui-conv-copy"><span class="ui-conv-top"><b>Sofia Andrade</b><em>15:31</em></span><span>10! Atendimento impecável 👏</span></span>
+            <span class="ui-unread"></span>
+          </button>
+          <button class="ui-conv" type="button" data-conv="pedro" data-channel="mail">
+            <span class="ui-avatar amber">PT<span class="ui-channel mail"><svg viewBox="0 0 18 18"><rect x="3" y="5" width="12" height="9" rx="2"/><path d="m3.4 6.1 5.6 4 5.6-4"/></svg></span></span>
+            <span class="ui-conv-copy"><span class="ui-conv-top"><b>Pedro Tavares</b><em>ontem</em></span><span>Gostaria de marcar uma primeira conversa…</span></span>
+          </button>
+        </div>
+
+        <div class="ui-detail-pane">
+          <article class="ui-detail active" data-detail="carla" data-channel="wa">
+            <div class="ui-wa-head">
+              <span class="ui-avatar rose">CM</span>
+              <span class="ui-head-copy"><b>Carla Menezes <em>WhatsApp</em></b><span><i></i>online · +55 11 98421-3308</span></span>
+              <span class="ui-head-actions">
+                <button type="button" aria-label="Chamada de vídeo"><svg viewBox="0 0 18 18"><path d="M3 6a2 2 0 0 1 2-2h5a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="m12 8 3-2v6l-3-2z"/></svg></button>
+                <button type="button" aria-label="Ligar"><svg viewBox="0 0 18 18"><path d="M14.5 12.4v2a1.4 1.4 0 0 1-1.53 1.4A12.2 12.2 0 0 1 2.2 5.03 1.4 1.4 0 0 1 3.6 3.5h2a1.4 1.4 0 0 1 1.4 1.2c.09.55.24 1.08.46 1.58a1.4 1.4 0 0 1-.31 1.48l-.84.84a9.4 9.4 0 0 0 3.1 3.1l.83-.84a1.4 1.4 0 0 1 1.49-.31c.5.22 1.03.37 1.58.46a1.4 1.4 0 0 1 1.19 1.39z"/></svg></button>
+                <button type="button" aria-label="Mais opções"><svg viewBox="0 0 18 18"><circle cx="9" cy="4" r="1"/><circle cx="9" cy="9" r="1"/><circle cx="9" cy="14" r="1"/></svg></button>
+              </span>
+            </div>
+            <div class="ui-wa-thread">
+              <div class="ui-secure"><svg viewBox="0 0 18 18"><rect x="4.5" y="8" width="9" height="7" rx="1.5"/><path d="M6.5 8V6.4a2.5 2.5 0 0 1 5 0V8"/></svg>Mensagens criptografadas de ponta a ponta · Hoje</div>
+              <div class="ui-bubble client">Oi, ainda dá tempo de entregar um documento que esqueci? Fiquei preocupada 😟<span>23:18</span></div>
+              <div class="ui-bubble julia"><b><svg viewBox="0 0 18 18"><path d="M9 2.5 10.7 7l4.8 2-4.8 2L9 15.5 7.3 11 2.5 9l4.8-2z"/></svg>Júlia · resposta em 12s</b>Oi, Carla! Fica tranquila 🙂 Anotei aqui e já deixei sinalizado para a equipe logo cedo. Assim que abrirmos, alguém te confirma o melhor caminho.<span>23:18 <svg viewBox="0 0 18 18"><path d="m3 9 3 3 7-7"/><path d="m7 12 1.5 1.5L15 7"/></svg></span></div>
+              <div class="ui-bubble client">Ufa, muito obrigada!<span>23:19</span></div>
+              <div class="ui-typing"><span><i></i><i></i><i></i></span>Júlia está digitando…</div>
+            </div>
+            <div class="ui-composer"><button type="button" aria-label="Emoji"><svg viewBox="0 0 18 18"><circle cx="9" cy="9" r="6"/><path d="M6.8 10.2a2.8 2.8 0 0 0 4.4 0"/><circle cx="7" cy="7" r=".6"/><circle cx="11" cy="7" r=".6"/></svg></button><button type="button" aria-label="Anexar"><svg viewBox="0 0 18 18"><path d="m13.5 8-5.8 5.8a3 3 0 1 1-4.2-4.2l6.1-6.1a2.1 2.1 0 1 1 3 3l-6 6a1.1 1.1 0 1 1-1.6-1.6l5.4-5.4"/></svg></button><span>Digite uma mensagem</span><button class="mic" type="button" aria-label="Áudio"><svg viewBox="0 0 18 18"><rect x="6.5" y="2.5" width="5" height="8" rx="2.5"/><path d="M4 9a5 5 0 0 0 10 0M9 14v2"/></svg></button></div>
+          </article>
+
+          <article class="ui-detail" data-detail="sofia" data-channel="wa" hidden>
+            <div class="ui-wa-head">
+              <span class="ui-avatar mint">SA</span>
+              <span class="ui-head-copy"><b>Sofia Andrade <em>WhatsApp</em></b><span><i></i>online · +55 21 99812-4477</span></span>
+              <span class="ui-head-actions"><button type="button" aria-label="Chamada de vídeo"><svg viewBox="0 0 18 18"><path d="M3 6a2 2 0 0 1 2-2h5a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="m12 8 3-2v6l-3-2z"/></svg></button><button type="button" aria-label="Ligar"><svg viewBox="0 0 18 18"><path d="M14.5 12.4v2a1.4 1.4 0 0 1-1.53 1.4A12.2 12.2 0 0 1 2.2 5.03 1.4 1.4 0 0 1 3.6 3.5h2a1.4 1.4 0 0 1 1.4 1.2c.09.55.24 1.08.46 1.58a1.4 1.4 0 0 1-.31 1.48l-.84.84a9.4 9.4 0 0 0 3.1 3.1l.83-.84a1.4 1.4 0 0 1 1.49-.31c.5.22 1.03.37 1.58.46a1.4 1.4 0 0 1 1.19 1.39z"/></svg></button><button type="button" aria-label="Mais opções"><svg viewBox="0 0 18 18"><circle cx="9" cy="4" r="1"/><circle cx="9" cy="9" r="1"/><circle cx="9" cy="14" r="1"/></svg></button></span>
+            </div>
+            <div class="ui-wa-thread">
+              <div class="ui-secure"><svg viewBox="0 0 18 18"><rect x="4.5" y="8" width="9" height="7" rx="1.5"/><path d="M6.5 8V6.4a2.5 2.5 0 0 1 5 0V8"/></svg>Mensagens criptografadas de ponta a ponta · Hoje</div>
+              <div class="ui-bubble julia"><b><svg viewBox="0 0 18 18"><path d="M9 2.5 10.7 7l4.8 2-4.8 2L9 15.5 7.3 11 2.5 9l4.8-2z"/></svg>Júlia · resposta em 12s</b>Sofia, foi um prazer te atender hoje 💜 De 0 a 10, o quanto você recomendaria nosso escritório a um amigo?<span>15:30 <svg viewBox="0 0 18 18"><path d="m3 9 3 3 7-7"/><path d="m7 12 1.5 1.5L15 7"/></svg></span></div>
+              <div class="ui-bubble client">10! Atendimento impecável 👏<span>15:31</span></div>
+              <div class="ui-typing"><span><i></i><i></i><i></i></span>Júlia está digitando…</div>
+            </div>
+            <div class="ui-composer"><button type="button" aria-label="Emoji"><svg viewBox="0 0 18 18"><circle cx="9" cy="9" r="6"/><path d="M6.8 10.2a2.8 2.8 0 0 0 4.4 0"/><circle cx="7" cy="7" r=".6"/><circle cx="11" cy="7" r=".6"/></svg></button><button type="button" aria-label="Anexar"><svg viewBox="0 0 18 18"><path d="m13.5 8-5.8 5.8a3 3 0 1 1-4.2-4.2l6.1-6.1a2.1 2.1 0 1 1 3 3l-6 6a1.1 1.1 0 1 1-1.6-1.6l5.4-5.4"/></svg></button><span>Digite uma mensagem</span><button class="mic" type="button" aria-label="Áudio"><svg viewBox="0 0 18 18"><rect x="6.5" y="2.5" width="5" height="8" rx="2.5"/><path d="M4 9a5 5 0 0 0 10 0M9 14v2"/></svg></button></div>
+          </article>
+
+          <article class="ui-detail mail" data-detail="rafael" data-channel="mail" hidden>
+            <div class="ui-mail-toolbar">
+              <span class="ui-mail-actions">
+                <button type="button" aria-label="Responder"><svg viewBox="0 0 18 18"><path d="M7 6 3.5 9 7 12"/><path d="M4 9h6a4 4 0 0 1 4 4v1"/></svg></button>
+                <button type="button" aria-label="Encaminhar"><svg viewBox="0 0 18 18"><path d="m11 6 3.5 3L11 12"/><path d="M14 9H8a4 4 0 0 0-4 4v1"/></svg></button>
+                <button type="button" aria-label="Arquivar"><svg viewBox="0 0 18 18"><path d="M4 6h10l-.8 8H4.8z"/><path d="M3 4h12v2H3z"/><path d="M7 9h4"/></svg></button>
+                <button type="button" aria-label="Favoritar"><svg viewBox="0 0 18 18"><path d="m9 2.8 1.9 3.8 4.2.6-3.05 2.98.72 4.2L9 12.4l-3.77 1.98.72-4.2L2.9 7.2l4.2-.6z"/></svg></button>
+                <em>E-mail · thread 2/2</em>
+              </span>
+              <span>qui, 09:06</span>
+            </div>
+            <div class="ui-mail-subject"><span>Assunto</span><b>Re: Andamento do processo nº 1003948-22.2025</b><p><svg viewBox="0 0 18 18"><path d="m13.5 8-5.8 5.8a3 3 0 1 1-4.2-4.2l6.1-6.1a2.1 2.1 0 1 1 3 3l-6 6a1.1 1.1 0 1 1-1.6-1.6l5.4-5.4"/></svg>Caixa de entrada · marcado como cliente</p></div>
+            <div class="ui-mail-thread">
+              <div class="ui-mail-msg">
+                <span class="ui-avatar sky">RL</span>
+                <div><header><b>Rafael Lima</b><time>qui, 09:05</time></header><p class="ui-mail-meta">de rafael.lima@gmail.com · para contato@juris8advogados.com.br</p><div class="ui-mail-body"><p>Bom dia!</p><p>Tem alguma novidade no meu processo? Faz alguns dias que não recebo notícias e queria entender se tem algo que eu precise fazer.</p><pre>Atenciosamente,
+Rafael Lima</pre></div></div>
+              </div>
+              <div class="ui-mail-msg julia">
+                <span class="ui-avatar julia"><svg viewBox="0 0 18 18"><path d="M9 2.5 10.7 7l4.8 2-4.8 2L9 15.5 7.3 11 2.5 9l4.8-2z"/></svg></span>
+                <div><header><b>Júlia · Escritório <em>Júlia · IA</em></b><time>qui, 09:06</time></header><p class="ui-mail-meta">de contato@juris8advogados.com.br · para rafael.lima@gmail.com</p><div class="ui-mail-body"><p>Bom dia, Rafael!</p><p>Conferindo aqui: o seu processo está aguardando a manifestação da outra parte. O prazo legal corre até 18/03 e, assim que houver movimentação, te aviso por aqui.</p><p>Qualquer dúvida no caminho, é só me chamar 🙂</p><pre>Júlia — Secretária jurídica
+Escritório · OAB/SP</pre></div></div>
+              </div>
+              <div class="ui-typing mail"><span><i></i><i></i><i></i></span>Júlia está redigindo uma resposta…</div>
+            </div>
+            <div class="ui-mail-reply"><button type="button"><svg viewBox="0 0 18 18"><path d="M7 6 3.5 9 7 12"/><path d="M4 9h6a4 4 0 0 1 4 4v1"/></svg>Responder</button><button type="button"><svg viewBox="0 0 18 18"><path d="m11 6 3.5 3L11 12"/><path d="M14 9H8a4 4 0 0 0-4 4v1"/></svg>Encaminhar</button><span><svg viewBox="0 0 18 18"><path d="M9 2.5 10.7 7l4.8 2-4.8 2L9 15.5 7.3 11 2.5 9l4.8-2z"/></svg>Sugestão da Júlia pronta</span><button class="primary" type="button"><svg viewBox="0 0 18 18"><path d="m2.5 9 12-5-5 12-1.5-5.5z"/><path d="m8 10.5 6.5-6.5"/></svg>Aprovar e enviar</button></div>
+          </article>
+
+          <article class="ui-detail mail" data-detail="pedro" data-channel="mail" hidden>
+            <div class="ui-mail-toolbar"><span class="ui-mail-actions"><button type="button" aria-label="Responder"><svg viewBox="0 0 18 18"><path d="M7 6 3.5 9 7 12"/><path d="M4 9h6a4 4 0 0 1 4 4v1"/></svg></button><button type="button" aria-label="Encaminhar"><svg viewBox="0 0 18 18"><path d="m11 6 3.5 3L11 12"/><path d="M14 9H8a4 4 0 0 0-4 4v1"/></svg></button><button type="button" aria-label="Arquivar"><svg viewBox="0 0 18 18"><path d="M4 6h10l-.8 8H4.8z"/><path d="M3 4h12v2H3z"/><path d="M7 9h4"/></svg></button><button type="button" aria-label="Favoritar"><svg viewBox="0 0 18 18"><path d="m9 2.8 1.9 3.8 4.2.6-3.05 2.98.72 4.2L9 12.4l-3.77 1.98.72-4.2L2.9 7.2l4.2-.6z"/></svg></button><em>E-mail · thread 1/1</em></span><span>ontem, 17:42</span></div>
+            <div class="ui-mail-subject"><span>Assunto</span><b>Primeira consulta — direito empresarial</b><p><svg viewBox="0 0 18 18"><path d="m13.5 8-5.8 5.8a3 3 0 1 1-4.2-4.2l6.1-6.1a2.1 2.1 0 1 1 3 3l-6 6a1.1 1.1 0 1 1-1.6-1.6l5.4-5.4"/></svg>Caixa de entrada · marcado como cliente</p></div>
+            <div class="ui-mail-thread"><div class="ui-mail-msg"><span class="ui-avatar amber">PT</span><div><header><b>Pedro Tavares</b><time>ontem, 17:42</time></header><p class="ui-mail-meta">de pedro.tavares@empresa.com.br · para contato@juris8advogados.com.br</p><div class="ui-mail-body"><p>Boa tarde,</p><p>Gostaria de marcar uma primeira conversa para discutir uma reestruturação societária da minha empresa. Vocês atendem essa área?</p><pre>Pedro Tavares
+Diretor — Tavares &amp; Cia</pre></div></div></div><div class="ui-typing mail"><span><i></i><i></i><i></i></span>Júlia está redigindo uma resposta…</div></div>
+            <div class="ui-mail-reply"><button type="button"><svg viewBox="0 0 18 18"><path d="M7 6 3.5 9 7 12"/><path d="M4 9h6a4 4 0 0 1 4 4v1"/></svg>Responder</button><button type="button"><svg viewBox="0 0 18 18"><path d="m11 6 3.5 3L11 12"/><path d="M14 9H8a4 4 0 0 0-4 4v1"/></svg>Encaminhar</button><span><svg viewBox="0 0 18 18"><path d="M9 2.5 10.7 7l4.8 2-4.8 2L9 15.5 7.3 11 2.5 9l4.8-2z"/></svg>Sugestão da Júlia pronta</span><button class="primary" type="button"><svg viewBox="0 0 18 18"><path d="m2.5 9 12-5-5 12-1.5-5.5z"/><path d="m8 10.5 6.5-6.5"/></svg>Aprovar e enviar</button></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== O PROBLEMA ===== -->
+<section data-screen-label="O problema">
+  <div class="shell">
+    <div class="sec-header reveal">
+      <h2 class="sec-h2">O cliente que não é respondido <span class="grad">não espera. Ele procura outro.</span></h2>
+      <p class="sec-lede">O atendimento jurídico acontece fora do horário comercial — e cada mensagem sem resposta é um cliente em risco.</p>
+    </div>
+
+    <div class="prob-grid">
+      <div class="prob-card reveal d1">
+        <span class="prob-ic"><svg viewBox="0 0 18 18"><circle cx="9" cy="9" r="7"/><polyline points="9,5 9,9 12,11"/></svg></span>
+        <span class="prob-h">A demanda chega fora do expediente</span>
+        <p class="prob-p">Boa parte das mensagens de clientes chega à noite e nos fins de semana — justamente quando o escritório está fechado.</p>
+        <span class="prob-foot"><svg viewBox="0 0 14 14"><path d="M7 1l1.4 3.6L12 6 8.4 7.4 7 11 5.6 7.4 2 6l3.6-1.4z"/></svg>A Júlia atende 24h, todos os dias</span>
+      </div>
+      <div class="prob-card reveal d2">
+        <span class="prob-ic"><svg viewBox="0 0 18 18"><path d="M14 5l-9 9-4-4"/><path d="M14 5l-5.5 5.5"/></svg></span>
+        <span class="prob-h">Resposta lenta esfria o lead</span>
+        <p class="prob-p">Quanto mais tempo o cliente espera, menor a chance de fechar. A primeira resposta rápida é o que mantém o interesse vivo.</p>
+        <span class="prob-foot"><svg viewBox="0 0 14 14"><path d="M7 1l1.4 3.6L12 6 8.4 7.4 7 11 5.6 7.4 2 6l3.6-1.4z"/></svg>Resposta em segundos, sempre</span>
+      </div>
+      <div class="prob-card reveal d3">
+        <span class="prob-ic"><svg viewBox="0 0 18 18"><path d="M3 4h12v9H6l-3 3z"/><line x1="6" y1="7" x2="12" y2="7"/><line x1="6" y1="10" x2="10" y2="10"/></svg></span>
+        <span class="prob-h">Conversas espalhadas se perdem</span>
+        <p class="prob-p">WhatsApp aqui, e-mail ali, anotações em outro lugar. Sem um lugar único, atendimento e contexto se perdem no caminho.</p>
+        <span class="prob-foot"><svg viewBox="0 0 14 14"><path d="M7 1l1.4 3.6L12 6 8.4 7.4 7 11 5.6 7.4 2 6l3.6-1.4z"/></svg>Tudo numa caixa de entrada só</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NO SEU TOM ===== -->
+<section id="tom" data-screen-label="No seu tom">
+  <div class="shell">
+    <div class="sec-header reveal">
+      <h2 class="sec-h2">Ela fala como o <span class="grad">seu escritório fala.</span></h2>
+      <p class="sec-lede">Escolha o tom e deixe a Júlia aprender com os seus próprios atendimentos. Ela soa como uma extensão da sua equipe — nunca como um robô.</p>
+    </div>
+
+    <div class="tone-grid">
+      <!-- TONES -->
+      <div class="tone-cards reveal d1">
+        <div class="tone-card">
+          <div class="tone-head"><span class="tone-radio"></span><span class="tone-name">Formal</span><span class="tone-tag">Tradicional</span></div>
+          <p class="tone-sample">"Prezada Carla, registramos a sua solicitação. Retornaremos com o encaminhamento no início do expediente."</p>
+        </div>
+        <div class="tone-card active">
+          <div class="tone-head"><span class="tone-radio"></span><span class="tone-name">Próximo</span><span class="tone-tag">Selecionado</span></div>
+          <p class="tone-sample">"Oi, Carla! Fica tranquila 🙂 Já anotei aqui e logo cedo a equipe te dá o melhor caminho."</p>
+        </div>
+        <div class="tone-card">
+          <div class="tone-head"><span class="tone-radio"></span><span class="tone-name">Objetivo</span><span class="tone-tag">Direto</span></div>
+          <p class="tone-sample">"Olá, Carla. Solicitação registrada. Retorno com a orientação amanhã pela manhã."</p>
+        </div>
+      </div>
+
+      <!-- UPLOAD -->
+      <div class="tone-aside reveal d2">
+        <div class="tone-upload">
+          <span class="tu-ic"><svg viewBox="0 0 22 22"><path d="M11 15V4"/><polyline points="6,9 11,4 16,9"/><path d="M3 15v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg></span>
+          <div class="tu-title">Ensine a Júlia com o seu histórico de WhatsApp e e-mail</div>
+          <p class="tu-desc">Suba o seu histórico de conversas no WhatsApp e e-mails. A Júlia aprende com a sua forma real de escrever e ajusta o tom dela ao seu, mantendo a identidade do seu escritório.</p>
+          <div class="tu-files">
+            <span class="tu-file">historico-whatsapp.txt</span>
+            <span class="tu-file">historico-emails.pst</span>
+            <span class="tu-file">modelos-atendimento.docx</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTE A JÚLIA (CHAT INTERATIVO) ===== -->
+<section id="testar" data-screen-label="Testar a Júlia">
+  <div class="shell">
+    <div class="try-grid">
+      <!-- TEXT -->
+      <div class="try-text reveal d1">
+        <h2>Converse com a Júlia <span class="grad">como se fosse um cliente.</span></h2>
+        <p>Mande uma mensagem como um cliente mandaria. Veja como ela acolhe, organiza e propõe o próximo passo — em tempo real.</p>
+        <div class="try-hint">
+          <span class="th-label">Sugestões para começar</span>
+          <div class="try-chips">
+            <span class="try-chip" data-msg="Oi, preciso falar com o advogado essa semana">Quero falar com o advogado</span>
+            <span class="try-chip" data-msg="Como está o andamento do meu processo?">Como está meu processo?</span>
+            <span class="try-chip" data-msg="Quanto custa uma consulta?">Quanto custa?</span>
+            <span class="try-chip" data-msg="Vocês atendem direito de família?">Vocês atendem família?</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHATBOX -->
+      <div class="chatbox reveal d2">
+        <div class="chat-head">
+          <span class="chat-av">JÚ</span>
+          <span class="chat-contact"><b>Júlia · Escritório</b><span><span class="cdot"></span>online agora</span></span>
+        </div>
+        <div class="chat-body" id="chatBody">
+          <div class="cmsg julia"><span class="cm-tag"><svg viewBox="0 0 14 14"><path d="M7 1l1.4 3.6L12 6 8.4 7.4 7 11 5.6 7.4 2 6l3.6-1.4z"/></svg>Júlia</span><br>Oi! 👋 Eu sou a Júlia, secretária do escritório. Antes de começarmos, como posso te chamar?</div>
+        </div>
+        <form class="chat-input" id="chatForm">
+          <input type="text" id="chatInput" placeholder="Escreva uma mensagem…" autocomplete="off" />
+          <button type="submit" class="chat-send" aria-label="Enviar"><svg viewBox="0 0 17 17"><line x1="2" y1="8.5" x2="14" y2="8.5"/><polyline points="9,3 14,8.5 9,14"/></svg></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA FINAL + FORM ===== -->
+<section id="ativar" data-screen-label="Ativar Júlia">
+  <div class="shell">
+    <div class="cta-grid">
+      <!-- PITCH -->
+      <div class="cta-pitch reveal d1">
+        <h2>Coloque a <span class="grad">Júlia</span> para atender o seu escritório.</h2>
+        <p>Em até 24 horas, um especialista do Juris8 configura a Júlia com o tom do seu escritório e os seus fluxos de atendimento.</p>
+        <div class="cta-list">
+          <div class="cta-li"><span class="cta-chk"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg></span>Configuração no tom de voz do seu escritório</div>
+          <div class="cta-li"><span class="cta-chk"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg></span>Conexão com WhatsApp e e-mail numa caixa só</div>
+          <div class="cta-li"><span class="cta-chk"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg></span>7 dias grátis — sem cartão de crédito</div>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div class="form-card reveal d2">
+        <div class="form-head">
+          <span class="form-title">Conhecer a Júlia</span>
+          <span class="form-intro">Preencha seus dados e um especialista entra em contato para ativar o seu teste de 7 dias.</span>
+        </div>
+        <form class="form-fields" id="lead-form" novalidate>
+          <div class="ff"><label for="j-nome">Nome completo</label><input id="j-nome" name="name" type="text" placeholder="Seu nome" autocomplete="name" required /></div>
+          <div class="ff"><label for="j-email">E-mail</label><input id="j-email" name="email" type="email" placeholder="voce@escritorio.com.br" autocomplete="email" required /></div>
+          <div class="ff"><label for="j-banca">Escritório de advocacia</label><input id="j-banca" name="office" type="text" placeholder="Nome do escritório" autocomplete="organization" required /></div>
+          <div class="ff"><label for="j-wpp">Contato (WhatsApp)</label><input id="j-wpp" name="phone" type="tel" placeholder="(11) 90000-0000" autocomplete="tel" required /></div>
+          <label class="ff-check">
+            <input type="checkbox" name="consent" required />
+            <span>Aceito ser contatado pelo Juris8 sobre este teste.</span>
+          </label>
+          <button type="submit" class="form-submit">
+            <span class="form-submit-label">Quero conhecer a Júlia</span>
+          </button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+        <div class="form-seals">
+          <span class="form-seal"><svg viewBox="0 0 12 12"><path d="M6 1L2 3v3c0 2.8 1.8 4.9 4 5.8C8.2 10.9 10 8.8 10 6V3L6 1z"/><polyline points="4,6 5.5,7.5 8.5,4.5"/></svg>LGPD</span>
+          <span class="form-seal"><svg viewBox="0 0 12 12"><circle cx="6" cy="4" r="2"/><path d="M2 11a4 4 0 0 1 8 0"/><line x1="2" y1="8" x2="10" y2="8"/></svg>Conforme OAB</span>
+          <span class="form-seal"><svg viewBox="0 0 12 12"><rect x="2" y="5" width="8" height="6" rx="1"/><path d="M4 5V3.5a2.5 2.5 0 0 1 5 0V5"/></svg>Dados criptografados</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER (home · compartilhado) ===== -->
+<footer>
+  <div class="shell">
+    <div class="footer-top">
+      <div class="footer-brand-col">
+        <a href="/" aria-label="Juris8 — Home"><img src="/DET/logo.png" alt="Juris 8" class="footer-logo" /></a>
+        <p class="footer-tag">A mais completa IA jurídica do Brasil. Pré-elaboração de peças, pesquisa, análise de documentos e transcrição — desenvolvidas por advogados, para advogados.</p>
+        <div class="footer-seals">
+          <span class="footer-seal"><i data-lucide="lock" width="11" height="11" stroke-width="1.8"></i>LGPD</span>
+          <span class="footer-seal"><i data-lucide="sparkles" width="11" height="11" stroke-width="1.8"></i>IA jurídica</span>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/juris8.ai?igsh=cDRkZnIxc3h1NXdi" target="_blank" rel="noopener" aria-label="Instagram">
+            <i data-lucide="instagram" width="15" height="15" stroke-width="1.5"></i>
+          </a>
+          <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Juris8." target="_blank" rel="noopener" aria-label="WhatsApp">
+            <i data-lucide="message-circle" width="15" height="15" stroke-width="1.5"></i>
+          </a>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="Rodapé">
+        <div class="footer-group">
+          <div class="footer-col-title">Soluções</div>
+          <div class="footer-col">
+            <a href="/DET/">DET Monitor</a>
+            <a href="/crm/">CRM com IA</a>
+            <a href="/secretariajuridica/">Secretaria jurídica</a>
+            <a href="/newsletter/">Newsletter mensal</a>
+            <a href="/trabalhistaempresarial/">Trabalhista empresarial</a>
+          </div>
+        </div>
+        <div class="footer-group">
+          <div class="footer-col-title">Plataforma</div>
+          <div class="footer-col">
+            <a href="/#funcionalidades">Pré-elaboração de peças</a>
+            <a href="/#funcionalidades">Pesquisa de jurisprudência</a>
+            <a href="/#funcionalidades">Análise de documentos</a>
+            <a href="/#funcionalidades">Transcrição de audiências</a>
+            <a href="/crm/">CRM com IA</a>
+            <a href="/secretariajuridica/">Secretaria jurídica</a>
+          </div>
+        </div>
+        <div class="footer-group">
+          <div class="footer-col-title">Contato</div>
+          <div class="footer-col">
+            <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Juris8." target="_blank" rel="noopener">WhatsApp</a>
+            <a href="https://www.instagram.com/juris8.ai?igsh=cDRkZnIxc3h1NXdi" target="_blank" rel="noopener">Instagram</a>
+            <a href="/#faq">FAQ</a>
+            <a href="/#solucoes">Soluções</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Juris8 · Todos os direitos reservados.</span>
+      <span class="footer-made"><span class="fm-dot"></span>Desenvolvido por advogados, para advogados</span>
+      <a href="#top" class="footer-top-link">Voltar ao topo<i data-lucide="chevron-up" width="13" height="13" stroke-width="1.8"></i></a>
+    </div>
+  </div>
+</footer>
+
+<div class="wa-fab" data-wa>
+  <div class="wa-bubble" role="dialog" aria-label="Atendimento no WhatsApp">
+    <button class="wa-bubble-close" type="button" aria-label="Fechar"><i data-lucide="x"></i></button>
+    <p class="wa-bubble-title">Dúvidas sobre a Júlia?</p>
+    <p class="wa-bubble-text">Fale com um especialista agora — resposta em minutos.</p>
+    <span class="wa-bubble-cta">Iniciar conversa</span>
+  </div>
+  <a class="wa-btn" href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20J%C3%BAlia." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <span class="wa-btn-ring" aria-hidden="true"></span>
+    <svg class="wa-btn-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.04 4C9.93 4 4.97 8.96 4.97 15.07c0 2.13.6 4.13 1.64 5.83L4.5 28l7.27-2.06a11.03 11.03 0 0 0 4.27.85h.01c6.11 0 11.07-4.96 11.07-11.07S22.15 4 16.04 4zm0 20.2h-.01a9.1 9.1 0 0 1-4.64-1.27l-.33-.2-3.86 1.09 1.1-3.76-.22-.35a9.11 9.11 0 1 1 8.96 4.49zm5.1-6.83c-.28-.14-1.65-.81-1.9-.9-.26-.1-.45-.14-.63.14-.19.28-.72.9-.88 1.08-.16.19-.32.21-.6.07-.28-.14-1.18-.43-2.25-1.39-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.49.14-.16.18-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.48l-.54-.01c-.19 0-.49.07-.74.35-.26.28-.97.95-.97 2.32s1 2.69 1.14 2.88c.14.19 1.96 2.99 4.75 4.19.66.29 1.18.46 1.58.59.66.21 1.27.18 1.74.11.53-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.26-.19-.54-.33z"/></svg>
+  </a>
+</div>
+
+<script>
+(function(){
+  var burger=document.getElementById('navBurger'),navMobile=document.getElementById('navMobile');
+  if(burger&&navMobile){burger.addEventListener('click',function(){var o=navMobile.classList.toggle('open');burger.setAttribute('aria-expanded',o?'true':'false');});navMobile.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){navMobile.classList.remove('open');burger.setAttribute('aria-expanded','false');});});}
+  var fab=document.querySelector('[data-wa]');if(!fab)return;
+  var bubble=fab.querySelector('.wa-bubble'),closeBtn=fab.querySelector('.wa-bubble-close'),link=fab.querySelector('.wa-btn'),KEY='juris8_wa_bubble_dismissed',reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches,dismissed=false;
+  setTimeout(function(){fab.classList.add('in');},500);try{dismissed=localStorage.getItem(KEY)==='1';}catch(e){}
+  if(!dismissed)setTimeout(function(){fab.classList.add('show-bubble');},reduce?900:3200);
+  if(window.matchMedia('(hover: hover)').matches){fab.addEventListener('mouseenter',function(){fab.classList.add('show-bubble');});fab.addEventListener('mouseleave',function(){if(dismissed)fab.classList.remove('show-bubble');});}
+  if(bubble&&link)bubble.addEventListener('click',function(e){if(e.target.closest('.wa-bubble-close'))return;window.open(link.href,'_blank','noopener');});
+  if(closeBtn)closeBtn.addEventListener('click',function(e){e.stopPropagation();fab.classList.remove('show-bubble');dismissed=true;try{localStorage.setItem(KEY,'1');}catch(err){}});
+  if(window.lucide)lucide.createIcons();
+})();
+</script>
+
+<script>
+/* ---- scroll reveal ---- */
+const observer = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
+  { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+);
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* ---- unified inbox mockup ---- */
+(function(){
+  const root = document.querySelector('[data-ui-inbox]');
+  if(!root) return;
+
+  const tabs = Array.from(root.querySelectorAll('[data-tab]'));
+  const rows = Array.from(root.querySelectorAll('[data-conv]'));
+  const details = Array.from(root.querySelectorAll('[data-detail]'));
+  const counter = root.querySelector('[data-ui-count]');
+  const labels = {
+    all: '4 conversas ativas',
+    wa: '2 conversas WhatsApp',
+    mail: '2 e-mails'
+  };
+  const cycle = [
+    { tab: 'all', conv: 'carla' },
+    { tab: 'wa', conv: 'sofia' },
+    { tab: 'mail', conv: 'rafael' }
+  ];
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let currentTab = 'all';
+  let timer = null;
+
+  function firstConversation(tab){
+    return rows.find(row => tab === 'all' || row.dataset.channel === tab)?.dataset.conv || 'carla';
+  }
+
+  function setState(tab, conv){
+    currentTab = tab;
+    const activeConv = conv || firstConversation(tab);
+
+    tabs.forEach(btn => {
+      const active = btn.dataset.tab === tab;
+      btn.classList.toggle('active', active);
+      btn.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+
+    rows.forEach(row => {
+      const visible = tab === 'all' || row.dataset.channel === tab;
+      row.hidden = !visible;
+      row.classList.toggle('active', row.dataset.conv === activeConv && visible);
+    });
+
+    details.forEach(detail => {
+      const active = detail.dataset.detail === activeConv;
+      detail.hidden = !active;
+      detail.classList.toggle('active', active);
+    });
+
+    if(counter) counter.textContent = labels[tab] || labels.all;
+  }
+
+  function restartCycle(){
+    if(prefersReduced) return;
+    if(timer) clearInterval(timer);
+    let index = cycle.findIndex(item => item.tab === currentTab);
+    timer = setInterval(() => {
+      index = (index + 1) % cycle.length;
+      setState(cycle[index].tab, cycle[index].conv);
+    }, 7000);
+  }
+
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = btn.dataset.tab || 'all';
+      setState(tab, firstConversation(tab));
+      restartCycle();
+    });
+  });
+
+  rows.forEach(row => {
+    row.addEventListener('click', () => {
+      setState(currentTab, row.dataset.conv);
+      restartCycle();
+    });
+  });
+
+  setState('all', 'carla');
+  restartCycle();
+})();
+
+/* ---- tone selector ---- */
+document.querySelectorAll('.tone-card').forEach(card => {
+  card.addEventListener('click', () => {
+    document.querySelectorAll('.tone-card').forEach(c => {
+      c.classList.remove('active');
+      c.querySelector('.tone-tag').textContent = c.querySelector('.tone-name').textContent === 'Formal' ? 'Tradicional' : (c.querySelector('.tone-name').textContent === 'Objetivo' ? 'Direto' : 'Próximo');
+    });
+    card.classList.add('active');
+    card.querySelector('.tone-tag').textContent = 'Selecionado';
+  });
+});
+
+/* ---- interactive Júlia chat (scripted, reliable) ---- */
+(function(){
+  const body = document.getElementById('chatBody');
+  const form = document.getElementById('chatForm');
+  const input = document.getElementById('chatInput');
+  if(!body || !form) return;
+
+  const SVG_SPARK = '<svg viewBox="0 0 14 14"><path d="M7 1l1.4 3.6L12 6 8.4 7.4 7 11 5.6 7.4 2 6l3.6-1.4z"/></svg>';
+  const coffeeBase = new Image();
+  const coffeeReady = new Promise((resolve, reject) => {
+    coffeeBase.onload = resolve;
+    coffeeBase.onerror = reject;
+  });
+  coffeeBase.src = 'images/copo-cafe-sem-nome.png';
+
+  if(document.fonts && document.fonts.load){
+    document.fonts.load('700 72px "Caveat"');
+  }
+
+
+  function scrollDown(){ body.scrollTop = body.scrollHeight; }
+
+  function addMsg(who, html){
+    const d = document.createElement('div');
+    d.className = 'cmsg ' + who;
+    if(who === 'julia' && html.includes('coffee-gift')) d.classList.add('coffee-msg');
+    d.innerHTML = (who === 'julia' ? '<span class="cm-tag">'+SVG_SPARK+'Júlia</span>' : '') + html;
+    body.appendChild(d);
+    renderCoffeeCards(d);
+    scrollDown();
+  }
+
+  function showTyping(){
+    const t = document.createElement('div');
+    t.className = 'chat-typing';
+    t.id = 'typing';
+    t.innerHTML = '<i></i><i></i><i></i>';
+    body.appendChild(t);
+    scrollDown();
+  }
+  function hideTyping(){ const t = document.getElementById('typing'); if(t) t.remove(); }
+
+  function escapeHtml(value){
+    return String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  }
+
+  function getAvatarInitials(name){
+    return name.split(' ').slice(0, 2).map(n => n[0]).join('').toUpperCase().slice(0, 2);
+  }
+
+  function generateAvatarColor(name){
+    const colors = [
+      'linear-gradient(135deg, #7C5FE6, #A78BFA)',
+      'linear-gradient(135deg, #06B6D4, #0891B2)',
+      'linear-gradient(135deg, #EC4899, #DB2777)',
+      'linear-gradient(135deg, #F59E0B, #D97706)',
+      'linear-gradient(135deg, #8B5CF6, #7C3AED)',
+      'linear-gradient(135deg, #10B981, #059669)',
+      'linear-gradient(135deg, #EF4444, #DC2626)',
+      'linear-gradient(135deg, #6366F1, #4F46E5)',
+    ];
+    let hash = 0;
+    for(let i = 0; i < name.length; i++){
+      hash = ((hash << 5) - hash) + name.charCodeAt(i);
+      hash = hash & hash;
+    }
+    return colors[Math.abs(hash) % colors.length];
+  }
+
+  function updateChatAvatar(name){
+    const avatar = document.querySelector('.chat-av');
+    if(!avatar) return;
+    const initials = getAvatarInitials(name);
+    const gradient = generateAvatarColor(name);
+    avatar.textContent = initials;
+    avatar.style.background = gradient;
+    avatar.classList.add('gradient-active');
+  }
+
+  const chatState = {
+    awaitingName: true,
+    awaitingSlot: false,
+    awaitingContact: false,
+    lastIntent: null,
+    selectedSlot: null,
+    userName: '',
+    pendingAfterName: ''
+  };
+
+  const slotMarkup = '<div class="wa-slots chat-slots" style="margin-top:6px"><button type="button" class="wa-slot" data-slot="Qua · 14:00">Qua · 14:00</button><button type="button" class="wa-slot" data-slot="Qui · 10:30">Qui · 10:30</button></div>';
+
+  function normalize(text){
+    return text
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[̀-ͯ]/g,'')
+      .replace(/[^\w\s:]/g,' ')
+      .replace(/\s+/g,' ')
+      .trim();
+  }
+
+  function detectSlot(text){
+    const t = normalize(text);
+    if(/\b(qua|quarta)\b/.test(t) && /\b(14|14:00|14h)\b/.test(t)) return 'Qua · 14:00';
+    if(/\b(qui|quinta)\b/.test(t) && /\b(10|10:30|10h30)\b/.test(t)) return 'Qui · 10:30';
+    if(/\b14:00\b|\b14h\b/.test(t)) return 'Qua · 14:00';
+    if(/\b10:30\b|\b10h30\b/.test(t)) return 'Qui · 10:30';
+    return '';
+  }
+
+  function hasPhone(text){
+    return /(\(?\d{2}\)?\s?)?9?\d{4}[-\s]?\d{4}/.test(text);
+  }
+
+  function extractName(text){
+    const t = normalize(text).replace(/(\(?\d{2}\)?\s?)?9?\d{4}[-\s]?\d{4}/g,'').trim();
+    const direct = t.match(/(?:meu nome e|me chamo|sou|pode me chamar de)\s+([a-z]{2,})/);
+    const candidate = direct ? direct[1] : (t.split(' ')[0] || '');
+    const blocked = ['oi','ola','bom','boa','quero','agendar','marcar','processo','quanto','sim','nao','pode','preciso','gostaria','consulta'];
+    if(!candidate || candidate.length < 2 || blocked.includes(candidate)) return '';
+    return candidate.charAt(0).toUpperCase() + candidate.slice(1);
+  }
+
+  function coffeeCardMarkup(name){
+    const safeName = escapeHtml(name);
+    return '<div class="coffee-gift" data-coffee-name="'+safeName+'"><div class="coffee-gift-head"><svg viewBox="0 0 18 18"><path d="M5 6h7v4.5A3.5 3.5 0 0 1 8.5 14 3.5 3.5 0 0 1 5 10.5z"/><path d="M12 7h1a2 2 0 0 1 0 4h-1"/><path d="M4 15h10"/><path d="M6 3c.4.5.4 1 0 1.5M9 3c.4.5.4 1 0 1.5M12 3c.4.5.4 1 0 1.5"/></svg><span>Café de boas-vindas para '+safeName+'</span></div><div class="coffee-gift-frame"><span>Preparando o copo...</span></div></div>';
+  }
+
+  function sanitizeCoffeeName(value){
+    return String(value).slice(0, 20).replace(/[^a-zA-ZÀ-ÿ\s'-]/g, '').trim();
+  }
+
+  function fitCoffeeFont(ctx, name, scale){
+    let size = 96 * scale;
+    const maxWidth = 470 * scale;
+    ctx.font = '700 '+size+'px "Caveat", cursive';
+    while(ctx.measureText(name).width > maxWidth && size > 34 * scale){
+      size -= 2 * scale;
+      ctx.font = '700 '+size+'px "Caveat", cursive';
+    }
+    return size;
+  }
+
+  async function makeCoffeeDataUrl(name){
+    const cleanName = sanitizeCoffeeName(name) || 'Cliente';
+    await coffeeReady;
+    if(document.fonts && document.fonts.ready) await document.fonts.ready;
+
+    const size = 900;
+    const scale = size / 1254;
+    const canvas = document.createElement('canvas');
+    canvas.width = size;
+    canvas.height = size;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(coffeeBase, 0, 0, size, size);
+
+    const fontSize = fitCoffeeFont(ctx, cleanName, scale);
+    ctx.save();
+    ctx.translate(612 * scale, 712 * scale);
+    ctx.rotate(-0.045);
+    ctx.globalCompositeOperation = 'multiply';
+    ctx.fillStyle = 'rgba(38, 26, 17, 0.82)';
+    ctx.font = '700 '+fontSize+'px "Caveat", cursive';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(cleanName, 0, 0);
+    ctx.restore();
+
+    return canvas.toDataURL('image/png');
+  }
+
+  function renderCoffeeCards(scope){
+    scope.querySelectorAll('[data-coffee-name]:not(.ready)').forEach(card => {
+      card.classList.add('ready');
+      const name = card.getAttribute('data-coffee-name') || 'Cliente';
+      const frame = card.querySelector('.coffee-gift-frame');
+      makeCoffeeDataUrl(name)
+        .then(src => {
+          frame.innerHTML = '<img src="'+src+'" alt="Copo de café com o nome '+escapeHtml(name)+'" loading="eager" />';
+          scrollDown();
+        })
+        .catch(() => {
+          frame.innerHTML = '<span>Não consegui preparar a imagem do café agora.</span>';
+        });
+    });
+  }
+
+
+
+
+  function emitResponse(response){
+    const blocks = Array.isArray(response) ? response.flat(Infinity).filter(Boolean) : [response];
+    blocks.forEach((block, i) => {
+      setTimeout(() => addMsg('julia', block), i * 420);
+    });
+  }
+
+  function offerSlots(prefix){
+    chatState.awaitingSlot = true;
+    chatState.lastIntent = 'schedule';
+    return prefix + slotMarkup + 'Qual fica melhor? 🙂';
+  }
+
+  function reply(text){
+    const t = normalize(text);
+    const has = (...ws) => ws.some(w => t.includes(w));
+    const pickedSlot = detectSlot(text);
+
+    const looksLikeRequest = pickedSlot || has(
+      'agendar','marcar','reuni','horario','conversar','falar com','advogad','consulta',
+      'processo','andamento','novidade','status','quanto','preco','custa','valor',
+      'familia','divorcio','guarda','pensao','trabalhista','demiss','rescis','urgente',
+      'prazo','intimacao','citacao','imovel','aluguel','vizinho','crime','prisao'
+    );
+
+    if(chatState.awaitingName){
+      const name = extractName(text);
+      if(!name || looksLikeRequest){
+        if(looksLikeRequest) chatState.pendingAfterName = text;
+        return looksLikeRequest ? 'Claro, posso te ajudar com isso. Antes, como posso te chamar?' : 'Antes, como posso te chamar?';
+      }
+      chatState.awaitingName = false;
+      chatState.userName = name;
+      updateChatAvatar(name);
+      const pending = chatState.pendingAfterName;
+      chatState.pendingAfterName = '';
+      const coffee = coffeeCardMarkup(name);
+      if(pending) return [
+        'Prazer, <b>'+name+'</b>! Já separei um café para te receber por aqui.',
+        coffee,
+        reply(pending)
+      ];
+      return [
+        'Prazer, <b>'+name+'</b>! Já separei um café para te receber por aqui.',
+        coffee,
+        'Me conta como posso ajudar — quer agendar uma conversa, saber do seu processo ou tirar uma dúvida?'
+      ];
+    }
+
+    if(chatState.awaitingSlot && pickedSlot){
+      chatState.awaitingSlot = false;
+      chatState.awaitingContact = true;
+      chatState.selectedSlot = pickedSlot;
+      const contactAsk = chatState.userName ? 'me envie um telefone de contato' : 'me envie seu nome completo e um telefone de contato';
+      return 'Perfeito, '+(chatState.userName || 'combinado')+'! Deixei pré-reservado para <b>'+pickedSlot+'</b>. Para finalizar, '+contactAsk+'. Eu encaminho para a equipe e você recebe a confirmação por aqui. ✅';
+    }
+
+    if(chatState.awaitingSlot && has('qualquer','tanto faz','pode ser','voce escolhe','melhor horario')){
+      chatState.awaitingSlot = false;
+      chatState.awaitingContact = true;
+      chatState.selectedSlot = 'Qua · 14:00';
+      return 'Combinado, '+(chatState.userName || 'perfeito')+' — vou deixar <b>Qua · 14:00</b> como opção principal. Me envie um telefone para eu concluir a pré-reserva. ✅';
+    }
+
+    if(chatState.awaitingSlot && has('nao','nenhum','outro','outro horario','nao posso')){
+      chatState.awaitingSlot = false;
+      return 'Sem problema. Me diga dois horários em que você costuma conseguir conversar, e eu verifico a agenda do escritório para encaixar a melhor opção.';
+    }
+
+    if(chatState.awaitingContact){
+      if(hasPhone(text)){
+        const slot = chatState.selectedSlot || 'o horário escolhido';
+        chatState.awaitingContact = false;
+        chatState.lastIntent = null;
+        return 'Perfeito, '+(chatState.userName || 'recebi seus dados')+'. A reunião ficou pré-agendada para <b>'+slot+'</b>. A equipe vai confirmar por mensagem e enviar o lembrete antes do horário combinado. ✅';
+      }
+      const thanks = chatState.userName ? 'Obrigada, '+chatState.userName+'!' : 'Obrigada!';
+      return thanks + ' Só falta um telefone de contato para eu concluir a pré-reserva e enviar para a equipe.';
+    }
+
+    if(has('agendar','marcar','reuni','horário','horario','conversar','falar com','advogad','consulta com','atender')){
+      return offerSlots('Claro, posso já reservar um horário para você falar com o advogado. Tenho estas opções:');
+    }
+    if(has('processo','andamento','novidade','status','minha causa','meu caso')){
+      return 'Posso verificar isso para você! Vou conferir o andamento que o escritório registrou e já te retorno por aqui. Assim que houver movimentação, eu também te aviso. 🙂';
+    }
+    if(has('quanto','preço','preco','custa','valor','honorár','honorar','custo')){
+      chatState.lastIntent = 'price';
+      return 'Ótima pergunta! Os valores dependem do seu caso, então o ideal é o advogado te passar isso com precisão. Posso reservar um horário para vocês alinharem tudo?';
+    }
+    if(has('família','familia','divórcio','divorcio','guarda','pensão','pensao')){
+      chatState.lastIntent = 'family';
+      return 'Sim, atendemos direito de família 💜 É um tema que merece um olhar próximo. Quer que eu marque uma conversa com a advogada para te orientar sobre o seu caso?';
+    }
+    if(has('trabalhista','demiss','rescis','hora extra','clt','emprego')){
+      chatState.lastIntent = 'labor';
+      return 'Sim, atendemos questões trabalhistas. Para te orientar com cuidado, o melhor é uma conversa com o advogado. Quer que eu já reserve um horário?';
+    }
+    if(has('urgente','urgência','urgencia','prazo','intimação','intimacao','citação','citacao','hoje')){
+      chatState.awaitingSlot = true;
+      chatState.lastIntent = 'urgent';
+      return 'Entendi que é algo urgente — vou priorizar seu contato com o advogado. Posso tentar encaixe hoje às 17:00 ou amanhã às 09:00. Se preferir, me diga qual prazo ou data limite aparece na intimação.';
+    }
+    if(has('sim','claro','pode','quero','reserve','reservar','vamos') && ['price','family','labor'].includes(chatState.lastIntent)){
+      return offerSlots('Perfeito. Tenho estes horários disponíveis:');
+    }
+    if(has('obrigad','valeu','agradeç','agradec','perfeito','show','ótimo','otimo')){
+      return 'Imagina, fico à disposição! 💜 Se precisar de mais alguma coisa, é só me chamar por aqui.';
+    }
+    if(has('oi','olá','ola','bom dia','boa tarde','boa noite','tudo bem')){
+      return 'Oi! 👋 Que bom falar com você. Me conta como posso ajudar — quer agendar uma conversa, saber do seu processo ou tirar uma dúvida?';
+    }
+    return 'Entendi! Vou anotar isso e, se precisar de uma análise do advogado, encaminho para a equipe. Enquanto isso, posso agendar uma conversa para você? 🙂';
+  }
+
+  function send(text){
+    if(!text.trim()) return;
+    addMsg('them', text.replace(/</g,'&lt;'));
+    input.value = '';
+    showTyping();
+    const delay = 700 + Math.min(text.length * 18, 1100);
+    setTimeout(async () => {
+      let response = '';
+      try{
+        response = reply(text);
+      }catch(error){
+        response = 'Entendi sua mensagem. Vou encaminhar isso para a equipe e te respondo por aqui assim que possivel.';
+      }
+      hideTyping();
+      emitResponse(response);
+    }, delay);
+  }
+
+  form.addEventListener('submit', e => { e.preventDefault(); send(input.value); });
+  document.querySelectorAll('.try-chip').forEach(chip => {
+    chip.addEventListener('click', () => { send(chip.getAttribute('data-msg')); input.focus(); });
+  });
+  body.addEventListener('click', e => {
+    const slot = e.target.closest('[data-slot]');
+    if(!slot) return;
+    send(slot.getAttribute('data-slot'));
+    input.focus();
+  });
+})();
+
+/* ---- Initialize Lucide Icons ---- */
+if(typeof lucide !== 'undefined'){
+  lucide.createIcons();
+}
+</script>
+
+<script>
+  // lead form — submits to Supabase `leads` table
+  (function(){
+    const form = document.getElementById('lead-form');
+    if (!form) return;
+
+    const supabase = window.supabase.createClient(
+      'https://hvbndvwwibhtuknbfmyh.supabase.co',
+      'sb_publishable_Sp9Kj8ZMbzWTeB0cV_pyMw_1L8b53j7'
+    );
+
+    const submitBtn = form.querySelector('.form-submit');
+    const submitLabel = form.querySelector('.form-submit-label');
+    const status = form.querySelector('.form-status');
+
+    function showStatus(kind, text) {
+      status.textContent = text;
+      status.classList.remove('ok', 'err');
+      status.classList.add('visible', kind);
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const data = new FormData(form);
+      const payload = {
+        name: data.get('name')?.toString().trim(),
+        phone: data.get('phone')?.toString().trim(),
+        email: data.get('email')?.toString().trim(),
+        office: data.get('office')?.toString().trim(),
+        consent: data.get('consent') === 'on',
+        source: 'lp-secretaria-julia'
+      };
+
+      submitBtn.disabled = true;
+      submitLabel.textContent = 'Enviando…';
+      status.classList.remove('visible', 'ok', 'err');
+
+      const { error } = await supabase.from('leads').insert([payload]);
+
+      if (error) {
+        submitBtn.disabled = false;
+        submitLabel.textContent = 'Quero conhecer a Júlia';
+        showStatus('err', 'Não foi possível enviar agora. Tente novamente em instantes.');
+        return;
+      }
+
+      submitLabel.textContent = 'Quero conhecer a Júlia';
+      submitBtn.disabled = false;
+      form.reset();
+      showStatus('ok', 'Recebemos sua solicitação! Um especialista entra em contato em breve.');
+    });
+  })();
+</script>
+
+</body>
+</html>
