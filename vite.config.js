@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 
 // LPs estáticas servidas de public/<pasta>/ (em produção o Vercel
 // resolve /<pasta> -> /<pasta>/index.html via trailingSlash).
-const staticDirs = ['DET', 'newsletter', 'crm', 'secretariajuridica', 'trabalhistaempresarial', 'agentejuridico', 'guia-det'];
+const staticDirs = ['DET', 'newsletter', 'crm', 'secretariajuridica', 'trabalhistaempresarial', 'trabalhistaescritorios', 'agentejuridico', 'guia-det'];
 
 export default defineConfig({
   server: { host: true, port: 8080 },
