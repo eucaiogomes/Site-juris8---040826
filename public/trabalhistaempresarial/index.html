@@ -2,12 +2,12 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8" />
-<title>Juris 8 — Contencioso Trabalhista Empresarial | Reduza o passivo trabalhista da sua empresa</title>
+<title>Juris8 Trabalhista — A mesma defesa trabalhista, com menos custo e menos prazo por processo</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="description" content="A primeira IA jurídica treinada exclusivamente para departamentos jurídicos empresariais brasileiros: triagem automatizada, geração de defesa e integração com o seu fluxo jurídico atual." />
+<meta name="description" content="O Juris8 Trabalhista conecta os dados que a sua empresa já tem — folha, ponto, ficha de registro, acordos coletivos — e entrega dossiê, minuta de contestação, cálculo e kit de audiência prontos para o seu escritório revisar, assinar e protocolar." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/styles.css" />
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -17,111 +17,118 @@
 <div class="orb orb-2"></div>
 
 <!-- ===== NAVBAR ===== -->
-<nav class="navbar">
+<nav class="navbar" id="navbar">
   <div class="navbar-inner">
     <a href="/" class="nav-brand" aria-label="Juris8 — Home">
-      <img src="/DET/logo.png" alt="Juris 8" class="nav-logo" />
+      <img src="/DET/logo.png" alt="Juris8" class="nav-logo" />
+      <div class="nav-badges">
+        <span class="nav-badge product">Trabalhista</span>
+        <span class="nav-badge tag">Empresas</span>
+      </div>
     </a>
     <div class="nav-links">
-      <a href="#plataforma" class="nav-link">Plataforma</a>
-      <a href="#contratos" class="nav-link">Contratos</a>
-      <a href="#seguranca" class="nav-link">Segurança</a>
-      <a href="#comparativo" class="nav-link">Comparativo</a>
+      <a href="#problema" class="nav-link">O problema</a>
+      <a href="#solucao" class="nav-link">A solução</a>
+      <a href="#fluxo" class="nav-link">O fluxo</a>
+      <a href="#o-que-muda" class="nav-link">O que muda</a>
+      <a href="#implantacao" class="nav-link">Implantação</a>
+      <a href="#faq" class="nav-link">Perguntas frequentes</a>
     </div>
     <div class="nav-right">
-      <a href="#demo" class="nav-ghost">Entrar</a>
-      <a href="#demo" class="nav-cta nav-cta-desktop">
+      <a href="#cta" class="nav-cta nav-cta-desktop">
         <svg viewBox="0 0 14 14"><rect x="2.5" y="3" width="9" height="9" rx="1"/><line x1="2.5" y1="6" x2="11.5" y2="6"/><line x1="5" y1="1.5" x2="5" y2="4"/><line x1="9" y1="1.5" x2="9" y2="4"/></svg>
-        Falar com um especialista
+        Falar com o time comercial
       </a>
       <button class="nav-burger" id="navBurger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
   <div class="nav-mobile" id="navMobile">
-    <a href="#plataforma">Plataforma</a>
-    <a href="#contratos">Contratos</a>
-    <a href="#seguranca">Segurança</a>
-    <a href="#comparativo">Comparativo</a>
-    <div class="nav-mobile-cta"><a href="#demo" class="nav-cta">Falar com um especialista</a></div>
+    <a href="#problema">O problema</a>
+    <a href="#solucao">A solução</a>
+    <a href="#fluxo">O fluxo</a>
+    <a href="#o-que-muda">O que muda</a>
+    <a href="#implantacao">Implantação</a>
+    <a href="#faq">Perguntas frequentes</a>
+    <div class="nav-mobile-cta"><a href="#cta" class="nav-cta">Falar com o time comercial</a></div>
   </div>
 </nav>
 
 <!-- ===== HERO ===== -->
-<section class="tr-hero" id="top" data-screen-label="Hero">
+<section class="tr-hero" id="top">
   <div class="shell">
     <div class="tr-hero-grid">
 
       <!-- TEXT -->
       <div class="tr-hero-text reveal">
-        <h1 class="tr-h1">Reduza o passivo trabalhista da sua empresa em até <span class="accent">30%.</span></h1>
-        <p class="tr-hero-sub">A primeira IA jurídica treinada exclusivamente para departamentos jurídicos empresariais brasileiros.</p>
-        <p class="tr-hero-sub small">Triagem automatizada, geração de defesa e integração ao seu fluxo jurídico atual.</p>
+        <span class="eyebrow">Empresas · Contenciose Trabalhista de Massa</span>
+        <h1 class="tr-h1">A mesma defesa trabalhista, com <span class="accent">menos custo e menos prazo por processo.</span></h1>
+        <p class="tr-hero-sub">O Juris8 Trabalhista conecta os dados que a sua empresa já tem — folha, ponto, ficha de registro, acordos coletivos — e entrega dossiê, minuta de contestação, cálculo e kit de audiência prontos para o seu escritório revisar, assinar e protocolar.</p>
         <div class="btn-group">
-          <a href="#demo" class="btn primary lg">
+          <a href="#cta" class="btn primary lg">
             <svg viewBox="0 0 14 14"><rect x="2.5" y="3" width="9" height="9" rx="1"/><line x1="2.5" y1="6" x2="11.5" y2="6"/><line x1="5" y1="1.5" x2="5" y2="4"/><line x1="9" y1="1.5" x2="9" y2="4"/></svg>
-            Falar com um especialista
+            Agendar apresentação
           </a>
-          <a href="#comparativo" class="btn secondary lg">Ver comparativo
+          <a href="#fluxo" class="btn secondary lg">Ver o fluxo completo
             <svg viewBox="0 0 14 14"><line x1="2" y1="7" x2="11" y2="7"/><polyline points="8,4 11,7 8,10"/></svg>
           </a>
         </div>
-        <div class="tr-hero-trust">
-          <span><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Dados isolados e seguros</span>
+        <div class="tr-hero-seals">
+          <span class="tr-seal"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>aderente à LGPD</span>
+          <span class="tr-seal"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>dados criptografados e segregados por cliente</span>
+          <span class="tr-seal"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>feito para o direito brasileiro</span>
+          <span class="tr-seal"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>revisão e assinatura sempre do advogado</span>
         </div>
-        <div class="tr-hero-note">Departamentos jurídicos que eliminam o trabalho manual do contencioso de massa.</div>
       </div>
 
-      <!-- DASHBOARD MOCK -->
+      <!-- VISUAL: painel da empresa -->
       <div class="tr-hero-visual reveal d2">
         <div class="mock">
-          <div class="dash-toolbar">
-            <span class="dash-view"><svg viewBox="0 0 14 14"><rect x="1.5" y="1.5" width="4.5" height="4.5" rx="1"/><rect x="8" y="1.5" width="4.5" height="4.5" rx="1"/><rect x="1.5" y="8" width="4.5" height="4.5" rx="1"/><rect x="8" y="8" width="4.5" height="4.5" rx="1"/></svg>Visão executiva</span>
-            <span class="dash-chip"><svg viewBox="0 0 14 14"><path d="M2 4h10M4 7h6M5.5 10h3"/></svg>Departamento jurídico</span>
-            <span class="dash-chip"><svg viewBox="0 0 14 14"><rect x="2" y="3" width="10" height="9" rx="1"/><line x1="2" y1="6" x2="12" y2="6"/></svg>12 meses</span>
-            <span class="dash-chip export"><svg viewBox="0 0 14 14"><path d="M7 1.5v7M4 6l3 3 3-3"/><path d="M2.5 11.5h9"/></svg>Exportar relatório</span>
+          <div class="mock-bar">
+            <span class="mock-dots"><i></i><i></i><i></i></span>
+            <span class="mock-bar-title">Juris8 · Gestão de Carteira Trabalhista</span>
+            <span class="mock-bar-live"><span class="lv-dot"></span>Ao vivo</span>
           </div>
           <div class="mock-body">
-            <div class="dash-kpis">
-              <div class="dk">
-                <div class="dk-top">Exposição financeira total</div>
-                <div class="dk-val">R$ 128,6 mi</div>
-                <svg class="dk-spark" data-spark="98,104,101,110,116,113,121,118,125,122,129,128" data-color="#9A63F0"></svg>
+            <div class="dash-kpi-summary">
+              <div class="dks-item">
+                <span class="dks-label">Processos ativos</span>
+                <span class="dks-val">284</span>
               </div>
-              <div class="dk">
-                <div class="dk-top">Casos ativos</div>
-                <div class="dk-val">24.532</div>
-                <svg class="dk-spark" data-spark="18,19,20,21,21,22,22,23,23,24,24,24.5" data-color="#7DD3FC"></svg>
-              </div>
-              <div class="dk">
-                <div class="dk-top">Novos casos no mês</div>
-                <div class="dk-val">1.284</div>
-                <svg class="dk-spark" data-spark="9,11,10,13,12,14,13,15,14,12,13,12.8" data-color="#9A63F0"></svg>
-              </div>
-              <div class="dk">
-                <div class="dk-top">Prazos a vencer · 7 dias</div>
-                <div class="dk-val sm">47</div>
-                <span class="dk-delta down"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg>18% vs. mês ant.</span>
+              <div class="dks-item">
+                <span class="dks-label">Provisão consolidada</span>
+                <span class="dks-val">R$ 14,8 mi</span>
               </div>
             </div>
-            <div class="dash-lower">
-              <div class="dash-panel">
-                <div class="dp-head">
-                  <span class="dp-title">Evolução do passivo · 12 meses</span>
-                  <span class="dp-legend">
-                    <span class="dp-leg"><i style="background:#9A63F0"></i>Exposição</span>
-                    <span class="dp-leg"><i style="background:#7DD3FC"></i>Casos</span>
-                  </span>
-                </div>
-                <svg class="dp-chart" id="passivoChart" viewBox="0 0 420 96" preserveAspectRatio="none"></svg>
-              </div>
-              <div class="dash-panel">
-                <div class="dp-head"><span class="dp-title">Por natureza do pedido</span></div>
-                <div class="dist-row"><span class="dist-name">Horas extras</span><span class="dist-track"><span class="dist-fill" style="width:0" data-w="84"></span></span><span class="dist-val">38%</span></div>
-                <div class="dist-row"><span class="dist-name">Verbas rescis.</span><span class="dist-track"><span class="dist-fill" style="width:0" data-w="62"></span></span><span class="dist-val">27%</span></div>
-                <div class="dist-row"><span class="dist-name">Insalubridade</span><span class="dist-track"><span class="dist-fill" style="width:0" data-w="44"></span></span><span class="dist-val">19%</span></div>
-                <div class="dist-row"><span class="dist-name">Vínculo</span><span class="dist-track"><span class="dist-fill" style="width:0" data-w="26"></span></span><span class="dist-val">9%</span></div>
-                <div class="dist-row"><span class="dist-name">Outros</span><span class="dist-track"><span class="dist-fill" style="width:0" data-w="16"></span></span><span class="dist-val">7%</span></div>
-              </div>
+
+            <div class="panel-head">
+              <span>Reclamante / Filial</span>
+              <span>Provisão</span>
+              <span>Cenário</span>
+              <span>Estágio do processo</span>
+            </div>
+            <div class="panel-row">
+              <span class="panel-client"><span class="cl-dot" style="background:var(--juris-400)"></span>Silva vs. Unidade Campinas</span>
+              <span class="panel-val">R$ 48.500</span>
+              <span class="panel-val good">R$ 18.000</span>
+              <span class="panel-status-tag ready">Minuta pronta para o escritório</span>
+            </div>
+            <div class="panel-row">
+              <span class="panel-client"><span class="cl-dot" style="background:var(--warn)"></span>Santos vs. Filial Contagem</span>
+              <span class="panel-val">R$ 92.000</span>
+              <span class="panel-val warn">R$ 35.000</span>
+              <span class="panel-status-tag rh">Aguardando subsídio do RH</span>
+            </div>
+            <div class="panel-row">
+              <span class="panel-client"><span class="cl-dot" style="background:var(--ok)"></span>Oliveira vs. Matriz SP</span>
+              <span class="panel-val">R$ 28.000</span>
+              <span class="panel-val good">R$ 12.500</span>
+              <span class="panel-status-tag filed">Protocolado</span>
+            </div>
+            <div class="panel-row">
+              <span class="panel-client"><span class="cl-dot" style="background:var(--info)"></span>Costa vs. Centro de Distribuição</span>
+              <span class="panel-val">R$ 64.000</span>
+              <span class="panel-val wait">R$ 22.000</span>
+              <span class="panel-status-tag calc">Cálculo em cenário</span>
             </div>
           </div>
         </div>
@@ -131,358 +138,512 @@
   </div>
 </section>
 
-<!-- ===== TRUST STRIP ===== -->
+<!-- ===== FAIXA DE CAPACIDADES (marquee) ===== -->
 <div class="trust-strip">
   <div class="trust-track">
-    <!-- SET 1 -->
-    <span class="trust-pill hi"><svg viewBox="0 0 14 14"><path d="M7 1l1.4 3.6L12 6 8.4 7.4 7 11 5.6 7.4 2 6l3.6-1.4z"/></svg>IA jurídica especializada no trabalhista</span>
-    <span class="trust-pill"><svg viewBox="0 0 14 14"><circle cx="7" cy="4" r="2.5"/><path d="M2 13a5 5 0 0 1 10 0"/><line x1="2" y1="9" x2="12" y2="9"/></svg>Treinada para departamentos jurídicos</span>
-    <span class="trust-pill"><svg viewBox="0 0 14 14"><path d="M2 4h10M4 7h6M5.5 10h3"/></svg>Triagem automatizada da caixa</span>
-    <span class="trust-pill green"><svg viewBox="0 0 14 14"><path d="M2 8l3 3 7-8"/></svg>Integração com DJE e DET</span>
-    <span class="trust-pill"><svg viewBox="0 0 14 14"><rect x="2" y="5" width="10" height="8" rx="1"/><path d="M5 5V3.5a2.5 2.5 0 0 1 5 0V5"/></svg>LGPD · dados isolados</span>
-    <span class="trust-pill green"><svg viewBox="0 0 14 14"><path d="M7 1L2 3v4c0 3.3 2.2 5.8 5 6.8C9.8 12.8 12 10.3 12 7V3L7 1z"/><polyline points="4.5,7 6.5,9 9.5,5"/></svg>Deploy on-premises disponível</span>
-    <!-- SET 2 -->
-    <span class="trust-pill hi"><svg viewBox="0 0 14 14"><path d="M7 1l1.4 3.6L12 6 8.4 7.4 7 11 5.6 7.4 2 6l3.6-1.4z"/></svg>IA jurídica especializada no trabalhista</span>
-    <span class="trust-pill"><svg viewBox="0 0 14 14"><circle cx="7" cy="4" r="2.5"/><path d="M2 13a5 5 0 0 1 10 0"/><line x1="2" y1="9" x2="12" y2="9"/></svg>Treinada para departamentos jurídicos</span>
-    <span class="trust-pill"><svg viewBox="0 0 14 14"><path d="M2 4h10M4 7h6M5.5 10h3"/></svg>Triagem automatizada da caixa</span>
-    <span class="trust-pill green"><svg viewBox="0 0 14 14"><path d="M2 8l3 3 7-8"/></svg>Integração com DJE e DET</span>
-    <span class="trust-pill"><svg viewBox="0 0 14 14"><rect x="2" y="5" width="10" height="8" rx="1"/><path d="M5 5V3.5a2.5 2.5 0 0 1 5 0V5"/></svg>LGPD · dados isolados</span>
-    <span class="trust-pill green"><svg viewBox="0 0 14 14"><path d="M7 1L2 3v4c0 3.3 2.2 5.8 5 6.8C9.8 12.8 12 10.3 12 7V3L7 1z"/><polyline points="4.5,7 6.5,9 9.5,5"/></svg>Deploy on-premises disponível</span>
+    <span class="trust-pill hi"><svg viewBox="0 0 14 14"><path d="M7 1l1.4 3.6L12 6 8.4 7.4 7 11 5.6 7.4 2 6l3.6-1.4z"/></svg>triagem automatizada</span>
+    <span class="trust-pill"><svg viewBox="0 0 14 14"><path d="M2 4h10M4 7h6M5.5 10h3"/></svg>dossiê de defesa</span>
+    <span class="trust-pill green"><svg viewBox="0 0 14 14"><path d="M2 8l3 3 7-8"/></svg>minuta de contestação no padrão da casa</span>
+    <span class="trust-pill"><svg viewBox="0 0 14 14"><path d="M3 15V8M7 15V4M11 15v-7M15 15V6"/></svg>cálculo e cenário de acordo</span>
+    <span class="trust-pill hi"><svg viewBox="0 0 14 14"><circle cx="7" cy="4" r="2.5"/><path d="M2 13a5 5 0 0 1 10 0"/></svg>kit do preposto</span>
+    <span class="trust-pill"><svg viewBox="0 0 14 14"><rect x="2" y="3" width="10" height="9" rx="1"/><line x1="2" y1="6" x2="12" y2="6"/></svg>monitoramento de prazos</span>
+    <span class="trust-pill green"><svg viewBox="0 0 14 14"><rect x="2" y="2" width="10" height="10" rx="1"/><line x1="4.5" y1="5.5" x2="9.5" y2="5.5"/><line x1="4.5" y1="8.5" x2="8" y2="8.5"/></svg>causa-raiz para o RH</span>
+    <span class="trust-pill hi"><svg viewBox="0 0 14 14"><path d="M7 1L2 3v4c0 3.3 2.2 5.8 5 6.8C9.8 12.8 12 10.3 12 7V3L7 1z"/><polyline points="4.5,7 6.5,9 9.5,5"/></svg>painel de provisão</span>
+    <!-- duplicate set -->
+    <span class="trust-pill hi"><svg viewBox="0 0 14 14"><path d="M7 1l1.4 3.6L12 6 8.4 7.4 7 11 5.6 7.4 2 6l3.6-1.4z"/></svg>triagem automatizada</span>
+    <span class="trust-pill"><svg viewBox="0 0 14 14"><path d="M2 4h10M4 7h6M5.5 10h3"/></svg>dossiê de defesa</span>
+    <span class="trust-pill green"><svg viewBox="0 0 14 14"><path d="M2 8l3 3 7-8"/></svg>minuta de contestação no padrão da casa</span>
+    <span class="trust-pill"><svg viewBox="0 0 14 14"><path d="M3 15V8M7 15V4M11 15v-7M15 15V6"/></svg>cálculo e cenário de acordo</span>
+    <span class="trust-pill hi"><svg viewBox="0 0 14 14"><circle cx="7" cy="4" r="2.5"/><path d="M2 13a5 5 0 0 1 10 0"/></svg>kit do preposto</span>
+    <span class="trust-pill"><svg viewBox="0 0 14 14"><rect x="2" y="3" width="10" height="9" rx="1"/><line x1="2" y1="6" x2="12" y2="6"/></svg>monitoramento de prazos</span>
+    <span class="trust-pill green"><svg viewBox="0 0 14 14"><rect x="2" y="2" width="10" height="10" rx="1"/><line x1="4.5" y1="5.5" x2="9.5" y2="5.5"/><line x1="4.5" y1="8.5" x2="8" y2="8.5"/></svg>causa-raiz para o RH</span>
+    <span class="trust-pill hi"><svg viewBox="0 0 14 14"><path d="M7 1L2 3v4c0 3.3 2.2 5.8 5 6.8C9.8 12.8 12 10.3 12 7V3L7 1z"/><polyline points="4.5,7 6.5,9 9.5,5"/></svg>painel de provisão</span>
   </div>
 </div>
 
-<!-- ===== EM NÚMEROS ===== -->
-<section data-screen-label="O passivo em números">
+<!-- ===== O PROBLEMA ===== -->
+<section id="problema">
   <div class="shell">
     <div class="sec-header reveal">
-      <h2 class="sec-h2">O custo invisível do contencioso trabalhista <span class="grad">cresce todos os meses.</span></h2>
-      <p class="sec-lede">Empresas brasileiras enfrentam um cenário de alta litigiosidade, custos crescentes e imprevisibilidade financeira que impacta diretamente o EBITDA e o caixa.</p>
+      <span class="eyebrow">O Problema</span>
+      <h2 class="sec-h2">O contencioso trabalhista de massa <span class="grad">não escala com mais gente.</span></h2>
+      <p class="sec-lede">O volume cresce, o custo por processo não cai, e o time interno passa o dia cobrando subsídio do RH, conferindo cálculo e relendo peça repetida. A conta aparece na provisão.</p>
     </div>
 
-    <div class="stats-wrap">
-      <div class="stat-card reveal d1">
-        <span class="stat-ic"><svg viewBox="0 0 18 18"><rect x="2" y="3" width="14" height="12" rx="1.5"/><line x1="2" y1="6.5" x2="16" y2="6.5"/><line x1="6" y1="3" x2="6" y2="1.5"/><line x1="12" y1="3" x2="12" y2="1.5"/></svg></span>
-        <div class="stat-num">80 milhões</div>
-        <p class="stat-desc">processos em tramitação na Justiça brasileira — o contencioso trabalhista é uma das maiores fatias.</p>
-        <span class="stat-src">Fonte: CNJ · Justiça em Números</span>
+    <!-- stats -->
+    <div class="stats-wrap reveal d1">
+      <div class="stat-card">
+        <div class="stat-num">R$ 50,6 bi</div>
+        <p class="stat-desc">pagos a reclamantes pela Justiça do Trabalho em 2025 — recorde histórico.</p>
+        <span class="stat-src">Fonte: TST / Justiça do Trabalho</span>
       </div>
-      <div class="stat-card reveal d2">
-        <span class="stat-ic"><svg viewBox="0 0 18 18"><path d="M9 2v14M3 7l6-5 6 5"/><path d="M3 11l6 5 6-5"/></svg></span>
-        <div class="stat-num">4 milhões</div>
-        <p class="stat-desc">casos novos chegam à Justiça do Trabalho a cada ano, mantendo o volume de demandas em alta.</p>
-        <span class="stat-src">Fonte: CNJ / TST · Justiça em Números</span>
+      <div class="stat-card">
+        <div class="stat-num">2,3 milhões</div>
+        <p class="stat-desc">novas ações trabalhistas ajuizadas por ano no país.</p>
+        <span class="stat-src">Fonte: TST — Relatório Geral da Justiça do Trabalho</span>
       </div>
-      <div class="stat-card reveal d3">
-        <span class="stat-ic"><svg viewBox="0 0 18 18"><path d="M3 15V8M7 15V4M11 15v-7M15 15V6"/></svg></span>
-        <div class="stat-num">1 dos maiores</div>
-        <p class="stat-desc">a Justiça do Trabalho está entre os ramos de maior volume de casos de todo o Judiciário brasileiro.</p>
-        <span class="stat-src">Fonte: CNJ · Justiça em Números</span>
+      <div class="stat-card">
+        <div class="stat-num">> R$ 6 mil</div>
+        <p class="stat-desc">custo médio de defesa por processo em carteiras de massa.</p>
+        <span class="stat-src">Fonte: benchmark de mercado</span>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">77%</div>
+        <p class="stat-desc">dos advogados já usam IA semanalmente — o benchmark do adversário subiu.</p>
+        <span class="stat-src">Fonte: pesquisa setorial 2025</span>
       </div>
     </div>
 
-    <div class="impact-panel reveal d2">
-      <p class="impact-quote">A combinação de volume, custo por caso e imprevisibilidade gera um impacto silencioso e contínuo no resultado da empresa — <b>muitas vezes subestimado pelas lideranças.</b></p>
-      <div class="impact-list">
-        <div class="impact-li"><span class="il-ic"><svg viewBox="0 0 14 14"><path d="M2 11l4-5 3 3 3-5"/><polyline points="12,4 12,7 9,7"/></svg></span>Aumento constante do número de ações e do custo por defesa.</div>
-        <div class="impact-li"><span class="il-ic"><svg viewBox="0 0 14 14"><rect x="2" y="2" width="10" height="10" rx="1"/><line x1="4.5" y1="5.5" x2="9.5" y2="5.5"/><line x1="4.5" y1="8.5" x2="8" y2="8.5"/></svg></span>Provisões contábeis imprecisas e difíceis de justificar para auditorias.</div>
-        <div class="impact-li"><span class="il-ic"><svg viewBox="0 0 14 14"><circle cx="5" cy="4.5" r="2"/><circle cx="10" cy="6" r="1.6"/><path d="M1.5 12a3.5 3.5 0 0 1 7 0"/></svg></span>Dependência de escritórios externos e falta de padronização.</div>
-        <div class="impact-li"><span class="il-ic"><svg viewBox="0 0 14 14"><circle cx="7" cy="7" r="5.5"/><line x1="7" y1="4" x2="7" y2="7.5"/><circle cx="7" cy="10" r="0.6" fill="currentColor"/></svg></span>Pouca inteligência sobre o portfólio de casos para apoiar decisões.</div>
+    <!-- pain points -->
+    <div class="pain-grid" style="margin-top:clamp(24px,3vw,40px);">
+      <div class="pain-card reveal d1">
+        <span class="pain-num">Dor 01</span>
+        <h3>Subsídio de RH travado.</h3>
+        <p>A defesa espera dias por holerite, cartão de ponto, ficha de registro e acordo coletivo. O prazo anda, o dossiê não.</p>
+        <p class="pain-details">Pedidos por e-mail, sem padrão nem rastreio · filial que responde tarde atrasa a peça inteira · documento errado só aparece na audiência.</p>
+      </div>
+      <div class="pain-card reveal d2">
+        <span class="pain-num">Dor 02</span>
+        <h3>Peça e cálculo refeitos do zero.</h3>
+        <p>Os mesmos vinte pedidos voltam toda semana e cada contestação é remontada à mão.</p>
+        <p class="pain-details">O acervo de teses existe, mas ninguém acha · cálculo em planilha paralela, sem cenário · qualidade varia por escritório e por advogado.</p>
+      </div>
+      <div class="pain-card reveal d3">
+        <span class="pain-num">Dor 03</span>
+        <h3>Custo alto e pouca visibilidade.</h3>
+        <p>Você paga por hora ou por ato, sem saber o custo real por processo — e sem devolver ao RH a causa-raiz do passivo.</p>
+        <p class="pain-details">Provisão baseada em média, não em risco por pedido · sem comparação entre escritórios · reclamação repetida por filial não vira ação preventiva.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== COMPARATIVO ===== -->
-<section id="comparativo" data-screen-label="Comparativo">
+<!-- ===== A SOLUÇÃO ===== -->
+<section id="solucao">
   <div class="shell">
-    <div class="sec-head-left reveal">
-      <h2 class="sh-title">Por que a IA generalista não resolve o contencioso trabalhista empresarial?</h2>
-      <p class="sh-lede">Soluções genéricas não entendem a complexidade do trabalhista brasileiro, nem a operação jurídica dentro das empresas.</p>
-      <div class="cmp-aside">
-        <span class="ca-ic"><svg viewBox="0 0 18 18"><path d="M9 1.5l6 2.5v4c0 4-2.6 6.6-6 7.5-3.4-.9-6-3.5-6-7.5v-4z"/><polyline points="6,9 8,11 12,6.5"/></svg></span>
-        <p>O Juris 8 foi construído exclusivamente para departamentos jurídicos empresariais brasileiros.</p>
+    <div class="sec-header reveal">
+      <span class="eyebrow">A Solução</span>
+      <h2 class="sec-h2">Uma esteira de defesa. <span class="grad">Não mais um software de gestão.</span></h2>
+      <p class="sec-lede">A Juris8 não pede que o seu time alimente mais um sistema. Ela entra no fluxo que já existe, consome os dados que a empresa já tem e entrega trabalho adiantado — para o seu escritório revisar, assinar e protocolar.</p>
+    </div>
+
+    <div class="sol-grid">
+      <div class="sol-card reveal d1">
+        <span class="sol-tag">Módulo 01</span>
+        <div class="sol-icon"><svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h14M4 11h14M4 16h14"/><circle cx="18" cy="6" r="2"/></svg></div>
+        <h3>Integração com os dados da empresa</h3>
+        <p>Folha, ponto, ficha de registro, acordos coletivos, organograma de filiais e o acervo de peças entram uma vez e ficam normalizados, indexados e versionados.</p>
+        <span class="sol-fecho">Base viva, não anexo perdido.</span>
+      </div>
+      <div class="sol-card reveal d2">
+        <span class="sol-tag">Módulo 02</span>
+        <div class="sol-icon"><svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="16" height="15" rx="1.5"/><line x1="3" y1="8" x2="19" y2="8"/><circle cx="15" cy="14" r="2.5"/><path d="M15 12.5v1.5l1 .8"/></svg></div>
+        <h3>Triagem por pedido, não por processo</h3>
+        <p>Cada inicial é lida e decomposta em pedidos — horas extras, insalubridade, vínculo, acúmulo de função — e cada um recebe tese, risco e a prova que precisa.</p>
+        <span class="sol-fecho">Classificação em minutos.</span>
+      </div>
+      <div class="sol-card reveal d3">
+        <span class="sol-tag">Módulo 03</span>
+        <div class="sol-icon"><svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h9l4 4v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><polyline points="13,3 13,7 17,7"/><line x1="7.5" y1="12" x2="14.5" y2="12"/><line x1="7.5" y1="15" x2="12" y2="15"/></svg></div>
+        <h3>Dossiê de defesa montado sozinho</h3>
+        <p>A plataforma sabe qual documento cada pedido exige, busca na base da empresa e só aciona o RH pelo que realmente falta, com prazo e responsável.</p>
+        <span class="sol-fecho">Menos e-mail, mais prova.</span>
+      </div>
+      <div class="sol-card reveal d1">
+        <span class="sol-tag">Módulo 04</span>
+        <div class="sol-icon"><svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h9l4 4v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><polyline points="13,3 13,7 17,7"/><path d="M8 14l1.5 1.5L13 12"/></svg></div>
+        <h3>Minuta de contestação no padrão da casa</h3>
+        <p>A peça sai no modelo do seu escritório, com as teses que ele já usa — não em um template genérico de mercado.</p>
+        <span class="sol-fecho">Padrão único entre escritórios.</span>
+      </div>
+      <div class="sol-card reveal d2">
+        <span class="sol-tag">Módulo 05</span>
+        <div class="sol-icon"><svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15V8M7 15V4M11 15v-7M15 15V6M19 15V9"/></svg></div>
+        <h3>Cálculo e cenário de acordo</h3>
+        <p>Liquidação por pedido, com faixa de risco e simulação de acordo, para a audiência começar com limite definido.</p>
+        <span class="sol-fecho">Provisão com lastro.</span>
+      </div>
+      <div class="sol-card reveal d3">
+        <span class="sol-tag">Módulo 06</span>
+        <div class="sol-icon"><svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="18" height="18" rx="2"/><line x1="6" y1="7" x2="16" y2="7"/><line x1="6" y1="11" x2="14" y2="11"/><line x1="6" y1="15" x2="10" y2="15"/></svg></div>
+        <h3>Painel de carteira e causa-raiz</h3>
+        <p>Custo por processo, prazo por peça, resultado por tese e o mapa de quais filiais e práticas geram o passivo.</p>
+        <span class="sol-fecho">Do contencioso à prevenção.</span>
       </div>
     </div>
 
-    <div class="cmp-table-wrap reveal d1">
+    <div class="sol-quote reveal">"Não vendemos software jurídico. Entregamos a defesa adiantada, no padrão da sua casa, por um preço previsível por processo ativo."</div>
+  </div>
+</section>
+
+<!-- ===== O FLUXO ===== -->
+<section id="fluxo">
+  <div class="shell">
+    <div class="sec-header reveal">
+      <span class="eyebrow">O Fluxo · Ponta a Ponta</span>
+      <h2 class="sec-h2">Da integração com os dados da empresa <span class="grad">até a audiência e a prevenção.</span></h2>
+      <p class="sec-lede">Todo processo entra pela mesma porta e percorre as mesmas fases. O que muda é quanto do trabalho já está pronto quando chega ao advogado.</p>
+    </div>
+
+    <!-- legend -->
+    <div class="flow-legend reveal">
+      <div class="flow-actor">
+        <span class="flow-actor-name"><span class="fa-dot empresa"></span>Empresa (jurídico + RH)</span>
+        <p>Fornece dados, aprova a estratégia recomendada e decide a faixa de acordo autorizada.</p>
+      </div>
+      <div class="flow-actor">
+        <span class="flow-actor-name"><span class="fa-dot juris8"></span>Juris8 (IA)</span>
+        <p>Captura, organiza os documentos, monta o dossiê, redige a minuta e efetua os cálculos.</p>
+      </div>
+      <div class="flow-actor">
+        <span class="flow-actor-name"><span class="fa-dot escritorio"></span>Escritório contratado</span>
+        <p>O advogado que já atende a empresa: revisa, ajusta, assina, protocola e conduz a audiência.</p>
+      </div>
+    </div>
+
+    <!-- Fase 0 -->
+    <div class="flow-phase0 reveal">
+      <span class="eyebrow" style="margin-bottom:10px;">Fase 0</span>
+      <h3>Integração: os dados que a empresa já tem</h3>
+      <p class="phase0-sub">Sete fontes convergem para uma camada única de dados:</p>
+      <div style="overflow-x:auto;">
+        <table class="flow-table">
+          <thead><tr><th>Fonte</th><th>O que traz</th></tr></thead>
+          <tbody>
+            <tr><td>Folha e holerites</td><td>verbas, adicionais, base de cálculo</td></tr>
+            <tr><td>Ponto eletrônico</td><td>jornada, intervalos, banco de horas</td></tr>
+            <tr><td>Ficha de registro</td><td>admissão, função, transferências</td></tr>
+            <tr><td>Acordo ou convenção coletiva</td><td>norma aplicável por base e período</td></tr>
+            <tr><td>Acervo de peças</td><td>teses e modelos da empresa e do escritório</td></tr>
+            <tr><td>PJe e publicações</td><td>andamentos, prazos, intimações</td></tr>
+            <tr><td>DET e eSocial</td><td>notificações e eventos trabalhistas</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="flow-layer">
+        <h4>Camada de dados Juris8</h4>
+        <p>Normaliza, indexa e versiona tudo por empregado, filial, período e norma aplicável. Cada documento fica rastreável até a peça em que foi usado.</p>
+        <div class="flow-chips">
+          <span class="flow-chip">Conexão por API</span>
+          <span class="flow-chip">SFTP</span>
+          <span class="flow-chip">Pasta monitorada</span>
+          <span class="flow-chip">Sem migrar de sistema</span>
+          <span class="flow-chip">Trilha de auditoria</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fases 1-7 timeline -->
+    <div class="flow-phases">
+      <!-- Fase 1 -->
+      <div class="flow-phase reveal">
+        <div class="phase-marker"><span class="phase-num">1</span></div>
+        <div class="phase-body">
+          <div class="phase-header">
+            <span class="phase-title">Captura e triagem</span>
+            <span class="phase-resp ai">Juris8 (IA)</span>
+          </div>
+          <div class="phase-io">
+            <div class="phase-box"><div class="phase-box-label">Entra</div><ul><li>Petição inicial e documentos do PJe</li><li>Dados do reclamante na base da empresa</li><li>Histórico de casos semelhantes na carteira</li></ul></div>
+            <div class="phase-box"><div class="phase-box-label">Sai</div><ul><li>Processo decomposto pedido a pedido</li><li>Tese sugerida e prova exigida por pedido</li><li>Alerta de prazo e de risco desde o primeiro dia</li></ul></div>
+          </div>
+          <div class="phase-gain"><strong>Ganho:</strong> a fila entra priorizada — começa-se pelo que é grave e caro, não pelo que chegou primeiro.</div>
+        </div>
+      </div>
+
+      <!-- Fase 2 -->
+      <div class="flow-phase reveal">
+        <div class="phase-marker"><span class="phase-num">2</span></div>
+        <div class="phase-body">
+          <div class="phase-header">
+            <span class="phase-title">Montagem do dossiê de defesa</span>
+            <span class="phase-resp ai">Juris8 (IA)</span>
+            <span class="phase-resp emp">RH da empresa</span>
+          </div>
+          <div class="phase-io">
+            <div class="phase-box"><div class="phase-box-label">Entra</div><ul><li>A lista de provas exigida pela triagem</li><li>A camada de dados da fase 0</li><li>As respostas do RH ao que faltar</li></ul></div>
+            <div class="phase-box"><div class="phase-box-label">Sai</div><ul><li>Dossiê completo, indexado por pedido</li><li>Pendências abertas com prazo e responsável</li><li>Registro de qual filial atrasa o subsídio</li></ul></div>
+          </div>
+          <div class="phase-gain"><strong>Ganho:</strong> o RH só é acionado pelo que a base não tem, em formulário com prazo — e não por e-mail solto.</div>
+        </div>
+      </div>
+
+      <!-- Fase 3 -->
+      <div class="flow-phase reveal">
+        <div class="phase-marker"><span class="phase-num">3</span></div>
+        <div class="phase-body">
+          <div class="phase-header">
+            <span class="phase-title">Estratégia e risco por pedido</span>
+            <span class="phase-resp ai">Juris8 (IA)</span>
+            <span class="phase-resp esc">Escritório contratado</span>
+            <span class="phase-resp emp">Jurídico interno</span>
+          </div>
+          <div class="phase-io">
+            <div class="phase-box"><div class="phase-box-label">Entra</div><ul><li>Dossiê e teses candidatas</li><li>Jurisprudência da vara e do TRT competente</li><li>Resultado histórico da empresa em pedidos iguais</li></ul></div>
+            <div class="phase-box"><div class="phase-box-label">Sai</div><ul><li>Recomendação de contestar, transacionar ou reconhecer</li><li>Faixa de risco financeiro por pedido</li><li>Decisão registrada, com o escritório opinando e o jurídico interno aprovando</li></ul></div>
+          </div>
+          <div class="phase-gain"><strong>Ganho:</strong> a estratégia deixa de depender de quem pegou o caso naquele dia.</div>
+        </div>
+      </div>
+
+      <!-- Fase 4 -->
+      <div class="flow-phase reveal">
+        <div class="phase-marker"><span class="phase-num">4</span></div>
+        <div class="phase-body">
+          <div class="phase-header">
+            <span class="phase-title">Minuta de contestação</span>
+            <span class="phase-resp ai">Juris8 (IA)</span>
+            <span class="phase-resp esc">Revisão e assinatura do escritório contratado</span>
+          </div>
+          <div class="phase-io">
+            <div class="phase-box"><div class="phase-box-label">Entra</div><ul><li>A estratégia aprovada na fase 3</li><li>O acervo de modelos e teses do escritório</li><li>As provas já vinculadas a cada pedido</li></ul></div>
+            <div class="phase-box"><div class="phase-box-label">Sai</div><ul><li>Peça redigida no modelo da casa, com citações verificadas</li><li>Marcação do que a IA gerou e do que exige leitura humana</li><li>Versão final revisada, assinada e protocolada pelo escritório contratado</li></ul></div>
+          </div>
+          <div class="phase-gain"><strong>Ganho:</strong> o advogado começa de uma minuta fundamentada, não de uma folha em branco — e usa o tempo dele no que é jurídico.</div>
+        </div>
+      </div>
+
+      <!-- Fase 5 -->
+      <div class="flow-phase reveal">
+        <div class="phase-marker"><span class="phase-num">5</span></div>
+        <div class="phase-body">
+          <div class="phase-header">
+            <span class="phase-title">Cálculo e cenário de acordo</span>
+            <span class="phase-resp ai">Juris8 (IA)</span>
+            <span class="phase-resp esc">Conferência do escritório</span>
+          </div>
+          <div class="phase-io">
+            <div class="phase-box"><div class="phase-box-label">Entra</div><ul><li>Verbas da folha e jornada do ponto</li><li>Norma coletiva aplicável ao período</li><li>Pedidos e faixa de risco da fase 3</li></ul></div>
+            <div class="phase-box"><div class="phase-box-label">Sai</div><ul><li>Liquidação por pedido, com memória de cálculo</li><li>Cenários de acordo mínimo, provável e teto</li><li>Provisão atualizada na carteira</li></ul></div>
+          </div>
+          <div class="phase-gain"><strong>Ganho:</strong> quem senta na audiência sabe até onde pode negociar — e por quê.</div>
+        </div>
+      </div>
+
+      <!-- Fase 6 -->
+      <div class="flow-phase reveal">
+        <div class="phase-marker"><span class="phase-num">6</span></div>
+        <div class="phase-body">
+          <div class="phase-header">
+            <span class="phase-title">Audiência: kit do preposto</span>
+            <span class="phase-resp ai">Juris8 (IA)</span>
+            <span class="phase-resp esc">Condução do escritório contratado</span>
+          </div>
+          <div class="phase-io">
+            <div class="phase-box"><div class="phase-box-label">Entra</div><ul><li>Dossiê, contestação e cálculo do processo</li><li>Perfil do reclamante e da unidade</li><li>Depoimentos e atas de casos semelhantes</li></ul></div>
+            <div class="phase-box"><div class="phase-box-label">Sai</div><ul><li>Roteiro para o preposto e perguntas para testemunhas</li><li>Pontos sensíveis e respostas recomendadas</li><li>Faixa de acordo autorizada, por escrito, pelo jurídico da empresa</li></ul></div>
+          </div>
+          <div class="phase-gain"><strong>Ganho:</strong> preposto preparado e advogado com o caso inteiro na mão — menos confissão por despreparo e menos surpresa por documento faltante.</div>
+        </div>
+      </div>
+
+      <!-- Fase 7 -->
+      <div class="flow-phase reveal">
+        <div class="phase-marker"><span class="phase-num">7</span></div>
+        <div class="phase-body">
+          <div class="phase-header">
+            <span class="phase-title">Monitoramento, prazos e recursos</span>
+            <span class="phase-resp ai">Juris8 (IA)</span>
+            <span class="phase-resp esc">Decisão do escritório</span>
+          </div>
+          <div class="phase-io">
+            <div class="phase-box"><div class="phase-box-label">Entra</div><ul><li>Publicações, andamentos e intimações do PJe e do DET</li><li>Sentenças e acórdãos da carteira</li><li>Decisões estratégicas já registradas</li></ul></div>
+            <div class="phase-box"><div class="phase-box-label">Sai</div><ul><li>Prazo capturado e distribuído automaticamente ao responsável</li><li>Recurso sugerido com tese e fundamentos da sentença, para o escritório decidir e redigir</li><li>Resultado que realimenta a base de teses</li></ul></div>
+          </div>
+          <div class="phase-gain"><strong>Ganho:</strong> o controle de prazo deixa de depender de conferência manual diária.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- output -->
+    <div class="flow-output reveal">
+      <h3>Saída — o que a diretoria e o RH passam a enxergar</h3>
+      <p style="font-size:13px;color:var(--ink-400);line-height:1.6;margin-bottom:16px;">Painel de carteira atualizado a cada movimentação, sem ninguém preencher planilha:</p>
+      <div class="output-grid">
+        <div class="output-item">
+          <h4>Provisão por risco</h4>
+          <p>Valor esperado por pedido e por unidade, com memória de cálculo auditável.</p>
+        </div>
+        <div class="output-item">
+          <h4>Custo por processo</h4>
+          <p>Quanto custa defender, comparável entre escritórios, filiais e tipos de pedido.</p>
+        </div>
+        <div class="output-item">
+          <h4>Resultado por tese</h4>
+          <p>O que ganha e o que perde, por vara e por tipo de pedido.</p>
+        </div>
+        <div class="output-item">
+          <h4>Causa-raiz do passivo</h4>
+          <p>Quais práticas e quais filiais geram as ações que se repetem todo mês.</p>
+        </div>
+      </div>
+      <div class="flow-cycle">A causa-raiz volta ao RH como ação preventiva, e cada sentença realimenta as teses da esteira.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== O QUE MUDA ===== -->
+<section id="o-que-muda">
+  <div class="shell">
+    <div class="sec-header reveal">
+      <span class="eyebrow">O que muda</span>
+      <h2 class="sec-h2">O trabalho continua o mesmo. <span class="grad">O ponto de partida, não.</span></h2>
+      <p class="sec-lede">Nada é substituído. O que muda é de onde cada um começa.</p>
+    </div>
+
+    <div class="cmp-table-wrap reveal" style="overflow-x:auto;">
       <table class="cmp-table">
         <thead>
           <tr>
-            <th class="cmp-col-crit"><span class="cmp-h-crit">Critério</span></th>
-            <th>
-              <span class="cmp-h">
-                <span class="cmp-h-ic"><svg viewBox="0 0 16 16"><circle cx="8" cy="5" r="2.6"/><path d="M2.5 14a5.5 5.5 0 0 1 11 0"/></svg></span>
-                <span class="cmp-h-name">Manual interno</span>
-                <span class="cmp-h-sub">Equipe própria</span>
-              </span>
-            </th>
-            <th>
-              <span class="cmp-h">
-                <span class="cmp-h-ic"><svg viewBox="0 0 16 16"><path d="M3 14V6l5-3.5L13 6v8"/><rect x="6" y="9.5" width="4" height="4.5"/></svg></span>
-                <span class="cmp-h-name">Escritório terceirizado</span>
-                <span class="cmp-h-sub">Serviço tradicional</span>
-              </span>
-            </th>
-            <th>
-              <span class="cmp-h">
-                <span class="cmp-h-ic"><svg viewBox="0 0 16 16"><path d="M4 3h8a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H6l-3 3V4a1 1 0 0 1 1-1z"/></svg></span>
-                <span class="cmp-h-name">IA generalista</span>
-                <span class="cmp-h-sub">ChatGPT e similares</span>
-              </span>
-            </th>
-            <th class="cmp-col-win">
-              <span class="cmp-h">
-                <span class="cmp-reco"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Recomendado</span>
-                <span class="cmp-h-ic"><svg viewBox="0 0 16 16"><path d="M8 1.5l1.6 4.1L14 7l-4.4 1.4L8 12.5 6.4 8.4 2 7l4.4-1.4z"/></svg></span>
-                <span class="cmp-h-name">Juris 8 Trabalhista</span>
-                <span class="cmp-h-sub">Plataforma especializada</span>
-              </span>
-            </th>
+            <th>Dimensão</th>
+            <th>Como é hoje</th>
+            <th>Com o Juris8 Trabalhista</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td class="cmp-crit">Especialização no trabalhista brasileiro</td>
-            <td><span class="cmp-cell"><span class="cmp-mk bad"><svg viewBox="0 0 14 14"><line x1="3.5" y1="3.5" x2="10.5" y2="10.5"/><line x1="10.5" y1="3.5" x2="3.5" y2="10.5"/></svg></span>Baixa</span></td>
-            <td><span class="cmp-cell"><span class="cmp-mk warn"><svg viewBox="0 0 14 14"><line x1="4" y1="7" x2="10" y2="7"/></svg></span>Média</span></td>
-            <td><span class="cmp-cell"><span class="cmp-mk warn"><svg viewBox="0 0 14 14"><line x1="4" y1="7" x2="10" y2="7"/></svg></span>Genérica</span></td>
-            <td class="cmp-col-win"><span class="cmp-cell"><span class="cmp-mk ok"><svg viewBox="0 0 14 14"><polyline points="2.5,7 6,10.5 11.5,3.5"/></svg></span>Alta, especializada</span></td>
-          </tr>
-          <tr>
-            <td class="cmp-crit">Custo total da operação</td>
-            <td><span class="cmp-cell"><span class="cmp-mk bad"><svg viewBox="0 0 14 14"><line x1="3.5" y1="3.5" x2="10.5" y2="10.5"/><line x1="10.5" y1="3.5" x2="3.5" y2="10.5"/></svg></span>Alto e ineficiente</span></td>
-            <td><span class="cmp-cell"><span class="cmp-mk bad"><svg viewBox="0 0 14 14"><line x1="3.5" y1="3.5" x2="10.5" y2="10.5"/><line x1="10.5" y1="3.5" x2="3.5" y2="10.5"/></svg></span>Alto e variável</span></td>
-            <td><span class="cmp-cell"><span class="cmp-mk warn"><svg viewBox="0 0 14 14"><line x1="4" y1="7" x2="10" y2="7"/></svg></span>Baixo, porém limitado</span></td>
-            <td class="cmp-col-win"><span class="cmp-cell"><span class="cmp-mk ok"><svg viewBox="0 0 14 14"><polyline points="2.5,7 6,10.5 11.5,3.5"/></svg></span>Baixo e previsível</span></td>
-          </tr>
-          <tr>
-            <td class="cmp-crit">Geração de defesa e peças</td>
-            <td><span class="cmp-cell"><span class="cmp-mk warn"><svg viewBox="0 0 14 14"><line x1="4" y1="7" x2="10" y2="7"/></svg></span>Manual</span></td>
-            <td><span class="cmp-cell"><span class="cmp-mk warn"><svg viewBox="0 0 14 14"><line x1="4" y1="7" x2="10" y2="7"/></svg></span>Manual</span></td>
-            <td><span class="cmp-cell"><span class="cmp-mk bad"><svg viewBox="0 0 14 14"><line x1="3.5" y1="3.5" x2="10.5" y2="10.5"/><line x1="10.5" y1="3.5" x2="3.5" y2="10.5"/></svg></span>Sem contexto do caso</span></td>
-            <td class="cmp-col-win"><span class="cmp-cell"><span class="cmp-mk ok"><svg viewBox="0 0 14 14"><polyline points="2.5,7 6,10.5 11.5,3.5"/></svg></span>Sim, com modelos próprios</span></td>
-          </tr>
-          <tr>
-            <td class="cmp-crit">Triagem e priorização da caixa</td>
-            <td><span class="cmp-cell"><span class="cmp-mk bad"><svg viewBox="0 0 14 14"><line x1="3.5" y1="3.5" x2="10.5" y2="10.5"/><line x1="10.5" y1="3.5" x2="3.5" y2="10.5"/></svg></span>Não</span></td>
-            <td><span class="cmp-cell"><span class="cmp-mk warn"><svg viewBox="0 0 14 14"><line x1="4" y1="7" x2="10" y2="7"/></svg></span>Parcial</span></td>
-            <td><span class="cmp-cell"><span class="cmp-mk bad"><svg viewBox="0 0 14 14"><line x1="3.5" y1="3.5" x2="10.5" y2="10.5"/><line x1="10.5" y1="3.5" x2="3.5" y2="10.5"/></svg></span>Não</span></td>
-            <td class="cmp-col-win"><span class="cmp-cell"><span class="cmp-mk ok"><svg viewBox="0 0 14 14"><polyline points="2.5,7 6,10.5 11.5,3.5"/></svg></span>Sim, automática</span></td>
-          </tr>
-          <tr>
-            <td class="cmp-crit">Privacidade e isolamento dos dados</td>
-            <td><span class="cmp-cell"><span class="cmp-mk warn"><svg viewBox="0 0 14 14"><line x1="4" y1="7" x2="10" y2="7"/></svg></span>Parcial</span></td>
-            <td><span class="cmp-cell"><span class="cmp-mk warn"><svg viewBox="0 0 14 14"><line x1="4" y1="7" x2="10" y2="7"/></svg></span>Parcial</span></td>
-            <td><span class="cmp-cell"><span class="cmp-mk bad"><svg viewBox="0 0 14 14"><line x1="3.5" y1="3.5" x2="10.5" y2="10.5"/><line x1="10.5" y1="3.5" x2="3.5" y2="10.5"/></svg></span>Dados em ambiente público</span></td>
-            <td class="cmp-col-win"><span class="cmp-cell"><span class="cmp-mk ok"><svg viewBox="0 0 14 14"><polyline points="2.5,7 6,10.5 11.5,3.5"/></svg></span>Dados isolados por cliente</span></td>
-          </tr>
-          <tr>
-            <td class="cmp-crit">Compliance e segurança</td>
-            <td><span class="cmp-cell"><span class="cmp-mk warn"><svg viewBox="0 0 14 14"><line x1="4" y1="7" x2="10" y2="7"/></svg></span>Variável</span></td>
-            <td><span class="cmp-cell"><span class="cmp-mk warn"><svg viewBox="0 0 14 14"><line x1="4" y1="7" x2="10" y2="7"/></svg></span>Variável</span></td>
-            <td><span class="cmp-cell"><span class="cmp-mk bad"><svg viewBox="0 0 14 14"><line x1="3.5" y1="3.5" x2="10.5" y2="10.5"/><line x1="10.5" y1="3.5" x2="3.5" y2="10.5"/></svg></span>Não garantido</span></td>
-            <td class="cmp-col-win"><span class="cmp-cell"><span class="cmp-mk ok"><svg viewBox="0 0 14 14"><polyline points="2.5,7 6,10.5 11.5,3.5"/></svg></span>Enterprise · LGPD · ISO</span></td>
-          </tr>
+          <tr><td>Subsídio de RH</td><td class="col-old">e-mail e cobrança manual, sem prazo</td><td class="col-new">pedido automático só do que falta, com prazo e responsável</td></tr>
+          <tr><td>Contestação</td><td class="col-old">refeita caso a caso, qualidade variável</td><td class="col-new">minuta no padrão da casa, revisada e assinada pelo escritório</td></tr>
+          <tr><td>Cálculo</td><td class="col-old">planilha paralela, sem cenário</td><td class="col-new">liquidação por pedido, com faixa mínima, provável e teto</td></tr>
+          <tr><td>Preço</td><td class="col-old">por hora ou por ato, difícil de prever</td><td class="col-new">assinatura por processo ativo/mês, previsível no orçamento</td></tr>
+          <tr><td>Gestão</td><td class="col-old">relatório manual, mensal, sem causa-raiz</td><td class="col-new">painel vivo de provisão, custo, resultado e origem do passivo</td></tr>
         </tbody>
       </table>
     </div>
 
-    <div class="cmp-foot reveal d2">
-      <span class="cf-ic"><svg viewBox="0 0 18 18"><path d="M9 1.5l6 2.5v4c0 4-2.6 6.6-6 7.5-3.4-.9-6-3.5-6-7.5v-4z"/><polyline points="6,9 8,11 12,6.5"/></svg></span>
-      <p><b>Somente uma plataforma construída para o contencioso trabalhista empresarial brasileiro</b> combina IA especializada, dados proprietários e integração completa ao fluxo jurídico da sua empresa.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CAMADAS (PLATAFORMA) ===== -->
-<section id="plataforma" data-screen-label="Camadas">
-  <div class="shell">
-    <div class="sec-head-left reveal">
-      <h2 class="sh-title">Camadas automatizadas <span class="serif">trabalhando juntas</span></h2>
-      <p class="sh-lede">Do protocolo inicial à geração de defesa — o Juris 8 cobre o ciclo do contencioso trabalhista sem lacunas manuais.</p>
-    </div>
-
-    <div class="camadas-grid">
-      <!-- CAMADA 01 · TRIAGEM -->
-      <div class="camada-card reveal d1">
-        <span class="camada-num">Camada 01</span>
-        <span class="camada-ic"><svg viewBox="0 0 22 22"><path d="M3 5h16M5.5 11h11M8 17h6"/></svg></span>
-        <div class="camada-title">Triagem Inteligente</div>
-        <p class="camada-desc">Toda a caixa de entrada do departamento jurídico classificada e priorizada por IA em segundos. Nenhum caso cai no esquecimento.</p>
-        <div class="camada-list">
-          <div class="camada-li"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Classificação automática por tipo de pedido</div>
-          <div class="camada-li"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Score de urgência e valor de risco</div>
-          <div class="camada-li"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Distribuição para advogado por especialidade</div>
-          <div class="camada-li"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Alerta de prazos e notificações</div>
-          <div class="camada-li fresh"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Integração com caixas DJE e DET<span class="li-new">Novo</span></div>
-        </div>
+    <!-- metrics -->
+    <div class="metrics-grid reveal">
+      <div class="metric-card">
+        <div class="metric-num">①</div>
+        <h4>Dias até a minuta</h4>
+        <p>Dias entre a citação e a minuta pronta — medido no próprio painel, processo a processo.</p>
       </div>
-
-      <!-- CAMADA 02 · DEFESA -->
-      <div class="camada-card reveal d2">
-        <span class="camada-num">Camada 02</span>
-        <span class="camada-ic"><svg viewBox="0 0 22 22"><path d="M5 3h9l4 4v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><polyline points="13,3 13,7 17,7"/><line x1="7.5" y1="12" x2="14.5" y2="12"/><line x1="7.5" y1="15" x2="12" y2="15"/></svg></span>
-        <div class="camada-title">Defesa Automatizada</div>
-        <p class="camada-desc">Peças jurídicas geradas com a jurisprudência trabalhista mais recente do TST e dos TRTs, treinadas com o histórico de vitórias da própria empresa.</p>
-        <div class="camada-list">
-          <div class="camada-li"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Contestação e contrarrazões em minutos</div>
-          <div class="camada-li"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Tese vencedora identificada por caso</div>
-          <div class="camada-li"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Revisão por advogado antes do protocolo</div>
-          <div class="camada-li"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Jurisprudência TST/TRT atualizada diariamente</div>
-        </div>
+      <div class="metric-card">
+        <div class="metric-num">②</div>
+        <h4>Dossiê completo</h4>
+        <p>Processos com dossiê completo antes do prazo — contagem simples, comparável mês a mês.</p>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">③</div>
+        <h4>Custo mensal por processo</h4>
+        <p>Conhecido em contrato desde o primeiro dia, sem hora cheia e sem surpresa por ato.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== CONTRATOS (BLOCO SEPARADO) ===== -->
-<section id="contratos" data-screen-label="Contratos">
+<!-- ===== COMO COMEÇA / IMPLANTAÇÃO ===== -->
+<section id="implantacao">
   <div class="shell">
-    <div class="sec-head-left reveal">
-      <h2 class="sh-title">Da defesa do passivo à <span class="serif">gestão de contratos.</span></h2>
-      <p class="sh-lede">Além do contencioso, a IA atua sobre os contratos da empresa — redigindo, revisando cláusulas críticas e acompanhando prazos de renovação.</p>
+    <div class="sec-header reveal">
+      <span class="eyebrow">Como Começa</span>
+      <h2 class="sec-h2">Começa por um recorte da carteira, <span class="grad">sem trocar nada do que já funciona.</span></h2>
+      <p class="sec-lede">Você escolhe um recorte — uma filial, um tipo de pedido ou um escritório — e o restante segue como está.</p>
     </div>
 
-    <div class="contratos-grid">
-      <!-- CARDS -->
-      <div class="contratos-cards reveal d1">
-        <div class="contrato-card">
-          <span class="contrato-ic"><svg viewBox="0 0 22 22"><path d="M5 3h9l4 4v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><polyline points="13,3 13,7 17,7"/><path d="M8 14l1.5 1.5L13 12"/></svg></span>
-          <div class="contrato-main">
-            <div class="contrato-title">Redação e revisão de cláusulas críticas</div>
-            <p class="contrato-desc">Geração e revisão de contratos com a IA apontando as cláusulas de maior risco e atribuindo um scoring a cada uma.</p>
-            <div class="contrato-tags">
-              <span class="contrato-tag">Redação</span>
-              <span class="contrato-tag">Revisão de cláusulas</span>
-              <span class="contrato-tag">Scoring</span>
-            </div>
-          </div>
-        </div>
-        <div class="contrato-card">
-          <span class="contrato-ic"><svg viewBox="0 0 22 22"><rect x="3" y="4" width="16" height="15" rx="1.5"/><line x1="3" y1="8" x2="19" y2="8"/><line x1="7" y1="2" x2="7" y2="5.5"/><line x1="15" y1="2" x2="15" y2="5.5"/><circle cx="15" cy="14" r="2.5"/><path d="M15 12.5v1.5l1 .8"/></svg></span>
-          <div class="contrato-main">
-            <div class="contrato-title">Gestão de prazos de renovação</div>
-            <p class="contrato-desc">Acompanhamento dos vencimentos e renovações de cada contrato, com alertas antecipados para o time jurídico não perder prazos.</p>
-            <div class="contrato-tags">
-              <span class="contrato-tag">Vencimentos</span>
-              <span class="contrato-tag">Renovações</span>
-              <span class="contrato-tag">Alertas</span>
-            </div>
-          </div>
-        </div>
+    <div class="steps-grid">
+      <div class="step-card reveal d1">
+        <span class="step-num">1</span>
+        <h3>Conexão dos dados</h3>
+        <p>Folha, ponto, ficha de registro e acervo de peças são conectados por API, SFTP ou pasta monitorada. Nada é migrado.</p>
       </div>
-
-      <!-- VISUAL -->
-      <div class="contratos-visual reveal d2">
-        <div class="mock">
-          <div class="mock-bar">
-            <span class="mock-dots"><i></i><i></i><i></i></span>
-            <span class="mock-bar-title">Juris 8 · Contratos</span>
-            <span class="mock-bar-live"><span class="lv-dot"></span>Analisado</span>
-          </div>
-          <div class="mock-body">
-            <div class="clause-mock-head">
-              <span class="clause-doc"><svg viewBox="0 0 16 16"><path d="M4 2h6l3 3v9a.8.8 0 0 1-.8.8H4a.8.8 0 0 1-.8-.8V2.8A.8.8 0 0 1 4 2z"/><polyline points="9.5,2 9.5,5 12.5,5"/></svg>Contrato de prestação de serviços</span>
-              <span class="clause-score"><svg viewBox="0 0 14 14" style="width:10px;height:10px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round"><path d="M7 1l1.4 3.6L12 6 8.4 7.4 7 11 5.6 7.4 2 6l3.6-1.4z"/></svg>Score 7,8/10</span>
-            </div>
-            <div class="clause-row">
-              <span class="clause-badge ok">A</span>
-              <span class="clause-info"><span class="clause-name">Objeto e escopo</span><span class="clause-note">Cláusula clara e completa, sem ressalvas.</span></span>
-              <span class="clause-tag ok">OK</span>
-            </div>
-            <div class="clause-row flag">
-              <span class="clause-badge flag">C</span>
-              <span class="clause-info"><span class="clause-name">Multa e rescisão</span><span class="clause-note">Penalidade desbalanceada — sugerir revisão do percentual.</span></span>
-              <span class="clause-tag flag">Atenção</span>
-            </div>
-            <div class="clause-row crit">
-              <span class="clause-badge crit">D</span>
-              <span class="clause-info"><span class="clause-name">Foro e responsabilidade</span><span class="clause-note">Cláusula crítica: exposição da empresa acima do recomendado.</span></span>
-              <span class="clause-tag crit">Crítica</span>
-            </div>
-            <div class="renew-strip">
-              <svg viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="11" rx="1"/><line x1="2" y1="6" x2="14" y2="6"/><circle cx="11" cy="10.5" r="2"/></svg>
-              <div><b>Renovação em 28 dias</b> <span>· lembrete enviado ao jurídico</span></div>
-              <span class="rs-tag">A vencer</span>
-            </div>
-          </div>
-        </div>
+      <div class="step-card reveal d2">
+        <span class="step-num">2</span>
+        <h3>Calibragem do padrão da casa</h3>
+        <p>Modelos e teses da empresa e do escritório contratado são carregados; o jurídico aprova as regras de risco.</p>
+      </div>
+      <div class="step-card reveal d1">
+        <span class="step-num">3</span>
+        <h3>Entrada dos processos do recorte</h3>
+        <p>Os casos passam pelas sete fases, com revisão e assinatura do escritório em cada peça.</p>
+      </div>
+      <div class="step-card reveal d2">
+        <span class="step-num">4</span>
+        <h3>Leitura conjunta</h3>
+        <p>Reunião mensal com empresa e escritório para revisar os três números acima e decidir a expansão para o restante da carteira.</p>
       </div>
     </div>
+
+    <div class="steps-note reveal"><strong>Nota de tranquilidade:</strong> contrato mensal, sem fidelidade longa, e a base de dados e as peças produzidas pertencem à empresa.</div>
   </div>
 </section>
 
-<!-- ===== SEGURANÇA / GOVERNANÇA ===== -->
-<section id="seguranca" data-screen-label="Segurança">
+<!-- ===== FAQ ===== -->
+<section id="faq">
   <div class="shell">
-    <div class="sec-head-left reveal">
-      <h2 class="sh-title">Seus dados, sua <span class="serif">propriedade exclusiva</span></h2>
-      <p class="sh-lede">Infraestrutura projetada para os requisitos de compliance de empresas com passivo jurídico real. Sem compromissos.</p>
+    <div class="sec-header reveal">
+      <span class="eyebrow">Perguntas Frequentes</span>
+      <h2 class="sec-h2">Dúvidas comuns <span class="grad">sobre a esteira trabalhista empresarial.</span></h2>
     </div>
 
-    <div class="sec-grid">
-      <div class="sec-card reveal d1">
-        <span class="sec-ic"><svg viewBox="0 0 20 20"><path d="M10 1.5l7 3v5c0 4.5-3 7.5-7 8.5-4-1-7-4-7-8.5v-5z"/><polyline points="6.5,10 9,12.5 13.5,7"/></svg></span>
-        <div class="sec-name">SOC 2 Type II</div>
-        <p class="sec-desc">Auditoria de segurança e disponibilidade em andamento. Controles de acesso granulares por papel e departamento.</p>
-        <span class="sec-badge wip"><span class="sb-dot"></span>Em andamento</span>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <div class="faq-head" onclick="this.parentElement.classList.toggle('open')">
+          <span>A IA substitui o advogado?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="3" x2="7" y2="11"/><line x1="3" y1="7" x2="11" y2="7"/></svg></span>
+        </div>
+        <div class="faq-body"><div class="faq-body-inner"><p>Não. A esteira entrega trabalho adiantado; a decisão jurídica, a assinatura e o protocolo continuam com o advogado do escritório contratado. Toda peça passa por revisão humana, e o sistema registra o que foi gerado e o que foi alterado.</p></div></div>
       </div>
-      <div class="sec-card reveal d2">
-        <span class="sec-ic"><svg viewBox="0 0 20 20"><rect x="3" y="7" width="14" height="11" rx="1.5"/><path d="M6.5 7V5a3.5 3.5 0 0 1 7 0v2"/><circle cx="10" cy="12" r="1.4"/></svg></span>
-        <div class="sec-name">LGPD Compliant</div>
-        <p class="sec-desc">Dados processados em servidores brasileiros. DPA customizado por cliente. Direito de portabilidade e exclusão garantido.</p>
-        <span class="sec-badge go"><span class="sb-dot"></span>Certificado</span>
+      <div class="faq-item">
+        <div class="faq-head" onclick="this.parentElement.classList.toggle('open')">
+          <span>E o escritório que já nos atende?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="3" x2="7" y2="11"/><line x1="3" y1="7" x2="11" y2="7"/></svg></span>
+        </div>
+        <div class="faq-body"><div class="faq-body-inner"><p>Continua. Ele é parte do fluxo: recebe o dossiê pronto, a minuta e o cálculo, revisa, assina, protocola e conduz a audiência. A maioria trata isso como alívio de trabalho braçal — e, quando há mais de um escritório, todos passam a produzir no mesmo padrão, o que torna custo e resultado comparáveis.</p></div></div>
       </div>
-      <div class="sec-card reveal d3">
-        <span class="sec-ic"><svg viewBox="0 0 20 20"><rect x="2.5" y="4" width="15" height="9" rx="1.5"/><line x1="6.5" y1="17" x2="13.5" y2="17"/><line x1="10" y1="13" x2="10" y2="17"/></svg></span>
-        <div class="sec-name">Deploy On-Premises</div>
-        <p class="sec-desc">Instalação no ambiente cloud privado da empresa. Para setores regulados que exigem isolamento total de dados.</p>
-        <span class="sec-badge pl"><span class="sb-dot"></span>Disponível</span>
+      <div class="faq-item">
+        <div class="faq-head" onclick="this.parentElement.classList.toggle('open')">
+          <span>Precisamos trocar o nosso sistema jurídico?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="3" x2="7" y2="11"/><line x1="3" y1="7" x2="11" y2="7"/></svg></span>
+        </div>
+        <div class="faq-body"><div class="faq-body-inner"><p>Não. A integração é com o que já existe — gestão de processos, folha, ponto e ERP — por API, SFTP ou pasta monitorada.</p></div></div>
       </div>
-      <div class="sec-card reveal d1">
-        <span class="sec-ic"><svg viewBox="0 0 20 20"><path d="M10 1.5l7 3v5c0 4.5-3 7.5-7 8.5-4-1-7-4-7-8.5v-5z"/><line x1="7" y1="9" x2="13" y2="9"/></svg></span>
-        <div class="sec-name">Zero Training Sharing</div>
-        <p class="sec-desc">Seus dados jamais treinam modelos de terceiros ou de outros clientes. Garantia contratual de exclusividade do fine-tuning.</p>
-        <span class="sec-badge go"><span class="sb-dot"></span>Garantia contratual</span>
+      <div class="faq-item">
+        <div class="faq-head" onclick="this.parentElement.classList.toggle('open')">
+          <span>Como ficam a LGPD e o sigilo?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="3" x2="7" y2="11"/><line x1="3" y1="7" x2="11" y2="7"/></svg></span>
+        </div>
+        <div class="faq-body"><div class="faq-body-inner"><p>Dados criptografados, segregados por cliente e não usados para treinar modelos de terceiros. Acesso por perfil, com trilha de auditoria de quem viu e usou cada documento.</p></div></div>
       </div>
-      <div class="sec-card reveal d2">
-        <span class="sec-ic"><svg viewBox="0 0 20 20"><path d="M5 3h7l3 3v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><polyline points="11.5,3 11.5,6.5 15,6.5"/><path d="M7 13l1.5 1.5L12 11"/></svg></span>
-        <div class="sec-name">Contratos Enterprise</div>
-        <p class="sec-desc">MSA customizado. SLA de disponibilidade de 99,9%. Suporte dedicado com resposta garantida em 2 horas.</p>
-        <span class="sec-badge pl"><span class="sb-dot"></span>Customizável</span>
+      <div class="faq-item">
+        <div class="faq-head" onclick="this.parentElement.classList.toggle('open')">
+          <span>Qual o tamanho de carteira que faz sentido?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="3" x2="7" y2="11"/><line x1="3" y1="7" x2="11" y2="7"/></svg></span>
+        </div>
+        <div class="faq-body"><div class="faq-body-inner"><p>A partir de cerca de 50 processos trabalhistas ativos o ganho já aparece. O modelo foi desenhado para empresas de 500 a 5.000 funcionários com contencioso de massa.</p></div></div>
       </div>
-      <div class="sec-card reveal d3">
-        <span class="sec-ic"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7.5"/><polyline points="6.5,10 9,12.5 13.5,7"/></svg></span>
-        <div class="sec-name">ISO 27001</div>
-        <p class="sec-desc">Política de segurança da informação alinhada ao padrão internacional. Gestão de incidentes documentada e testada.</p>
-        <span class="sec-badge wip"><span class="sb-dot"></span>Em certificação</span>
+      <div class="faq-item">
+        <div class="faq-head" onclick="this.parentElement.classList.toggle('open')">
+          <span>Como é a cobrança?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="3" x2="7" y2="11"/><line x1="3" y1="7" x2="11" y2="7"/></svg></span>
+        </div>
+        <div class="faq-body"><div class="faq-body-inner"><p>Assinatura mensal por processo ativo, com faixas por volume. Preço previsível, sem hora cheia e sem cobrança por ato.</p></div></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ===== CTA + FORM ===== -->
-<section id="demo" data-screen-label="Falar com um especialista">
+<section id="cta">
   <div class="shell">
     <div class="demo-grid">
       <!-- PITCH -->
       <div class="demo-pitch reveal d1">
-        <h2 class="sh-title">Converse com nossa <span class="serif">equipe</span></h2>
-        <p>Descubra como o Juris 8 pode automatizar o contencioso trabalhista da sua empresa.</p>
-        <p>Agende uma conversa com nossa equipe para conhecer a plataforma, esclarecer dúvidas e entender como a IA do Juris 8 pode apoiar o seu departamento jurídico.</p>
+        <span class="eyebrow">Próximo Passo</span>
+        <h2 class="sh-title">Veja a esteira funcionando <span class="grad">antes de decidir qualquer coisa.</span></h2>
+        <p>Em uma apresentação de 30 minutos, o time comercial mostra o fluxo completo, os exemplos de peça e cálculo e como a integração acontece na prática. Se fizer sentido, o passo seguinte é uma conversa técnica com o seu jurídico e o seu escritório.</p>
         <div class="demo-list">
-          <div class="demo-li"><span class="dl-chk"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg></span>Apresentação personalizada da plataforma</div>
-          <div class="demo-li"><span class="dl-chk"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg></span>Demonstração dos principais recursos</div>
-          <div class="demo-li"><span class="dl-chk"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg></span>Espaço para esclarecer dúvidas da sua equipe</div>
-          <div class="demo-li"><span class="dl-chk"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg></span>Integrações e implantação explicadas na prática</div>
+          <div class="demo-li"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Demonstração das sete fases com casos reais anonimizados</div>
+          <div class="demo-li"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Exemplos de dossiê, minuta e cálculo</div>
+          <div class="demo-li"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Como o escritório contratado entra no fluxo</div>
+          <div class="demo-li"><svg viewBox="0 0 14 14"><polyline points="2,7 5.5,10.5 12,3"/></svg>Faixas de preço por volume de processos ativos</div>
         </div>
       </div>
 
       <!-- FORM -->
       <div class="form-card reveal d2">
         <div class="form-head">
-          <span class="form-title">Falar com um especialista</span>
-          <span class="form-intro">Preencha abaixo. Retornamos em até 24h para confirmar data e horário.</span>
+          <span class="form-title">Agendar apresentação</span>
+          <span class="form-intro">Preencha abaixo. Retorno do time comercial em até um dia útil.</span>
         </div>
         <form id="lead-form" class="form-fields" novalidate>
           <div class="form-row">
@@ -491,8 +652,8 @@
               <input id="lead-name" name="name" type="text" placeholder="João Silva" autocomplete="name" required />
             </div>
             <div class="ff">
-              <label for="lead-office">Empresa / Escritório</label>
-              <input id="lead-office" name="office" type="text" placeholder="Nome da empresa" autocomplete="organization" required />
+              <label for="lead-phone">Telefone / WhatsApp</label>
+              <input id="lead-phone" name="phone" type="tel" placeholder="(11) 99999-9999" autocomplete="tel" required />
             </div>
           </div>
           <div class="form-row">
@@ -501,210 +662,177 @@
               <input id="lead-email" name="email" type="email" placeholder="joao@empresa.com.br" autocomplete="email" required />
             </div>
             <div class="ff">
-              <label for="lead-phone">Telefone / WhatsApp</label>
-              <input id="lead-phone" name="phone" type="tel" placeholder="(11) 99999-9999" autocomplete="tel" required />
+              <label for="lead-office">Empresa</label>
+              <input id="lead-office" name="office" type="text" placeholder="Nome da empresa" autocomplete="organization" required />
             </div>
           </div>
           <div class="ff">
-            <label for="lead-cnpjs">CNPJ(s) <span class="ff-opt">opcional</span></label>
-            <input id="lead-cnpjs" name="cnpjs" type="text" placeholder="00.000.000/0001-00" />
+            <label for="lead-role">Cargo <span class="ff-opt">opcional</span></label>
+            <input id="lead-role" name="role" type="text" placeholder="Gerente jurídico, coordenador de contencioso…" />
           </div>
           <div class="ff">
-            <label for="lead-message">Mensagem <span class="ff-opt">opcional</span></label>
-            <textarea id="lead-message" name="message" rows="3" placeholder="Conte um pouco sobre o volume de casos ou o que deseja avaliar."></textarea>
+            <label for="lead-volume">Processos trabalhistas ativos</label>
+            <select id="lead-volume" name="volume" required>
+              <option value="" disabled selected>Selecione</option>
+              <option value="menos-100">Menos de 100</option>
+              <option value="100-500">100 a 500</option>
+              <option value="500-2000">500 a 2.000</option>
+              <option value="mais-2000">Mais de 2.000</option>
+            </select>
+          </div>
+          <div class="ff">
+            <label for="lead-offices-today">Escritório(s) que atendem hoje <span class="ff-opt">opcional</span></label>
+            <input id="lead-offices-today" name="offices_today" type="text" placeholder="Ex.: Silva & Advogados, Oliveira Ramos…" />
+          </div>
+          <div class="ff">
+            <label for="lead-message">Contexto <span class="ff-opt">opcional</span></label>
+            <textarea id="lead-message" name="message" rows="3" placeholder="Conte um pouco sobre a sua carteira ou principais desafios de contencioso."></textarea>
           </div>
           <label class="ff-consent" for="lead-consent">
             <input id="lead-consent" name="consent" type="checkbox" required />
-            <span>Autorizo o contato da equipe Juris 8 e o tratamento dos meus dados conforme a LGPD.</span>
+            <span>Autorizo o contato da equipe Juris8 e o tratamento dos meus dados conforme a LGPD.</span>
           </label>
           <button type="submit" class="form-submit" id="lead-submit">
-            Falar com um especialista
+            Agendar apresentação
             <svg viewBox="0 0 16 16"><line x1="2" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
           </button>
           <p id="lead-form-status" class="form-status" role="status" aria-live="polite" hidden></p>
         </form>
+        <p class="form-after">Retorno do time comercial em até um dia útil.</p>
         <div class="form-seals">
           <span class="form-seal"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>Sem compromisso</span>
           <span class="form-seal"><svg viewBox="0 0 12 12"><path d="M6 1L2 3v3c0 2.8 1.8 4.9 4 5.8C8.2 10.9 10 8.8 10 6V3L6 1z"/></svg>NDA disponível</span>
-          <span class="form-seal"><svg viewBox="0 0 12 12"><rect x="2" y="5" width="8" height="6" rx="1"/><path d="M4 5V3.5a2.5 2.5 0 0 1 5 0V5"/></svg>Protegido por LGPD</span>
+          <span class="form-seal"><svg viewBox="0 0 12 12"><rect x="2" y="5" width="8" height="6" rx="1"/><path d="M4 5V3.5a2.5 2.5 0 0 1 5 0V5"/></svg>LGPD</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== FOOTER (home · compartilhado) ===== -->
+<!-- ===== FOOTER ===== -->
 <footer>
   <div class="shell">
     <div class="footer-top">
       <div class="footer-brand-col">
-        <a href="/" aria-label="Juris8 — Home"><img src="/DET/logo.png" alt="Juris 8" class="footer-logo" /></a>
-        <p class="footer-tag">A mais completa IA jurídica do Brasil. Pré-elaboração de peças, pesquisa, análise de documentos e transcrição — desenvolvidas por advogados, para advogados.</p>
+        <a href="/" aria-label="Juris8 — Home"><img src="/DET/logo.png" alt="Juris8" class="footer-logo" /></a>
+        <p class="footer-tag">Inteligência artificial aplicada ao contencioso trabalhista de massa, com revisão e assinatura humanas em todas as peças.</p>
         <div class="footer-seals">
-          <span class="footer-seal"><i data-lucide="lock" width="11" height="11" stroke-width="1.8"></i>LGPD</span>
-          <span class="footer-seal"><i data-lucide="sparkles" width="11" height="11" stroke-width="1.8"></i>IA jurídica</span>
+          <span class="footer-seal"><svg viewBox="0 0 12 12" width="11" height="11" fill="none" stroke="var(--juris-300)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="8" height="6" rx="1"/><path d="M4 5V3.5a2.5 2.5 0 0 1 5 0V5"/></svg>LGPD</span>
+          <span class="footer-seal"><svg viewBox="0 0 14 14" width="11" height="11" fill="none" stroke="var(--juris-300)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1l1.4 3.6L12 6 8.4 7.4 7 11 5.6 7.4 2 6l3.6-1.4z"/></svg>IA jurídica</span>
         </div>
         <div class="footer-social">
           <a href="https://www.instagram.com/juris8.ai?igsh=cDRkZnIxc3h1NXdi" target="_blank" rel="noopener" aria-label="Instagram">
-            <i data-lucide="instagram" width="15" height="15" stroke-width="1.5"></i>
+            <svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="11" height="11" rx="3"/><circle cx="8" cy="8" r="2.5"/><circle cx="11.5" cy="4.5" r="0.7" fill="currentColor" stroke="none"/></svg>
           </a>
-          <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Juris8." target="_blank" rel="noopener" aria-label="WhatsApp">
-            <i data-lucide="message-circle" width="15" height="15" stroke-width="1.5"></i>
+          <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Juris8%20Trabalhista." target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 8A5.5 5.5 0 1 1 4.3 3.6L2.5 13.5l4-1.8A5.5 5.5 0 0 0 13.5 8z"/></svg>
           </a>
         </div>
       </div>
       <nav class="footer-links" aria-label="Rodapé">
         <div class="footer-group">
-          <div class="footer-col-title">Soluções</div>
+          <div class="footer-col-title">Solução</div>
           <div class="footer-col">
-            <a href="/DET/">DET Monitor</a>
-            <a href="/crm/">CRM com IA</a>
-            <a href="/secretariajuridica/">Secretaria jurídica</a>
-            <a href="/newsletter/">Newsletter mensal</a>
-            <a href="/trabalhistaempresarial/">Trabalhista empresarial</a>
+            <a href="#problema">O problema</a>
+            <a href="#solucao">A esteira</a>
+            <a href="#fluxo">O fluxo</a>
+            <a href="#o-que-muda">O que muda</a>
           </div>
         </div>
         <div class="footer-group">
-          <div class="footer-col-title">Plataforma</div>
+          <div class="footer-col-title">Empresa</div>
           <div class="footer-col">
-            <a href="/#funcionalidades">Pré-elaboração de peças</a>
-            <a href="/#funcionalidades">Pesquisa de jurisprudência</a>
-            <a href="/#funcionalidades">Análise de documentos</a>
-            <a href="/#funcionalidades">Transcrição de audiências</a>
+            <a href="#implantacao">Implantação</a>
+            <a href="#faq">Perguntas frequentes</a>
+            <a href="#cta">Falar com o time comercial</a>
           </div>
         </div>
         <div class="footer-group">
-          <div class="footer-col-title">Contato</div>
+          <div class="footer-col-title">Confiança</div>
           <div class="footer-col">
-            <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Juris8." target="_blank" rel="noopener">WhatsApp</a>
-            <a href="https://www.instagram.com/juris8.ai?igsh=cDRkZnIxc3h1NXdi" target="_blank" rel="noopener">Instagram</a>
-            <a href="/#faq">FAQ</a>
-            <a href="/#solucoes">Soluções</a>
+            <a href="#faq">LGPD e segurança</a>
+            <a href="#solucao">Revisão humana</a>
+            <a href="#fluxo">Integrações</a>
           </div>
         </div>
       </nav>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">© 2026 Juris8 · Todos os direitos reservados.</span>
-      <span class="footer-made"><span class="fm-dot"></span>Desenvolvido por advogados, para advogados</span>
-      <a href="#top" class="footer-top-link">Voltar ao topo<i data-lucide="chevron-up" width="13" height="13" stroke-width="1.8"></i></a>
+      <span class="footer-copy">© 2026 Juris8 · Juris8 Trabalhista — contencioso de massa.</span>
+      <a href="#top" class="footer-top-link">Voltar ao topo<svg viewBox="0 0 14 14" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,9 7,5 11,9"/></svg></a>
     </div>
   </div>
 </footer>
 
+<!-- ===== WHATSAPP FAB ===== -->
 <div class="wa-fab" data-wa>
   <div class="wa-bubble" role="dialog" aria-label="Atendimento no WhatsApp">
-    <button class="wa-bubble-close" type="button" aria-label="Fechar"><i data-lucide="x"></i></button>
-    <p class="wa-bubble-title">Dúvidas sobre Trabalhista?</p>
-    <p class="wa-bubble-text">Fale com um especialista agora — resposta em minutos.</p>
-    <span class="wa-bubble-cta">Iniciar conversa</span>
+    <button class="wa-bubble-close" type="button" aria-label="Fechar"><svg viewBox="0 0 14 14" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="3" x2="11" y2="11"/><line x1="11" y1="3" x2="3" y2="11"/></svg></button>
+    <p class="wa-bubble-title">Dúvidas sobre o Trabalhista?</p>
+    <p class="wa-bubble-text">Fale com o time comercial agora — resposta em minutos.</p>
+    <span class="wa-bubble-cta">Iniciar conversa <svg viewBox="0 0 14 14" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="2" y1="7" x2="11" y2="7"/><polyline points="8,4 11,7 8,10"/></svg></span>
   </div>
-  <a class="wa-btn" href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Trabalhista%20Empresarial." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <a class="wa-btn" href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Juris8%20Trabalhista%20Empresarial." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
     <span class="wa-btn-ring" aria-hidden="true"></span>
     <svg class="wa-btn-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.04 4C9.93 4 4.97 8.96 4.97 15.07c0 2.13.6 4.13 1.64 5.83L4.5 28l7.27-2.06a11.03 11.03 0 0 0 4.27.85h.01c6.11 0 11.07-4.96 11.07-11.07S22.15 4 16.04 4zm0 20.2h-.01a9.1 9.1 0 0 1-4.64-1.27l-.33-.2-3.86 1.09 1.1-3.76-.22-.35a9.11 9.11 0 1 1 8.96 4.49zm5.1-6.83c-.28-.14-1.65-.81-1.9-.9-.26-.1-.45-.14-.63.14-.19.28-.72.9-.88 1.08-.16.19-.32.21-.6.07-.28-.14-1.18-.43-2.25-1.39-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.49.14-.16.18-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.48l-.54-.01c-.19 0-.49.07-.74.35-.26.28-.97.95-.97 2.32s1 2.69 1.14 2.88c.14.19 1.96 2.99 4.75 4.19.66.29 1.18.46 1.58.59.66.21 1.27.18 1.74.11.53-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.26-.19-.54-.33z"/></svg>
   </a>
 </div>
-<script src="https://unpkg.com/lucide@0.511.0/dist/umd/lucide.min.js"></script>
-<script>if (window.lucide) lucide.createIcons();</script>
+
 <script>
-(function(){
-  var burger=document.getElementById('navBurger'),navMobile=document.getElementById('navMobile');
-  if(burger&&navMobile){burger.addEventListener('click',function(){var o=navMobile.classList.toggle('open');burger.setAttribute('aria-expanded',o?'true':'false');});navMobile.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){navMobile.classList.remove('open');burger.setAttribute('aria-expanded','false');});});}
-  var fab=document.querySelector('[data-wa]');if(!fab)return;
-  var bubble=fab.querySelector('.wa-bubble'),closeBtn=fab.querySelector('.wa-bubble-close'),link=fab.querySelector('.wa-btn'),KEY='juris8_wa_bubble_dismissed',reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches,dismissed=false;
-  setTimeout(function(){fab.classList.add('in');},500);try{dismissed=localStorage.getItem(KEY)==='1';}catch(e){}
-  if(!dismissed)setTimeout(function(){fab.classList.add('show-bubble');},reduce?900:3200);
-  if(window.matchMedia('(hover: hover)').matches){fab.addEventListener('mouseenter',function(){fab.classList.add('show-bubble');});fab.addEventListener('mouseleave',function(){if(dismissed)fab.classList.remove('show-bubble');});}
-  if(bubble&&link)bubble.addEventListener('click',function(e){if(e.target.closest('.wa-bubble-close'))return;window.open(link.href,'_blank','noopener');});
-  if(closeBtn)closeBtn.addEventListener('click',function(e){e.stopPropagation();fab.classList.remove('show-bubble');dismissed=true;try{localStorage.setItem(KEY,'1');}catch(err){}});
-  if(window.lucide)lucide.createIcons();
-})();
-</script>
-<script>
-/* Reveal estável: sem animar posição ao rolar */
+/* ---- Reveal ---- */
 document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
 
-/* ---- helpers: smooth path ---- */
-function smoothPath(pts){
-  if(pts.length<2) return '';
-  let d = `M ${pts[0][0]},${pts[0][1]}`;
-  for(let i=0;i<pts.length-1;i++){
-    const p0 = pts[i-1]||pts[i], p1 = pts[i], p2 = pts[i+1], p3 = pts[i+2]||p2;
-    const t = 0.18;
-    const c1x = p1[0] + (p2[0]-p0[0])*t, c1y = p1[1] + (p2[1]-p0[1])*t;
-    const c2x = p2[0] - (p3[0]-p1[0])*t, c2y = p2[1] - (p3[1]-p1[1])*t;
-    d += ` C ${c1x},${c1y} ${c2x},${c2y} ${p2[0]},${p2[1]}`;
-  }
-  return d;
-}
-
-/* ---- KPI sparklines ---- */
-document.querySelectorAll('.dk-spark').forEach(svg=>{
-  const vals = svg.dataset.spark.split(',').map(Number);
-  const color = svg.dataset.color;
-  const W=120,H=24,pad=2;
-  const min=Math.min(...vals),max=Math.max(...vals),rng=(max-min)||1;
-  const pts = vals.map((v,i)=>[pad+(i/(vals.length-1))*(W-pad*2), H-pad-((v-min)/rng)*(H-pad*2)]);
-  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
-  svg.setAttribute('preserveAspectRatio','none');
-  const id='sg'+Math.random().toString(36).slice(2,7);
-  const line = smoothPath(pts);
-  const area = line + ` L ${W-pad},${H} L ${pad},${H} Z`;
-  svg.innerHTML = `<defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="${color}" stop-opacity="0.3"/><stop offset="100%" stop-color="${color}" stop-opacity="0"/></linearGradient></defs>`
-    + `<path d="${area}" fill="url(#${id})"/>`
-    + `<path d="${line}" fill="none" stroke="${color}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>`;
-});
-
-/* ---- passivo area chart ---- */
+/* ---- Mobile menu ---- */
 (function(){
-  const svg = document.getElementById('passivoChart');
-  if(!svg) return;
-  const exposure = [98,104,101,110,116,113,121,118,125,122,129,128];
-  const cases    = [62,66,64,70,73,71,78,76,82,80,86,84];
-  const W=420,H=96,padT=8,padB=8,padX=4;
-  const maxV=140;
-  const x=i=>padX+(i/(exposure.length-1))*(W-padX*2);
-  const y=v=>padT+(1-(v/maxV))*(H-padT-padB);
-  const ptsE=exposure.map((v,i)=>[x(i),y(v)]);
-  const ptsC=cases.map((v,i)=>[x(i),y(v)]);
-  const lineE=smoothPath(ptsE),lineC=smoothPath(ptsC);
-  const areaE=lineE+` L ${x(exposure.length-1)},${H-padB} L ${x(0)},${H-padB} Z`;
-  let grid='';
-  for(let g=0;g<=2;g++){const gy=padT+(g/2)*(H-padT-padB);grid+=`<line x1="${padX}" y1="${gy}" x2="${W-padX}" y2="${gy}" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>`;}
-  svg.innerHTML = `<defs><linearGradient id="pgrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9A63F0" stop-opacity="0.3"/><stop offset="100%" stop-color="#9A63F0" stop-opacity="0"/></linearGradient></defs>`
-    + grid
-    + `<path d="${areaE}" fill="url(#pgrad)"/>`
-    + `<path d="${lineE}" fill="none" stroke="#9A63F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`
-    + `<path d="${lineC}" fill="none" stroke="#7DD3FC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 3"/>`;
+  var burger=document.getElementById('navBurger'),navMobile=document.getElementById('navMobile');
+  if(burger&&navMobile){
+    burger.addEventListener('click',function(){
+      var o=navMobile.classList.toggle('open');
+      burger.setAttribute('aria-expanded',o?'true':'false');
+    });
+    navMobile.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click',function(){
+        navMobile.classList.remove('open');
+        burger.setAttribute('aria-expanded','false');
+      });
+    });
+  }
 })();
 
-/* ---- distribution bars animate ---- */
+/* ---- Smooth scroll for anchor links ---- */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({behavior:'smooth',block:'start'}); }
+  });
+});
+
+/* ---- WhatsApp FAB ---- */
 (function(){
-  const fills = document.querySelectorAll('.dist-fill');
-  const io = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        document.querySelectorAll('.dist-fill').forEach(f=>{ f.style.transition='width 0.9s cubic-bezier(.4,0,.2,1)'; f.style.width=f.dataset.w+'%'; });
-        io.disconnect();
-      }
-    });
-  },{threshold:0.3});
-  if(fills.length) io.observe(fills[0].closest('.dash-panel'));
+  var fab=document.querySelector('[data-wa]');if(!fab)return;
+  var bubble=fab.querySelector('.wa-bubble'),closeBtn=fab.querySelector('.wa-bubble-close'),link=fab.querySelector('.wa-btn'),KEY='juris8_wa_emp_dismissed',dismissed=false;
+  setTimeout(function(){fab.classList.add('in');},500);
+  try{dismissed=localStorage.getItem(KEY)==='1';}catch(e){}
+  if(!dismissed)setTimeout(function(){fab.classList.add('show-bubble');},3200);
+  if(window.matchMedia('(hover: hover)').matches){
+    fab.addEventListener('mouseenter',function(){fab.classList.add('show-bubble');});
+    fab.addEventListener('mouseleave',function(){if(dismissed)fab.classList.remove('show-bubble');});
+  }
+  if(bubble&&link)bubble.addEventListener('click',function(e){if(e.target.closest('.wa-bubble-close'))return;window.open(link.href,'_blank','noopener');});
+  if(closeBtn)closeBtn.addEventListener('click',function(e){e.stopPropagation();fab.classList.remove('show-bubble');dismissed=true;try{localStorage.setItem(KEY,'1');}catch(err){}});
 })();
 
 /* ---- Lead form → Supabase ---- */
 (function(){
-  const SUPABASE_URL = 'https://hvbndvwwibhtuknbfmyh.supabase.co';
-  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2Ym5kdnd3aWJodHVrbmJmbXloIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIyODUyNzAsImV4cCI6MjA5Nzg2MTI3MH0.7-9eHbms6AEoX_4HfbDwiY9rpXjHI7UMl0xcYRvBECA';
-  const LEAD_SOURCE = 'lp-trabalhista';
-
-  const form = document.getElementById('lead-form');
+  var SUPABASE_URL = 'https://hvbndvwwibhtuknbfmyh.supabase.co';
+  var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2Ym5kdnd3aWJodHVrbmJmbXloIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIyODUyNzAsImV4cCI6MjA5Nzg2MTI3MH0.7-9eHbms6AEoX_4HfbDwiY9rpXjHI7UMl0xcYRvBECA';
+  var LEAD_SOURCE = 'lp-trabalhistaempresarial';
+  var form = document.getElementById('lead-form');
   if(!form || !window.supabase) return;
-
-  const client = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-  const statusEl = document.getElementById('lead-form-status');
-  const submitBtn = document.getElementById('lead-submit');
-  const submitDefaultHtml = submitBtn ? submitBtn.innerHTML : '';
+  var client = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  var statusEl = document.getElementById('lead-form-status');
+  var submitBtn = document.getElementById('lead-submit');
+  var submitDefaultHtml = submitBtn ? submitBtn.innerHTML : '';
 
   function setStatus(type, message){
     if(!statusEl) return;
@@ -715,17 +843,18 @@ document.querySelectorAll('.dk-spark').forEach(svg=>{
 
   form.addEventListener('submit', async function(e){
     e.preventDefault();
+    var name = (form.name.value || '').trim();
+    var phone = (form.phone.value || '').trim();
+    var email = (form.email.value || '').trim();
+    var office = (form.office.value || '').trim();
+    var role = (form.role ? form.role.value || '' : '').trim();
+    var volume = form.volume ? form.volume.value || '' : '';
+    var officesToday = (form.offices_today ? form.offices_today.value || '' : '').trim();
+    var message = (form.message ? form.message.value || '' : '').trim();
+    var consent = !!form.consent.checked;
 
-    const name = (form.name.value || '').trim();
-    const office = (form.office.value || '').trim();
-    const email = (form.email.value || '').trim();
-    const phone = (form.phone.value || '').trim();
-    const cnpjs = (form.cnpjs.value || '').trim();
-    const message = (form.message.value || '').trim();
-    const consent = !!form.consent.checked;
-
-    if(!name || !office || !email || !phone){
-      setStatus('error', 'Preencha nome, empresa, e-mail e telefone.');
+    if(!name || !email || !phone || !office){
+      setStatus('error', 'Preencha nome, telefone, e-mail e empresa.');
       return;
     }
     if(!consent){
@@ -733,37 +862,34 @@ document.querySelectorAll('.dk-spark').forEach(svg=>{
       return;
     }
 
-    if(submitBtn){
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Enviando…';
-    }
+    if(submitBtn){ submitBtn.disabled = true; submitBtn.textContent = 'Enviando…'; }
     setStatus('loading', 'Enviando seus dados…');
 
     try {
-      const { error } = await client.from('leads').insert({
-        name,
-        office,
-        email,
-        phone,
-        cnpjs: cnpjs || null,
-        message: message || null,
+      var payload = {
+        name: name,
+        office: office,
+        email: email,
+        phone: phone,
+        message: [
+          role ? 'Cargo: ' + role : '',
+          volume ? 'Volume: ' + volume : '',
+          officesToday ? 'Escritórios hoje: ' + officesToday : '',
+          message ? 'Contexto: ' + message : ''
+        ].filter(Boolean).join(' | ') || null,
         consent: true,
         source: LEAD_SOURCE,
         status: 'novo'
-      });
-
-      if(error) throw error;
-
+      };
+      var result = await client.from('leads').insert(payload);
+      if(result.error) throw result.error;
       form.reset();
-      setStatus('success', 'Recebemos seu contato. Nossa equipe retorna em até 24h.');
+      setStatus('success', 'Recebemos seu contato. O time comercial retorna em até um dia útil.');
     } catch (err) {
       console.error('Lead form error:', err);
       setStatus('error', 'Não foi possível enviar agora. Tente novamente em instantes.');
     } finally {
-      if(submitBtn){
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = submitDefaultHtml;
-      }
+      if(submitBtn){ submitBtn.disabled = false; submitBtn.innerHTML = submitDefaultHtml; }
     }
   });
 })();
